@@ -20,5 +20,8 @@
   "bugs": {
     "url": "https://github.com/Ochanissi/DevEd/issues"
   },
-  "homepage": "https://github.com/Ochanissi/DevEd#readme"
+  "homepage": "https://github.com/Ochanissi/DevEd#readme",
+  "dependencies": {
+    "prettier": "^1.19.1"
+  }
 }
