@@ -13,10 +13,10 @@
     <!-- <link rel="stylesheet" href="css/style.css" /> -->
     <link rel="shortcut icon" type="image/png" href="./img/logo.png" />
 
-    <title>WebDev &mdash; Web Developer</title>
+    <title>DevEd &mdash; Web Developer</title>
   </head>
   <body class="container">
-    <nav class="navbar">     
+    <nav class="navbar">
       <input id="menu-toggle" type="checkbox" />
       <label class="menu-button-container" for="menu-toggle">
         <div class="menu-button"></div>
@@ -30,8 +30,12 @@
           <a href="#about" class="navbar__main--link">Courses</a>
         </li>
         <li class="navbar__main--item navbar__main--home">
-          <a href="#header" class=""><img class="navbar__main--logo" src="./img/logo.png" alt="WebDev Logo"></a>
-          
+          <a href="#header" class=""
+            ><img
+              class="navbar__main--logo"
+              src="./img/logo.png"
+              alt="WebDev Logo"
+          /></a>
         </li>
         <li class="navbar__main--item">
           <a href="#projects" class="navbar__main--link">About</a>
@@ -52,10 +56,85 @@
     </nav>
 
     <header class="header" id="header">
-      <img class="header__logo" src="./img/logo.png" alt="WebDev Logo">
+      <img class="header__logo" src="./img/logo.png" alt="WebDev Logo" />
       <h1 class="heading-1">Your Course to Success</h1>
-      <h2 class="heading-2 mb-sm">Build skills with courses, certificates, and degrees online from world-class universities and companies</h2>
+      <h2 class="heading-2 mb-sm">
+        Build skills with courses, certificates, and degrees online from
+        world-class universities and companies
+      </h2>
       <a href="#projects" class="btn">View courses</a>
     </header>
-  </bodybody class="container">
+
+    <section class="about" id="about">
+      <div class="about__title" data-aos="fade-right">
+        <h3 class="heading-3">Achieve your goals</h3>
+      </div>
+      <div class="about__features">
+        <div class="about__features-1">
+          <ion-icon
+            name="construct"
+            class="about__features--img"
+            data-aos="flip-right"
+          ></ion-icon>
+          <h4 class="heading-4--dark" data-aos="fade-up">Learn the latest skills</h4>
+          <p
+            class="about__features--text-1"
+            data-aos="fade-up"
+            data-aos-delay="100"
+          >
+          like business analytics, graphic design, Python, and more
+          </p>
+        </div>
+        <div class="about__features-2">
+          <ion-icon
+            name="trending-up"
+            class="about__features--img"
+            data-aos="flip-right"
+          ></ion-icon>
+          <h4 class="heading-4--dark" data-aos="fade-up">Get ready for a career</h4>
+          <p
+            class="about__features--text-2"
+            data-aos="fade-up"
+            data-aos-delay="100"
+          >
+          in high-demand fields like IT, AI and cloud engineering
+          </p>
+        </div>
+        <div class="about__features-3">
+          <ion-icon
+            name="checkbox-outline"
+            class="about__features--img"
+            data-aos="flip-right"
+          ></ion-icon>
+          <h4 class="heading-4--dark" data-aos="fade-up">Earn a certificate or degree</h4>
+          <p
+            class="about__features--text-3"
+            data-aos="fade-up"
+            data-aos-delay="100"
+          >
+          from a leading university in business, computer science, and more
+          </p>
+        </div>
+        <div class="about__features-4">
+          <ion-icon
+            name="rocket"
+            class="about__features--img"
+            data-aos="flip-right"
+          ></ion-icon>
+          <h4 class="heading-4--dark" data-aos="fade-up">Upskill your organization</h4>
+          <p
+            class="about__features--text-4"
+            data-aos="fade-up"
+            data-aos-delay="100"
+          >
+          with on-demand training and development programs
+          </p>
+        </div>
+      </div>
+      </div>
+    </section>
+
+
+    <script src="https://unpkg.com/ionicons@4.5.10-0/dist/ionicons.js"></script>
+  </body>
 </html>
