@@ -1,0 +1,32 @@
+.header {
+  // background-color: red;
+
+  grid-row: 1 / 2;
+  grid-column: center-start / center-end;
+
+  display: grid;
+  justify-content: center;
+  align-content: center;
+  align-items: center;
+  justify-items: center;
+  grid-gap: 3rem;
+
+  padding: 0 15rem;
+
+  text-align: center;
+
+  // background-image: linear-gradient(
+  //     to right bottom,
+  //     rgba($color-grey-dark-2, 0.8),
+  //     rgba($color-grey-dark-3, 0.8)
+  //   ),
+  //   url(../img/header-background.jpg);
+  // background-size: cover;
+  // background-position: top;
+  // position: relative;
+
+  &__logo {
+    height: 30rem;
+    width: auto;
+  }
+}
