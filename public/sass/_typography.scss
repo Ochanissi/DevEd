@@ -1,0 +1,224 @@
+%heading {
+  font-family: $font-display;
+  font-weight: 400;
+}
+
+.heading-1 {
+  @extend %heading;
+  font-size: 6rem;
+  color: $color-grey-dark-3;
+  line-height: 1;
+
+  &--name {
+    @extend .heading-1;
+    color: $color-secondary;
+  }
+
+  // @media only screen and (max-width: $bp-small) {
+  //   font-size: 4rem;
+  // }
+}
+
+.heading-2 {
+  @extend %heading;
+  font-size: 3rem;
+  color: $color-grey-dark-2;
+  line-height: 1;
+
+  &--light {
+    @extend .heading-2;
+    color: $color-grey-light-1;
+  }
+
+  &--dark {
+    @extend .heading-2;
+    color: $color-grey-dark-1;
+  }
+
+  // @media only screen and (max-width: $bp-small) {
+  //   font-size: 3rem;
+  // }
+}
+
+.heading-3 {
+  @extend %heading;
+  font-size: 4rem;
+  color: $color-black;
+  font-weight: 700;
+  text-transform: uppercase;
+
+  position: relative;
+
+  &:before {
+    content: '';
+    position: absolute;
+    left: 50%;
+    bottom: -15%;
+    height: 0.05rem;
+    width: 50%;
+    border-bottom: 0.5rem solid $color-black;
+    transform: translate(-50%, 0);
+  }
+}
+
+.heading-4 {
+  @extend %heading;
+  font-size: 3rem;
+  line-height: 1;
+  font-weight: 600;
+  color: $color-grey-dark-1;
+
+  &--light {
+    @extend .heading-4;
+    color: $color-grey-light-1;
+  }
+
+  &--dark {
+    @extend .heading-4;
+    color: $color-grey-dark-3;
+  }
+}
+
+.btn,
+.btn:link,
+.btn:visited {
+  padding: 1.5rem 2rem;
+  border: 2px solid $color-secondary-dark;
+  background-color: $color-secondary;
+  color: $color-white;
+  font-family: $font-display;
+  font-weight: 700;
+  text-transform: uppercase;
+  text-decoration: none;
+  font-size: 1.5rem;
+  letter-spacing: 0.4rem;
+  cursor: pointer;
+  transition: all 0.5s ease-in-out;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  &:hover {
+    background: $color-primary;
+    border: 2px solid $color-primary-dark;
+    color: #fefefe;
+  }
+}
+
+.btn__card,
+.btn__card:link,
+.btn__card:visited {
+  padding: 0.8rem 1.4rem;
+  border: 2px solid $color-grey-dark-1;
+  color: $color-grey-dark-1;
+  font-family: $font-display;
+  font-weight: 700;
+  text-transform: uppercase;
+  text-decoration: none;
+  font-size: 1.5rem;
+  letter-spacing: 0.4rem;
+  cursor: pointer;
+  transition: all 0.5s ease-in-out;
+
+  &:hover {
+    background: $color-primary;
+    border: 2px solid $color-primary-dark;
+    color: $color-white;
+
+    & ion-icon {
+      transform: none;
+    }
+  }
+}
+
+.btn__contact,
+.btn__contact:link,
+.btn__contact:visited {
+  padding: 0.8rem 1.4rem;
+  border: 2px solid $color-white;
+  color: $color-white;
+  font-family: $font-display;
+  font-weight: 700;
+  text-transform: uppercase;
+  text-decoration: none;
+  font-size: 3rem;
+  letter-spacing: 0.4rem;
+  cursor: pointer;
+  transition: all 0.5s ease-in-out;
+
+  &:hover {
+    background: $color-primary;
+    border: 2px solid $color-primary-dark;
+    color: $color-white;
+
+    & ion-icon {
+      transform: none;
+    }
+  }
+}
+
+.btn__footer,
+.btn__footer:link,
+.btn__footer:visited {
+  padding: 0.5rem 1rem;
+  border: 3px solid $color-secondary-dark;
+  color: $color-white;
+  background: $color-secondary;
+  font-family: $font-display;
+  font-weight: 700;
+  text-transform: uppercase;
+  text-decoration: none;
+  font-size: 3rem;
+  letter-spacing: 0.4rem;
+  cursor: pointer;
+  transition: all 0.5s ease-in-out;
+
+  &:hover {
+    background: $color-secondary-dark;
+    border: 3px solid $color-secondary-dark;
+    color: $color-grey-light-2;
+
+    & ion-icon {
+      transform: rotate(-90deg) scale(1.1);
+    }
+  }
+}
+
+.btn__icon {
+  &-arrow {
+    font-weight: 700;
+    padding-left: 1rem;
+    font-size: 2rem;
+    transition: all 0.3s linear;
+    line-height: 25px;
+  }
+
+  &-gihub {
+    padding-left: 1rem;
+  }
+
+  &-rocket {
+    padding-left: 1rem;
+  }
+
+  &-home {
+    transform: rotate(-90deg);
+  }
+}
+
+.mb-sm {
+  margin-bottom: 2rem;
+}
+
+.mb-md {
+  margin-bottom: 3rem;
+}
+
+.mb-lg {
+  margin-bottom: 4rem;
+}
+
+.mb-hg {
+  margin-bottom: 8rem;
+}
