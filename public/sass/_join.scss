@@ -1,0 +1,39 @@
+.join {
+  // background-color: yellowgreen;
+  background-color: $color-primary-darker;
+
+  grid-column: full-start / full-end;
+
+  padding: 10rem 0;
+
+  display: grid;
+
+  grid-gap: 3rem;
+
+  justify-content: center;
+  align-content: center;
+  justify-items: center;
+  align-items: center;
+
+  color: white;
+  &__title {
+    font-size: 4rem;
+    max-width: 90rem;
+    text-align: center;
+  }
+
+  &__text {
+    font-size: 2rem;
+  }
+
+  &__btns {
+    display: flex;
+
+    &--1 {
+      margin-right: 5rem;
+    }
+
+    &--2 {
+    }
+  }
+}
