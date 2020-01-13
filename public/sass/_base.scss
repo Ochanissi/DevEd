@@ -1,6 +1,7 @@
 // COLOR VARIABLES
 $color-primary: #46cbd8;
 $color-primary-dark: #3fb5c0;
+$color-primary-darker: #22a6b3;
 
 $color-secondary: #a919c8;
 $color-secondary-dark: #9313b3;
@@ -64,7 +65,7 @@ body {
 
 .container {
   display: grid;
-  grid-template-rows: 100vh repeat(5, min-content);
+  grid-template-rows: 100vh repeat(6, min-content);
   grid-template-columns:
     [full-start] minmax(6rem, 1fr) [center-start] repeat(
       8,
