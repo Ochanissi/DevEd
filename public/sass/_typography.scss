@@ -106,6 +106,28 @@
   }
 }
 
+.btn__nav--primary,
+.btn__nav--primary:link,
+.btn__nav--primary:visited {
+  @extend .btn;
+  padding: 0.75rem 1rem;
+  border: 3px solid $color-secondary;
+  background-color: transparent;
+
+  &:hover {
+    background: $color-secondary;
+    border: 3px solid $color-secondary-dark;
+    color: #fefefe;
+  }
+}
+
+.btn__nav--secondary,
+.btn__nav--secondary:link,
+.btn__nav--secondary:visited {
+  @extend .btn;
+  padding: 0.75rem 1rem;
+}
+
 .btn__card,
 .btn__card:link,
 .btn__card:visited {
