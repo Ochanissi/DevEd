@@ -1,0 +1,35 @@
+.contact {
+  // background-color: burlywood;
+  background-color: $color-grey-dark-4;
+
+  grid-column: full-start / full-end;
+
+  // clip-path: polygon(50% 15%, 100% 0, 100% 100%, 0 100%, 0 0);
+
+  padding: 10rem 0;
+  text-align: center;
+
+  &__title {
+    padding-bottom: 5rem;
+    display: flex;
+    justify-content: center;
+
+    &--header {
+      color: $color-white;
+
+      &:before {
+        border-bottom: 0.5rem solid $color-white;
+      }
+    }
+  }
+
+  &__content {
+    &--links {
+      display: grid;
+      grid-auto-flow: column;
+      justify-content: center;
+      justify-items: center;
+      grid-gap: 3rem;
+    }
+  }
+}
