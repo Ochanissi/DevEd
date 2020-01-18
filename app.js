@@ -1,17 +1,36 @@
 const fs = require('fs');
 const express = require('express');
+const morgan = require('morgan');
 
 const app = express();
 
+// MIDDLEWARES
+
+app.use(morgan('dev'));
 app.use(express.json());
+
+app.use((req, res, next) => {
+  console.log('Hello from the middleware!');
+  next();
+});
+
+app.use((req, res, next) => {
+  req.requestTime = new Date().toISOString();
+  next();
+});
 
 const courses = JSON.parse(
   fs.readFileSync(`${__dirname}/dev-data/data/courses-simple.json`)
 );
 
+// ROUTE HANDLERS
+
 const getAllCourses = (req, res) => {
+  // console.log(req.requestTime);
+
   res.status(200).json({
     status: 'success',
+    requestAt: req.requestTime,
     results: courses.length,
     data: {
       courses
@@ -101,6 +120,8 @@ const deleteCourse = (req, res) => {
 // app.patch('/api/v1/courses/:id', updateCourse);
 // app.delete('/api/v1/courses/:id', deleteCourse);
 
+// ROUTES
+
 app
   .route('/api/v1/courses')
   .get(getAllCourses)
@@ -111,6 +132,8 @@ app
   .get(getCourse)
   .patch(updateCourse)
   .delete(deleteCourse);
+
+// START SERVER
 
 const port = 3000;
 app.listen(port, () => {

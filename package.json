@@ -43,6 +43,7 @@
   "dependencies": {
     "babel-polyfill": "^6.26.0",
     "express": "^4.17.1",
+    "morgan": "^1.9.1",
     "prettier": "^1.19.1"
   }
 }
