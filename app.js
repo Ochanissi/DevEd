@@ -5,21 +5,11 @@ const app = express();
 
 app.use(express.json());
 
-// app.get('/', (req, res) => {
-//   res
-//     .status(200)
-//     .json({ message: 'Hello from the server side!', app: 'Natours' });
-// });
-
-// app.post('/', (req, res) => {
-//   res.send('You can post to this endpoint...');
-// });
-
 const courses = JSON.parse(
   fs.readFileSync(`${__dirname}/dev-data/data/courses-simple.json`)
 );
 
-app.get('/api/v1/courses', (req, res) => {
+const getAllCourses = (req, res) => {
   res.status(200).json({
     status: 'success',
     results: courses.length,
@@ -27,9 +17,9 @@ app.get('/api/v1/courses', (req, res) => {
       courses
     }
   });
-});
+};
 
-app.get('/api/v1/courses/:id', (req, res) => {
+const getCourse = (req, res) => {
   console.log(req.params);
 
   const id = req.params.id * 1;
@@ -49,9 +39,9 @@ app.get('/api/v1/courses/:id', (req, res) => {
       course
     }
   });
-});
+};
 
-app.post('/api/v1/courses', (req, res) => {
+const createCourse = (req, res) => {
   // console.log(req.body);
 
   const newId = courses[courses.length - 1].id + 1;
@@ -73,9 +63,9 @@ app.post('/api/v1/courses', (req, res) => {
   );
 
   // res.send('Done');
-});
+};
 
-app.patch('/api/v1/courses/:id', (req, res) => {
+const updateCourse = (req, res) => {
   if (req.params.id * 1 > courses.length) {
     return res.status(404).json({
       status: 'failed',
@@ -89,9 +79,9 @@ app.patch('/api/v1/courses/:id', (req, res) => {
       course: '<Updated course here...>'
     }
   });
-});
+};
 
-app.delete('/api/v1/courses/:id', (req, res) => {
+const deleteCourse = (req, res) => {
   if (req.params.id * 1 > courses.length) {
     return res.status(404).json({
       status: 'failed',
@@ -103,7 +93,24 @@ app.delete('/api/v1/courses/:id', (req, res) => {
     status: 'success',
     data: null
   });
-});
+};
+
+// app.get('/api/v1/courses', getAllCourses);
+// app.get('/api/v1/courses/:id', getCourse);
+// app.post('/api/v1/courses', createCourse);
+// app.patch('/api/v1/courses/:id', updateCourse);
+// app.delete('/api/v1/courses/:id', deleteCourse);
+
+app
+  .route('/api/v1/courses')
+  .get(getAllCourses)
+  .post(createCourse);
+
+app
+  .route('/api/v1/courses/:id')
+  .get(getCourse)
+  .patch(updateCourse)
+  .delete(deleteCourse);
 
 const port = 3000;
 app.listen(port, () => {
