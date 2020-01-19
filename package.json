@@ -4,13 +4,14 @@
   "description": "DevEd Project",
   "main": "index.js",
   "scripts": {
-    "start": "nodemon server.js",
+    "start:dev": "nodemon server.js",
+    "start:prod": "set NODE_ENV=production&&nodemon server.js",
     "watch:sass": "node-sass sass/main.scss css/style.css -w",
     "devserver": "live-server --browser=chrome",
     "live-start": "npm-run-all --parallel devserver watch:sass",
     "dev": "webpack --mode development",
     "build": "webpack --mode production",
-    "start:dev": "webpack-dev-server --mode development"
+    "start:wp": "webpack-dev-server --mode development"
   },
   "repository": {
     "type": "git",
@@ -30,11 +31,20 @@
     "babel-loader": "8.0.6",
     "babel-preset-env": "1.7.0",
     "css-loader": "3.4.2",
+    "eslint": "^6.8.0",
+    "eslint-config-airbnb": "^18.0.1",
+    "eslint-config-prettier": "^6.9.0",
+    "eslint-plugin-import": "^2.20.0",
+    "eslint-plugin-jsx-a11y": "^6.2.3",
+    "eslint-plugin-node": "^11.0.0",
+    "eslint-plugin-prettier": "^3.1.2",
+    "eslint-plugin-react": "^7.18.0",
     "html-webpack-plugin": "3.2.0",
     "mini-css-extract-plugin": "0.9.0",
     "node-sass": "^4.13.1",
     "postcss-loader": "3.0.0",
     "postcss-preset-env": "6.7.0",
+    "prettier": "^1.19.1",
     "sass-loader": "8.0.1",
     "style-loader": "1.1.2",
     "webpack": "4.41.5",
@@ -43,8 +53,8 @@
   },
   "dependencies": {
     "babel-polyfill": "^6.26.0",
+    "dotenv": "^8.2.0",
     "express": "^4.17.1",
-    "morgan": "^1.9.1",
-    "prettier": "^1.19.1"
+    "morgan": "^1.9.1"
   }
 }
