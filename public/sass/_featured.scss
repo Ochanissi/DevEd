@@ -1,0 +1,46 @@
+.featured {
+  // background-color: red;
+
+  grid-row: 1 / 2;
+  grid-column: full-start / full-end;
+
+  display: grid;
+  justify-content: center;
+  align-content: center;
+  align-items: center;
+  justify-items: center;
+  grid-gap: 3rem;
+
+  padding: 0 15rem;
+
+  text-align: center;
+
+  &__heading {
+    max-width: 100rem;
+  }
+
+  // background-image: linear-gradient(
+  //     to right bottom,
+  //     rgba($color-grey-dark-2, 0.8),
+  //     rgba($color-grey-dark-3, 0.8)
+  //   ),
+  //   url(../img/header-background.jpg);
+  // background-size: cover;
+  // background-position: top;
+  // position: relative;
+
+  &__popular {
+    background-color: $color-primary;
+    width: 100vw;
+
+    &--title {
+      padding: 3rem 0;
+      color: $color-white;
+      font-size: 3rem;
+      font-weight: 500;
+    }
+
+    &--content {
+    }
+  }
+}
