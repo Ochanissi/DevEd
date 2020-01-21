@@ -102,8 +102,14 @@
   &:hover {
     background: $color-primary;
     border: 2px solid $color-primary-dark;
-    color: #fefefe;
+    color: $color-white;
   }
+}
+
+.btn__card,
+.btn__card:link,
+.btn__card:visited {
+  padding: 1rem 1.2rem;
 }
 
 .btn__nav--primary,
@@ -117,7 +123,7 @@
   &:hover {
     background: $color-secondary;
     border: 3px solid $color-secondary-dark;
-    color: #fefefe;
+    color: $color-white;
   }
 }
 
@@ -126,107 +132,6 @@
 .btn__nav--secondary:visited {
   @extend .btn;
   padding: 0.75rem 1rem;
-}
-
-.btn__card,
-.btn__card:link,
-.btn__card:visited {
-  padding: 0.8rem 1.4rem;
-  border: 2px solid $color-grey-dark-1;
-  color: $color-grey-dark-1;
-  font-family: $font-display;
-  font-weight: 700;
-  text-transform: uppercase;
-  text-decoration: none;
-  font-size: 1.5rem;
-  letter-spacing: 0.4rem;
-  cursor: pointer;
-  transition: all 0.5s ease-in-out;
-
-  &:hover {
-    background: $color-primary;
-    border: 2px solid $color-primary-dark;
-    color: $color-white;
-
-    & ion-icon {
-      transform: none;
-    }
-  }
-}
-
-.btn__contact,
-.btn__contact:link,
-.btn__contact:visited {
-  padding: 0.8rem 1.4rem;
-  border: 2px solid $color-white;
-  color: $color-white;
-  font-family: $font-display;
-  font-weight: 700;
-  text-transform: uppercase;
-  text-decoration: none;
-  font-size: 3rem;
-  letter-spacing: 0.4rem;
-  cursor: pointer;
-  transition: all 0.5s ease-in-out;
-
-  &:hover {
-    background: $color-primary;
-    border: 2px solid $color-primary-dark;
-    color: $color-white;
-
-    & ion-icon {
-      transform: none;
-    }
-  }
-}
-
-.btn__footer,
-.btn__footer:link,
-.btn__footer:visited {
-  padding: 0.5rem 1rem;
-  border: 3px solid $color-secondary-dark;
-  color: $color-white;
-  background: $color-secondary;
-  font-family: $font-display;
-  font-weight: 700;
-  text-transform: uppercase;
-  text-decoration: none;
-  font-size: 3rem;
-  letter-spacing: 0.4rem;
-  cursor: pointer;
-  transition: all 0.5s ease-in-out;
-
-  &:hover {
-    background: $color-secondary-dark;
-    border: 3px solid $color-secondary-dark;
-    color: $color-grey-light-2;
-
-    & ion-icon {
-      transform: rotate(-90deg) scale(1.1);
-    }
-  }
-}
-
-.btn__icon {
-  &-arrow {
-    font-weight: 700;
-    padding-left: 1rem;
-    font-size: 2rem;
-    transition: all 0.3s linear;
-    line-height: 25px;
-  }
-
-  &-gihub {
-    padding-left: 1rem;
-  }
-
-  &-rocket {
-    padding-left: 1rem;
-  }
-
-  &-home {
-    transform: rotate(-90deg);
-  }
 }
 
 .mb-sm {

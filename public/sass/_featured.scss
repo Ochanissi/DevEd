@@ -30,17 +30,44 @@
   // position: relative;
 
   &__popular {
+    display: grid;
+    grid-template-columns:
+      [full-start] minmax(6rem, 1fr) [center-start] repeat(
+        8,
+        [col-start] minmax(min-content, 14rem) [col-end]
+      )
+      [center-end] minmax(6rem, 1fr) [full-end];
+
     background-color: $color-primary;
     width: 100vw;
 
+    padding: 5rem 0;
+
     &--title {
-      padding: 3rem 0;
+      padding-bottom: 3rem;
       color: $color-white;
       font-size: 3rem;
       font-weight: 500;
+      grid-row: 1 / 2;
+      grid-column: center-start / center-end;
     }
 
     &--content {
+      // background-color: red;
+      grid-row: 2 / 3;
+      grid-column: center-start / center-end;
+
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+
+      justify-content: center;
+      align-content: center;
+      justify-items: center;
+      align-items: center;
+
+      text-align: center;
+
+      grid-gap: 5rem;
     }
   }
 }

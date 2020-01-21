@@ -7,7 +7,6 @@
   padding: 10rem 0;
 
   display: grid;
-  grid-template-rows: repeat(5, min-content);
   grid-template-columns:
     [full-start] minmax(6rem, 1fr) [center-start] repeat(
       8,
