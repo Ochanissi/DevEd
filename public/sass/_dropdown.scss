@@ -1,0 +1,40 @@
+select {
+  appearance: none;
+  border-radius: 0;
+}
+
+label[for='dropdown'] {
+  position: relative;
+  display: block;
+  width: 34rem;
+  overflow: hidden;
+  cursor: pointer;
+}
+
+label[for='dropdown']::after {
+  content: ' ';
+  position: absolute;
+  right: 0;
+  top: 0;
+  width: 4rem;
+  height: 100%;
+  display: block;
+  background: $color-primary-darker
+    url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAOBAMAAAGq7RFVAAAAJ1BMVEX///////////////////////////////////////////////////9Ruv0SAAAADHRSTlMACAoREoKDt7y9zc5qtZoyAAAAcklEQVQIHQXBsQnCUAAFwFOCCKbIABaWERzi1yaFAzmEpHYEC8GUKVQEkbyhvOOkZqdWt0/QYKqLzQeF7dv6y/RLwa2wYtk4Xxxe+t8yd1WuM/rcUc2gYHEeoP02umSgTR50ybBPRuiSZAS6ZAQ4jgCAPyjYJiRH4fymAAAAAElFTkSuQmCC')
+    no-repeat center center;
+  pointer-events: none;
+}
+
+label[for='dropdown'] select {
+  border: 5px solid $color-primary-darker;
+  background: $color-white;
+  padding: 0.7rem 2rem;
+  width: 100%;
+  font-size: 16px;
+  font-family: monospace;
+  cursor: pointer;
+}
+
+label[for='dropdown'] select:focus {
+  outline: 1px dotted #a9a9a9;
+}
