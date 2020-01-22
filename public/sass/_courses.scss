@@ -14,11 +14,20 @@
 
   margin: 10rem 0;
 
+  grid-gap: 10rem;
+
   &__heading {
     // background-color: blue;
 
     text-align: center;
-    margin-bottom: 5rem;
+    font-weight: 500;
+    font-size: 4rem;
+  }
+
+  &__filters {
+    display: grid;
+    grid-auto-flow: column;
+    grid-gap: 5rem;
   }
 
   &__content {
