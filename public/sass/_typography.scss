@@ -127,6 +127,32 @@
   }
 }
 
+.btn__contact,
+.btn__contact:link,
+.btn__contact:visited {
+  padding: 0.8rem 1.4rem;
+  border: 2px solid $color-white;
+  color: $color-white;
+  font-family: $font-display;
+  font-weight: 700;
+  text-transform: uppercase;
+  text-decoration: none;
+  font-size: 3rem;
+  letter-spacing: 0.4rem;
+  cursor: pointer;
+  transition: all 0.5s ease-in-out;
+
+  &:hover {
+    background: $color-primary;
+    border: 2px solid $color-primary-dark;
+    color: $color-white;
+
+    & ion-icon {
+      transform: none;
+    }
+  }
+}
+
 .btn__nav--secondary,
 .btn__nav--secondary:link,
 .btn__nav--secondary:visited {
