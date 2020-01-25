@@ -59,8 +59,13 @@
       padding: 3rem;
     }
 
+    &--name {
+      color: $color-primary;
+    }
+
     &--text {
       &-1 {
+        color: $color-secondary;
       }
 
       &-2 {

@@ -34,20 +34,21 @@
 
   &__content {
     // background-color: red;
+    background-color: $color-white;
 
     grid-row: 2 / 3;
     grid-column: center-start / center-end;
 
     display: grid;
-    grid-template-columns: repeat(1, 1fr);
+    // grid-template-columns: repeat(1, 1fr);
     grid-gap: 3rem;
 
     max-width: 102rem;
 
-    justify-content: center;
-    align-content: center;
-    justify-items: center;
-    align-items: start;
+    // justify-content: center;
+    // align-content: center;
+    // justify-items: center;
+    // align-items: start;
 
     text-align: left;
 
@@ -58,6 +59,7 @@
     ion-icon {
       vertical-align: middle;
       padding-left: 3rem;
+      padding-right: 1rem;
     }
   }
 }
