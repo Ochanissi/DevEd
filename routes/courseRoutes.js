@@ -8,7 +8,7 @@ const router = express.Router();
 router
   .route('/')
   .get(courseController.getAllCourses)
-  .post(courseController.checkBody, courseController.createCourse);
+  .post(courseController.createCourse);
 
 router
   .route('/:id')

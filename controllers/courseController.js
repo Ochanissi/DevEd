@@ -1,59 +1,84 @@
 const Course = require('./../models/courseModel');
 
-exports.checkBody = (req, res, next) => {
-  if (!req.body.name || !req.body.price) {
-    return res.status(400).json({
+exports.getAllCourses = async (req, res) => {
+  try {
+    const courses = await Course.find();
+
+    res.status(200).json({
+      status: 'success',
+      results: courses.length,
+      data: {
+        courses
+      }
+    });
+  } catch (err) {
+    res.status(404).json({
       status: 'failed',
-      message: 'Missing name or price.'
+      message: err
     });
   }
-
-  next();
 };
 
-exports.getAllCourses = (req, res) => {
-  // console.log(req.requestTime);
+exports.getCourse = async (req, res) => {
+  try {
+    // console.log(req.params);
+    const course = await Course.findById(req.params.id);
+    // Couse.findOne({ _id: req.params.id })
 
-  res.status(200).json({
-    status: 'success',
-    requestAt: req.requestTime
-    // results: courses.length,
-    // data: {
-    //   courses
-    // }
-  });
+    res.status(200).json({
+      status: 'success',
+      data: {
+        course
+      }
+    });
+  } catch (err) {
+    res.status(404).json({
+      status: 'failed',
+      message: err
+    });
+  }
 };
 
-exports.getCourse = (req, res) => {
-  console.log(req.params);
+exports.createCourse = async (req, res) => {
+  try {
+    // const newCourse = new Course({});
+    // newCourse.save();
 
-  const id = req.params.id * 1;
-  // const course = courses.find(el => el.id === id);
+    const newCourse = await Course.create(req.body);
 
-  // res.status(200).json({
-  //   status: 'success',
-  //   data: {
-  //     course
-  //   }
-  // });
+    res.status(201).json({
+      status: 'success',
+      data: {
+        course: newCourse
+      }
+    });
+  } catch (err) {
+    res.status(400).json({
+      status: 'failed',
+      message: 'Invalid data sent!'
+    });
+  }
 };
 
-exports.createCourse = (req, res) => {
-  res.status(201).json({
-    status: 'success'
-    // data: {
-    //   course: newCourse
-    // }
-  });
-};
+exports.updateCourse = async (req, res) => {
+  try {
+    const course = await Course.findByIdAndUpdate(req.params.id, req.body, {
+      new: true,
+      runValidators: true
+    });
 
-exports.updateCourse = (req, res) => {
-  res.status(200).json({
-    status: 'success',
-    data: {
-      course: '<Updated course here...>'
-    }
-  });
+    res.status(200).json({
+      status: 'success',
+      data: {
+        course
+      }
+    });
+  } catch (err) {
+    res.status(404).json({
+      status: 'failed',
+      message: err
+    });
+  }
 };
 
 exports.deleteCourse = (req, res) => {
