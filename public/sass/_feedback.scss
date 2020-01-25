@@ -1,0 +1,135 @@
+.feedback {
+  // background-color: greenyellow;
+
+  grid-column: center-start / center-end;
+
+  // padding: 10rem 0;
+  // grid-gap: 5rem;
+
+  display: grid;
+  justify-content: center;
+  align-content: center;
+  justify-items: center;
+  align-items: center;
+
+  margin: 10rem 0;
+
+  grid-gap: 10rem;
+
+  &__title {
+  }
+
+  &__subtitle {
+    display: grid;
+    grid-auto-flow: column;
+    grid-gap: 3rem;
+
+    vertical-align: middle;
+
+    font-size: 3rem;
+    font-weight: 500;
+
+    box-shadow: 0 0 1px 1px rgba($color-black, 0.1),
+      0 3px 1px 0 rgba($color-black, 0.1);
+
+    padding: 1rem;
+    // background-color: $color-grey-light-1;
+
+    &--rating {
+    }
+
+    &--star {
+      height: 3rem;
+      width: 3rem;
+      margin-right: 1px;
+
+      vertical-align: middle;
+
+      &--active {
+        fill: #55c57a;
+      }
+      &--inactive {
+        fill: #bbb;
+      }
+    }
+  }
+
+  &__content {
+    // background-color: red;
+
+    display: grid;
+    // grid-template-columns: repeat(3, 1fr);
+
+    justify-content: center;
+    align-content: center;
+    justify-items: center;
+    align-items: center;
+
+    text-align: center;
+
+    grid-gap: 5rem;
+    // padding: 0 2rem;
+
+    &--review {
+      display: grid;
+      grid-template-columns: max-content, auto;
+
+      background-color: $color-grey-light-1;
+
+      box-shadow: 0 0 1px 1px rgba($color-black, 0.1),
+        0 3px 1px 0 rgba($color-black, 0.1);
+      padding: 2rem;
+
+      &--col-1 {
+        grid-column: 1 / 2;
+
+        border-right: 1px solid $color-grey-light-3;
+
+        padding: 3rem 5rem 3rem 3rem;
+      }
+
+      &--col-2 {
+        grid-column: 2 / 3;
+
+        padding: 3rem;
+      }
+
+      &--img {
+        max-width: 10rem;
+
+        clip-path: polygon(
+          30% 0%,
+          70% 0%,
+          100% 30%,
+          100% 70%,
+          70% 100%,
+          30% 100%,
+          0% 70%,
+          0% 30%
+        );
+      }
+
+      &--name {
+      }
+
+      &--rating {
+        margin-bottom: 3rem;
+      }
+
+      &--star {
+        height: 3rem;
+        width: 3rem;
+        margin-right: 1px;
+
+        vertical-align: middle;
+
+        &--active {
+          fill: #55c57a;
+        }
+        &--inactive {
+          fill: #bbb;
+        }
+      }
+    }
+  }
+}
