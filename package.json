@@ -4,7 +4,7 @@
   "description": "DevEd Project",
   "main": "index.js",
   "scripts": {
-    "start:dev": "nodemon server.js",
+    "start": "nodemon server.js",
     "start:prod": "set NODE_ENV=production&&nodemon server.js",
     "watch:sass": "node-sass sass/main.scss css/style.css -w",
     "devserver": "live-server --browser=chrome",
@@ -55,6 +55,7 @@
     "babel-polyfill": "^6.26.0",
     "dotenv": "^8.2.0",
     "express": "^4.17.1",
+    "mongoose": "^5.8.9",
     "morgan": "^1.9.1"
   }
 }
