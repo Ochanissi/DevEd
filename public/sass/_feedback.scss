@@ -85,7 +85,7 @@
 
         border-right: 1px solid $color-grey-light-3;
 
-        padding: 3rem 5rem 3rem 3rem;
+        padding: 3rem 5rem 0 3rem;
       }
 
       &--col-2 {
@@ -109,9 +109,6 @@
         );
       }
 
-      &--name {
-      }
-
       &--rating {
         margin-bottom: 3rem;
       }
@@ -129,6 +126,20 @@
         &--inactive {
           fill: #bbb;
         }
+      }
+
+      &--name {
+        font-size: 2rem;
+      }
+
+      &--country {
+        font-style: italic;
+        font-size: 1.75rem;
+
+        padding-bottom: 2rem;
+      }
+
+      &--date {
       }
     }
   }
