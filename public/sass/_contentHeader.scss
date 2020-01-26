@@ -105,7 +105,38 @@
       padding: 2rem;
       &--img {
         width: 28rem;
-        padding-bottom: 1rem;
+        // padding-bottom: 1rem;
+      }
+
+      &--price {
+        padding: 1rem 0;
+        margin: 1rem 0;
+
+        border: 2px solid $color-primary;
+
+        background-color: rgba($color-primary, 0.1);
+
+        box-shadow: 0 0 px px rgba($color-primary, 0.1),
+          0 3rem px 0 rgba($color-primary, 0.1);
+
+        vertical-align: middle;
+
+        &--value {
+          font-weight: 500;
+          font-size: 2rem;
+        }
+
+        &--discount {
+          font-size: 1.6rem;
+          color: $color-grey-dark-2;
+          text-decoration: line-through;
+        }
+
+        &--percentage {
+          font-size: 1.6rem;
+          color: $color-grey-dark-2;
+          font-style: italic;
+        }
       }
     }
 

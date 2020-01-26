@@ -112,21 +112,6 @@
   padding: 1rem 1.2rem;
 }
 
-.btn__nav--primary,
-.btn__nav--primary:link,
-.btn__nav--primary:visited {
-  @extend .btn;
-  padding: 0.75rem 1rem;
-  border: 3px solid $color-secondary;
-  background-color: transparent;
-
-  &:hover {
-    background: $color-secondary;
-    border: 3px solid $color-secondary-dark;
-    color: $color-white;
-  }
-}
-
 .btn__contact,
 .btn__contact:link,
 .btn__contact:visited {
@@ -153,11 +138,28 @@
   }
 }
 
+.btn__nav--primary,
+.btn__nav--primary:link,
+.btn__nav--primary:visited {
+  @extend .btn;
+  padding: 0.75rem 1rem;
+  border: 2px solid $color-secondary;
+  background-color: transparent;
+  font-weight: 500;
+
+  &:hover {
+    background: $color-secondary;
+    border: 2px solid $color-secondary-dark;
+    color: $color-white;
+  }
+}
+
 .btn__nav--secondary,
 .btn__nav--secondary:link,
 .btn__nav--secondary:visited {
   @extend .btn;
   padding: 0.75rem 1rem;
+  font-weight: 500;
 }
 
 .mb-sm {
