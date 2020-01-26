@@ -3,23 +3,55 @@ const Course = require('./../models/courseModel');
 exports.getAllCourses = async (req, res) => {
   try {
     // BUI LD QUERY
-    // 1. Filtering
+    // 1A. Filtering
     const queryObj = { ...req.query };
     const excludedFields = ['page', 'sort', 'limit', 'fields'];
     excludedFields.forEach(el => delete queryObj[el]);
 
     // console.log(req.query, queryObj);
 
-    // 2. Advanced filtering
+    // 1B. Advanced filtering
 
     let queryStr = JSON.stringify(queryObj);
     queryStr = queryStr.replace(/\b(gte|gt|lte|lt)\b/g, match => `$${match}`);
-    console.log(JSON.parse(queryStr));
+    // console.log(JSON.parse(queryStr));
 
     // { price: {  $gte: 5 } }
     // gte, gt, lte, lt
 
-    const query = Course.find(JSON.parse(queryStr));
+    let query = Course.find(JSON.parse(queryStr));
+
+    // 2. Sorting
+    if (req.query.sort) {
+      const sortBy = req.query.sort.split(',').join(' ');
+      // console.log(sortBy);
+      query.sort(sortBy);
+      // sort('price ratingsAverage')
+      // ?sort=-price,ratingsAverage
+    } else {
+      query.sort('-createdAt');
+    }
+
+    // 3. Field Limiting
+    if (req.query.fields) {
+      const fields = req.query.fields.split(',').join(' ');
+      query = query.select(fields);
+    } else {
+      query = query.select('-__v');
+    }
+
+    // 4. Pagination
+    const page = req.query.page * 1 || 1;
+    const limit = req.query.limit * 1 || 100;
+    const skip = (page - 1) * limit;
+
+    // ?page=2&limit=10, 1-10, page 1, 11-20, page 2. 21-30, page 3
+    query = query.skip(skip).limit(limit);
+
+    if (req.query.page) {
+      const numCourses = await Course.countDocuments();
+      if (skip >= numCourses) throw Error('This page does not exist!');
+    }
 
     // const query = Course.find({
     //   price: 10,
@@ -34,6 +66,7 @@ exports.getAllCourses = async (req, res) => {
 
     // EXECUTE QUERY
     const courses = await query;
+    // query.sort().select().skip().limit()
 
     // SEND RESPONSE
     res.status(200).json({
