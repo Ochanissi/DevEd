@@ -1,0 +1,47 @@
+[
+  {
+    "id": 0,
+    "title": "The Complete JavaScript Course",
+    "subtitle": "Master JavaScript with the most complete course!",
+    "ratingsAverage": 4.7,
+    "ratingsQuantity": 37,
+    "studentsEnrolled": 82,
+    "author": "Mirel Bitoi",
+    "lastUpdated": "11/03/2020",
+    "langSound": "English",
+    "langSubs": "English",
+    "image": "card__photo--1.jpg",
+    "priceValue": 19.99,
+    "priceDiscount": 199.99,
+    "pricePercentage": 90,
+    "includesVideo": 28,
+    "includesArticles": 11,
+    "includesContent": 12,
+    "learnSummary": [
+      "Go from a total beginner to an advanced JavaScript developer",
+      "JavaScript and programming fundamentals: variables, boolean logic, if/else, loops, functions, arrays, etc.",
+      "Asynchronous JavaScript: The event loop, promises, async/await, AJAX and APIs",
+      "Downloadable lectures, code and design assets for all projects",
+      "A true understanding of how JavaScript works behind the scenes",
+      "Practice your new skills with coding challenges (solutions included)",
+      "Organize and structure your code using JavaScript patterns like modules",
+      "Modern JavaScript for 2020: NPM, Webpack, Babel and ES6 modules"
+    ],
+    "description": [
+      "This is a truly complete JavaScript course, that goes beyond what other JavaScript courses out there teach you.",
+      "Come with me on a journey with the goal of truly understanding the JavaScript language. And I explain everything on the way with great detail!",
+      "I will take you from a complete JavaScript beginner to an advanced developer. You will not just learn the JavaScript language itself, you will also learn how to program. How to solve problems. How to structure and organize code using common JavaScript patterns.",
+      "You will learn 'why' something works in JavaScript, not just 'how'. Because in the modern JavaScript world of today, you need more than just knowing how something works. You need to debug code, you need to understand code, you need to be able to think about code.",
+      "To achieve our goal together, the course contains coding sessions, coding challenges, theory lectures, real-world projects and a final course exam.",
+      "This course is different because it's not just about writing code, it's also about how and why code works the way it does. Because it's the perfect mix between theory and practice. Because it focuses not only on small coding examples, but also on real-world projects and use cases.",
+      "So, by the end of the course, you will be a capable JavaScript developer, able to write, understand and debug JavaScript code using all the powerful features the language offers to us."
+    ],
+    "requirements": [
+      "No coding experience is necessary to take this course! I take you from beginner to expert!",
+      "Any computer and OS will work — Windows, macOS or Linux. We will set up your text editor the course.",
+      "basic understanding of HTML and CSS is a plus, but not a must! The course includes a 5-minutes HTML and CSS crash course."
+    ],
+    "teachers": [],
+    "reviews": []
+  }
+]
