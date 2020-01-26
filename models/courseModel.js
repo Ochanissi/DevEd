@@ -1,23 +1,16 @@
 const mongoose = require('mongoose');
 
 const courseSchema = new mongoose.Schema({
-  name: {
+  title: {
     type: String,
-    required: [true, 'A course must have a name!'],
+    required: [true, 'A course must have a title!'],
     unique: true,
     trim: true
   },
-  duration: {
-    type: Number,
-    required: [true, 'A course must have a duration!']
-  },
-  maxGroupSize: {
-    type: Number,
-    required: [true, 'A course must have a group size!']
-  },
-  difficulty: {
+  subtitle: {
     type: String,
-    required: [true, 'A course must have a difficulty!']
+    required: [true, 'A course must have a subtitle!'],
+    trim: true
   },
   ratingsAverage: {
     type: Number,
@@ -27,30 +20,70 @@ const courseSchema = new mongoose.Schema({
     type: Number,
     default: 0
   },
-  price: {
+  studentsEnrolled: {
     type: Number,
-    required: [true, 'A course must have a price!']
+    default: 0
   },
-  priceDiscount: Number,
-  summary: {
-    type: String,
-    trim: true,
-    required: [true, 'A course must have a description!']
-  },
-  description: {
-    type: String,
-    trim: true
-  },
-  imageCover: {
-    type: String,
-    required: [true, 'A course must have a cover image!']
-  },
-  images: [String],
-  createAt: {
+  createdAt: {
     type: Date,
     default: Date.now()
   },
-  startDates: [Date]
+  lastUpdate: {
+    type: Date,
+    default: Date.now()
+  },
+  langSound: {
+    type: [String],
+    required: [true, 'A course must have a language for sound!']
+  },
+  langSubs: {
+    type: [String],
+    required: [true, 'A course must have a language for subs!']
+  },
+  image: {
+    type: String,
+    required: [true, 'A course must have a cover image!']
+  },
+  priceValue: {
+    type: Number,
+    required: [true, 'A course must have a price!']
+  },
+  priceDiscount: {
+    type: Number
+  },
+  pricePercentage: {
+    type: Number
+  },
+  includesVideo: {
+    type: Number,
+    required: [true, 'A course must have a includes video count!']
+  },
+  includesArticle: {
+    type: Number,
+    required: [true, 'A course must have a includes article count!']
+  },
+  includesContent: {
+    type: Number,
+    required: [true, 'A course must have a includes content count!']
+  },
+  learnSummary: {
+    type: [String],
+    required: [true, 'A course must have a learn summary!']
+  },
+  description: {
+    type: [String],
+    required: [true, 'A course must have a description!']
+  },
+  requirements: {
+    type: [String],
+    required: [true, 'A course must have requirements!']
+  },
+  teachers: {
+    type: [String]
+  },
+  reviews: {
+    type: [String]
+  }
 });
 
 const Course = mongoose.model('Course', courseSchema);
