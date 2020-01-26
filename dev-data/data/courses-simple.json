@@ -13,7 +13,7 @@
     "priceValue": 19.99,
     "priceDiscount": 199.99,
     "pricePercentage": 90,
-    "includesVideo": 28,
+    "includesVideos": 28,
     "includesArticles": 11,
     "includesContent": 12,
     "learnSummary": [
@@ -57,7 +57,7 @@
     "priceValue": 19.99,
     "priceDiscount": 199.99,
     "pricePercentage": 90,
-    "includesVideo": 39.5,
+    "includesVideos": 39.5,
     "includesArticles": 69,
     "includesContent": 42,
     "learnSummary": [
@@ -102,7 +102,7 @@
     "priceValue": 19.99,
     "priceDiscount": 199.99,
     "pricePercentage": 90,
-    "includesVideo": 34,
+    "includesVideos": 34,
     "includesArticles": 9,
     "includesContent": 14,
     "learnSummary": [
@@ -111,8 +111,7 @@
       "Flexbox layouts: build a huge real-world project with flexbox",
       "Using Sass in real-world projects: global variables, architecting CSS, managing media queries, etc.",
       "Responsive images in HTML and CSS for faster pageloads",
-      "
-      The NPM ecosystem: development workflows and building processes",
+      "The NPM ecosystem: development workflows and building processes",
       "Downloadable lectures, code and design assets for all projects",
       "Advanced responsive design: media queries, mobile-first vs desktop-first, em vs rem units, etc."
     ],
