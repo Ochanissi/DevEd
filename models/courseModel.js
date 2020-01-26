@@ -54,11 +54,11 @@ const courseSchema = new mongoose.Schema({
   pricePercentage: {
     type: Number
   },
-  includesVideo: {
+  includesVideos: {
     type: Number,
     required: [true, 'A course must have a includes video count!']
   },
-  includesArticle: {
+  includesArticles: {
     type: Number,
     required: [true, 'A course must have a includes article count!']
   },

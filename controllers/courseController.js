@@ -2,8 +2,30 @@ const Course = require('./../models/courseModel');
 
 exports.getAllCourses = async (req, res) => {
   try {
-    const courses = await Course.find();
+    // BUI LD QUERY
+    const queryObj = { ...req.query };
+    const excludedFields = ['page', 'sort', 'limit', 'fields'];
+    excludedFields.forEach(el => delete queryObj[el]);
 
+    console.log(req.query, queryObj);
+
+    const query = Course.find(queryObj);
+
+    // const query = Course.find({
+    //   price: 10,
+    //   studentsEnrolled: 20
+    // });
+
+    // const query = Course.find()
+    //   .where('price')
+    //   .equals(5)
+    //   .where('studentsEnrolled')
+    //   .equals(20);
+
+    // EXECUTE QUERY
+    const courses = await query;
+
+    // SEND RESPONSE
     res.status(200).json({
       status: 'success',
       results: courses.length,
