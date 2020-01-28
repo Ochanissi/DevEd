@@ -6,6 +6,10 @@ const router = express.Router();
 // router.param('id', courseController.checkID);
 
 router
+  .route('/top-5-cheap')
+  .get(courseController.aliasTopCourses, courseController.getAllCourses);
+
+router
   .route('/')
   .get(courseController.getAllCourses)
   .post(courseController.createCourse);
