@@ -113,3 +113,96 @@ exports.deleteCourse = async (req, res) => {
     });
   }
 };
+
+exports.getCourseStats = async (req, res) => {
+  try {
+    const stats = await Course.aggregate([
+      {
+        $match: { ratingsAverage: { $gte: 4.5 } }
+      },
+      {
+        $group: {
+          // _id: '$langSound',
+          _id: '$ratingsAverage',
+          numRatings: { $sum: '$ratingsQuantity' },
+          numCourses: { $sum: 1 },
+          avgRating: { $avg: '$ratingsAverage' },
+          avgPrice: { $avg: '$priceValue' },
+          minPrice: { $min: '$priceValue' },
+          maxPrice: { $max: '$priceValue' }
+        }
+      },
+      {
+        $sort: { avgPrice: 1 }
+      }
+      // {
+      //   $match: { _id { $ne: 'EASY'}}
+      // }
+    ]);
+
+    res.status(200).json({
+      status: 'success',
+      data: {
+        stats
+      }
+    });
+  } catch (err) {
+    res.status(404).json({
+      status: 'failed',
+      message: err
+    });
+  }
+};
+
+exports.getMonthlyPlan = async (req, res) => {
+  try {
+    const year = req.params.year * 1; //2021
+
+    const plan = await Course.aggregate([
+      {
+        $unwind: '$createdAt'
+      },
+      {
+        $match: {
+          createdAt: {
+            $gte: new Date(`${year}-01-01`),
+            $lte: new Date(`${year}-12-31`)
+          }
+        }
+      },
+      {
+        $group: {
+          _id: { $month: '$createdAt' },
+          numCourseStarts: { $sum: 1 },
+          courses: { $push: '$name' }
+        }
+      },
+      {
+        $addFields: { month: '$_id' }
+      },
+      {
+        $project: {
+          _id: 0
+        }
+      },
+      {
+        $sort: { numCourseStarts: -1 }
+      },
+      {
+        $limit: 12
+      }
+    ]);
+
+    res.status(200).json({
+      status: 'success',
+      data: {
+        plan
+      }
+    });
+  } catch (err) {
+    res.status(404).json({
+      status: 'failed',
+      message: err
+    });
+  }
+};
