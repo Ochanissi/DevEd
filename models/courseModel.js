@@ -87,6 +87,10 @@ const courseSchema = new mongoose.Schema(
     },
     reviews: {
       type: [String]
+    },
+    secretCourse: {
+      type: Boolean,
+      default: false
     }
   },
   {
@@ -115,6 +119,31 @@ courseSchema.pre('save', function(next) {
 //   console.log(doc);
 //   next();
 // });
+
+// QUERY MIDDLEWARE
+courseSchema.pre(/^find/, function(next) {
+  this.find({ secretCourse: { $ne: true } });
+
+  this.start = Date.now();
+
+  next();
+});
+
+courseSchema.post(/^find/, function(docs, next) {
+  console.log(`Query took ${Date.now() - this.start} milliseconds!`);
+  // console.log(docs);
+
+  next();
+});
+
+// AGGREGATION MIDDLEWARE
+courseSchema.pre('aggregate', function(next) {
+  this.pipeline().unshift({ $match: { secretCourse: { $ne: true } } });
+
+  console.log(this.pipeline());
+
+  next();
+});
 
 const Course = mongoose.model('Course', courseSchema);
 
