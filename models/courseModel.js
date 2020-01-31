@@ -1,5 +1,6 @@
 const mongoose = require('mongoose');
 const slugify = require('slugify');
+const validator = require('validator');
 
 const courseSchema = new mongoose.Schema(
   {
@@ -7,7 +8,16 @@ const courseSchema = new mongoose.Schema(
       type: String,
       required: [true, 'A course must have a title!'],
       unique: true,
-      trim: true
+      trim: true,
+      maxlength: [
+        50,
+        'A course title must have less or equal than 40 characters!'
+      ],
+      minlength: [
+        10,
+        'A course title must have less or equal than 40 characters!'
+      ]
+      // validate: [validator.isAlpha, 'Course title must only contain characters']
     },
     subtitle: {
       type: String,
@@ -17,7 +27,9 @@ const courseSchema = new mongoose.Schema(
     slug: String,
     ratingsAverage: {
       type: Number,
-      default: 4.5
+      default: 4.5,
+      min: [1, 'Rating must be above 1.0!'],
+      max: [5, 'Rating must be above 5.0!']
     },
     ratingsQuantity: {
       type: Number,
@@ -53,7 +65,14 @@ const courseSchema = new mongoose.Schema(
       required: [true, 'A course must have a price!']
     },
     priceDiscount: {
-      type: Number
+      type: Number,
+      validate: {
+        validator: function(val) {
+          // this only points to current doc on NEW document creation
+          return val < this.priceValue;
+        },
+        message: 'Discount price ({{VALUE}) should be below the regular price'
+      }
     },
     pricePercentage: {
       type: Number
@@ -87,6 +106,14 @@ const courseSchema = new mongoose.Schema(
     },
     reviews: {
       type: [String]
+    },
+    category: {
+      type: String,
+      required: [true, 'A course must have a category!'],
+      enum: {
+        values: ['easy', 'medium', 'hard'],
+        message: 'Difficulty is either: easy, medium or hard!'
+      }
     },
     secretCourse: {
       type: Boolean,
