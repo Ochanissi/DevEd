@@ -6,6 +6,7 @@
   "scripts": {
     "start": "nodemon server.js",
     "start:prod": "set NODE_ENV=production&&nodemon server.js",
+    "debug": "ndb server.js",
     "watch:sass": "node-sass sass/main.scss css/style.css -w",
     "devserver": "live-server --browser=chrome",
     "live-start": "npm-run-all --parallel devserver watch:sass",
