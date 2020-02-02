@@ -1,6 +1,6 @@
 const Course = require('./../models/courseModel');
 const APIFeatures = require('./../utils/apiFeatures');
-const catchAsync = require('./../utils/catchASync');
+const catchAsync = require('./../utils/catchAsync');
 const AppError = require('./../utils/appError');
 
 exports.aliasTopCourses = (req, res, next) => {
