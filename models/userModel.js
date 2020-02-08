@@ -42,7 +42,12 @@ const userSchema = new mongoose.Schema({
   },
   passwordChangedAt: Date,
   passwordResetToken: String,
-  passwordResetExpires: Date
+  passwordResetExpires: Date,
+  active: {
+    type: Boolean,
+    default: true,
+    select: false
+  }
 });
 
 userSchema.pre('save', async function(next) {
@@ -63,6 +68,13 @@ userSchema.pre('save', function(next) {
 
   this.passwordChangedAt = Date.now() - 1000;
 
+  next();
+});
+
+userSchema.pre(/^find/, function(next) {
+  // this points ot the current query
+  // this.find({ active: true });
+  this.find({ active: { $ne: false } });
   next();
 });
 
