@@ -1,5 +1,6 @@
 const mongoose = require('mongoose');
 const slugify = require('slugify');
+// const User = require('./userModel');
 // const validator = require('validator');
 
 const courseSchema = new mongoose.Schema(
@@ -11,11 +12,11 @@ const courseSchema = new mongoose.Schema(
       trim: true,
       maxlength: [
         50,
-        'A course title must have less or equal than 40 characters!'
+        'A course title must have less or equal than 50 characters!'
       ],
       minlength: [
         10,
-        'A course title must have less or equal than 40 characters!'
+        'A course title must have more or equal than 10 characters!'
       ]
       // validate: [validator.isAlpha, 'Course title must only contain characters']
     },
@@ -101,9 +102,12 @@ const courseSchema = new mongoose.Schema(
       type: [String],
       required: [true, 'A course must have requirements!']
     },
-    teachers: {
-      type: [String]
-    },
+    teachers: [
+      {
+        type: mongoose.Schema.ObjectId,
+        ref: 'User'
+      }
+    ],
     reviews: {
       type: [String]
     },
@@ -137,6 +141,16 @@ courseSchema.pre('save', function(next) {
   next();
 });
 
+// courseSchema.pre('save', async function(next) {
+//   const teachersPromises = this.teachers.map(
+//     async id => await User.findById(id)
+//   );
+
+//   this.teachers = await Promise.all(teachersPromises);
+
+//   next();
+// });
+
 // courseSchema.pre('save', function(next) {
 //   console.log('Will same document...');
 //   next();
@@ -152,6 +166,15 @@ courseSchema.pre(/^find/, function(next) {
   this.find({ secretCourse: { $ne: true } });
 
   this.start = Date.now();
+
+  next();
+});
+
+courseSchema.pre(/^find/, function(next) {
+  this.populate({
+    path: 'teachers',
+    select: '-__v -passwordChangedAt'
+  });
 
   next();
 });
