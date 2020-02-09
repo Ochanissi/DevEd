@@ -108,9 +108,6 @@ const courseSchema = new mongoose.Schema(
         ref: 'User'
       }
     ],
-    reviews: {
-      type: [String]
-    },
     category: {
       type: String,
       required: [true, 'A course must have a category!'],
@@ -132,6 +129,13 @@ const courseSchema = new mongoose.Schema(
 
 courseSchema.virtual('includesVideosMinutes').get(function() {
   return this.includesVideos * 10;
+});
+
+// Virtual populate
+courseSchema.virtual('reviews', {
+  ref: 'Review',
+  foreignField: 'course',
+  localField: '_id'
 });
 
 // DOCUMENT MIDDLEWARE: runs before .save() and .create()
