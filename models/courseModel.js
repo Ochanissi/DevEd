@@ -112,8 +112,15 @@ const courseSchema = new mongoose.Schema(
       type: String,
       required: [true, 'A course must have a category!'],
       enum: {
-        values: ['easy', 'medium', 'hard'],
-        message: 'Difficulty is either: easy, medium or hard!'
+        values: [
+          'Business & Management',
+          'IT & Computer Science',
+          'Science, Engineering & Math',
+          'Teaching',
+          'Other'
+        ],
+        message:
+          'Category should be either: Business & Management, IT & Computer Science, Science, Engineering & Math, Teaching or Other!'
       }
     },
     secretCourse: {
