@@ -22,17 +22,31 @@ router
   .get(courseController.aliasTopCourses, courseController.getAllCourses);
 
 router.route('/course-stats').get(courseController.getCourseStats);
-router.route('/monthly-plan/:year').get(courseController.getMonthlyPlan);
+router
+  .route('/monthly-plan/:year')
+  .get(
+    authController.protect,
+    authController.restrictTo('admin', 'lead-guide', 'guide'),
+    courseController.getMonthlyPlan
+  );
 
 router
   .route('/')
-  .get(authController.protect, courseController.getAllCourses)
-  .post(courseController.createCourse);
+  .get(courseController.getAllCourses)
+  .post(
+    authController.protect,
+    authController.restrictTo('admin', 'lead-guide'),
+    courseController.createCourse
+  );
 
 router
   .route('/:id')
   .get(courseController.getCourse)
-  .patch(courseController.updateCourse)
+  .patch(
+    authController.protect,
+    authController.restrictTo('admin', 'lead-guide'),
+    courseController.updateCourse
+  )
   .delete(
     authController.protect,
     authController.restrictTo('admin', 'lead-guide'),

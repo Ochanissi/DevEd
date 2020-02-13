@@ -1,470 +1,429 @@
 [
   {
-    "startLocation": {
-      "description": "Miami, USA",
-      "type": "Point",
-      "coordinates": [-80.185942, 25.774772],
-      "address": "301 Biscayne Blvd, Miami, FL 33132, USA"
-    },
-    "ratingsAverage": 4.8,
-    "ratingsQuantity": 6,
-    "images": ["tour-2-1.jpg", "tour-2-2.jpg", "tour-2-3.jpg"],
-    "startDates": [
-      "2021-06-19T09:00:00.000Z",
-      "2021-07-20T09:00:00.000Z",
-      "2021-08-18T09:00:00.000Z"
-    ],
     "_id": "5c88fa8cf4afda39709c2955",
-    "name": "The Sea Explorer",
-    "duration": 7,
-    "maxGroupSize": 15,
-    "difficulty": "medium",
-    "guides": ["5c8a22c62f8fb814b56fa18b", "5c8a1f4e2f8fb814b56fa185"],
-    "price": 497,
-    "summary": "Exploring the jaw-dropping US east coast by foot and by boat",
-    "description": "Consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.\nIrure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.",
-    "imageCover": "tour-2-cover.jpg",
-    "locations": [
-      {
-        "_id": "5c88fa8cf4afda39709c2959",
-        "description": "Lummus Park Beach",
-        "type": "Point",
-        "coordinates": [-80.128473, 25.781842],
-        "day": 1
-      },
-      {
-        "_id": "5c88fa8cf4afda39709c2958",
-        "description": "Islamorada",
-        "type": "Point",
-        "coordinates": [-80.647885, 24.909047],
-        "day": 2
-      },
-      {
-        "_id": "5c88fa8cf4afda39709c2957",
-        "description": "Sombrero Beach",
-        "type": "Point",
-        "coordinates": [-81.0784, 24.707496],
-        "day": 3
-      },
-      {
-        "_id": "5c88fa8cf4afda39709c2956",
-        "description": "West Key",
-        "type": "Point",
-        "coordinates": [-81.768719, 24.552242],
-        "day": 5
-      }
-    ]
+    "title": "The Complete JavaScript Course",
+    "subtitle": "Master JavaScript with the most complete course!",
+    "category": "IT & Computer Science",
+    "ratingsAverage": 4.7,
+    "ratingsQuantity": 37,
+    "studentsEnrolled": 82,
+    "langSound": ["English"],
+    "langSubs": ["English"],
+    "image": "card__photo--1.jpg",
+    "priceValue": 199.9,
+    "priceDiscount": 90,
+    "includesVideos": 28,
+    "includesArticles": 11,
+    "includesContent": 12,
+    "learnSummary": [
+      "Go from a total beginner to an advanced JavaScript developer",
+      "JavaScript and programming fundamentals: variables, boolean logic, if/else, loops, functions, arrays, etc.",
+      "Asynchronous JavaScript: The event loop, promises, async/await, AJAX and APIs",
+      "Downloadable lectures, code and design assets for all projects",
+      "A true understanding of how JavaScript works behind the scenes",
+      "Practice your new skills with coding challenges (solutions included)",
+      "Organize and structure your code using JavaScript patterns like modules",
+      "Modern JavaScript for 2020: NPM, Webpack, Babel and ES6 modules"
+    ],
+    "description": [
+      "This is a truly complete JavaScript course, that goes beyond what other JavaScript courses out there teach you.",
+      "Come with me on a journey with the goal of truly understanding the JavaScript language. And I explain everything on the way with great detail!",
+      "I will take you from a complete JavaScript beginner to an advanced developer. You will not just learn the JavaScript language itself, you will also learn how to program. How to solve problems. How to structure and organize code using common JavaScript patterns.",
+      "You will learn 'why' something works in JavaScript, not just 'how'. Because in the modern JavaScript world of today, you need more than just knowing how something works. You need to debug code, you need to understand code, you need to be able to think about code.",
+      "To achieve our goal together, the course contains coding sessions, coding challenges, theory lectures, real-world projects and a final course exam.",
+      "This course is different because it's not just about writing code, it's also about how and why code works the way it does. Because it's the perfect mix between theory and practice. Because it focuses not only on small coding examples, but also on real-world projects and use cases.",
+      "So, by the end of the course, you will be a capable JavaScript developer, able to write, understand and debug JavaScript code using all the powerful features the language offers to us."
+    ],
+    "requirements": [
+      "No coding experience is necessary to take this course! I take you from beginner to expert!",
+      "Any computer and OS will work — Windows, macOS or Linux. We will set up your text editor the course.",
+      "Basic understanding of HTML and CSS is a plus, but not a must! The course includes a 5-minutes HTML and CSS crash course."
+    ],
+    "teachers": ["5c8a22c62f8fb814b56fa18b", "5c8a1f4e2f8fb814b56fa185"]
   },
   {
-    "startLocation": {
-      "description": "Banff, CAN",
-      "type": "Point",
-      "coordinates": [-115.570154, 51.178456],
-      "address": "224 Banff Ave, Banff, AB, Canada"
-    },
-    "ratingsAverage": 5,
-    "ratingsQuantity": 9,
-    "images": ["tour-1-1.jpg", "tour-1-2.jpg", "tour-1-3.jpg"],
-    "startDates": [
-      "2021-04-25T09:00:00.000Z",
-      "2021-07-20T09:00:00.000Z",
-      "2021-10-05T09:00:00.000Z"
-    ],
     "_id": "5c88fa8cf4afda39709c2951",
-    "name": "The Forest Hiker",
-    "duration": 5,
-    "maxGroupSize": 25,
-    "difficulty": "easy",
-    "guides": [
+    "title": "Build Responsive Real World Websites",
+    "subtitle": "The easiest way to learn modern web design, HTML5 and CSS3 step-by-step from scratch.",
+    "category": "IT & Computer Science",
+    "ratingsAverage": 4.6,
+    "ratingsQuantity": 123,
+    "studentsEnrolled": 463,
+    "langSound": ["English", "French"],
+    "langSubs": ["English", "French"],
+    "image": "card__photo--5.jpg",
+    "priceValue": 149.9,
+    "priceDiscount": 90,
+    "includesVideos": 39.5,
+    "includesArticles": 69,
+    "includesContent": 42,
+    "learnSummary": [
+      "Real-world skills to build real-world websites: professional, beautiful and truly responsive websites",
+      "The proven 7 real-world steps from complete scratch to a fully functional and optimized website",
+      "Learn super cool jQuery effects like animations, scroll effects and 'sticky' navigation",
+      "Get helpful support in the course Q&A",
+      "A huge project that will teach you everything you need to know to get started with HTML5 and CSS3",
+      "Simple-to-use web design guidelines and tips to make your website stand out from the crowd",
+      "Downloadable lectures, code and design assets for the entire project",
+      "Get my e-book 'Best Resources for Web Design and Development with HTML5 & CSS3' for free"
+    ],
+    "description": [
+      "Easy-to-follow and hands-on web development with HTML5, CSS3 and some jQuery.",
+      "The proven 7 real-world steps from complete scratch to a fully functional and optimized website.",
+      "Simple-to-use web design guidelines and tips to make your website stand out from the crowd.",
+      "How to get and use images, fonts and icons to make your website shine — all for free.",
+      "Responsive web design: learn how to create websites that work beautifully on all screen sizes.",
+      "How to use jQuery for super cool effects like animations, scroll effects and 'sticky' navigation.",
+      "How to optimize your website for good speed performance and for search engines (SEO).",
+      "How to launch your website for the world to see it."
+    ],
+    "requirements": [
+      "No coding or design experience necessary",
+      "Any computer will do — Windows, OSX or Linux",
+      "You don’t need to buy any software — we will use the best free web development editor in the world"
+    ],
+    "teachers": [
       "5c8a21d02f8fb814b56fa189",
       "5c8a201e2f8fb814b56fa186",
       "5c8a1f292f8fb814b56fa184"
-    ],
-    "price": 397,
-    "summary": "Breathtaking hike through the Canadian Banff National Park",
-    "description": "Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.\nLorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
-    "imageCover": "tour-1-cover.jpg",
-    "locations": [
-      {
-        "_id": "5c88fa8cf4afda39709c2954",
-        "description": "Banff National Park",
-        "type": "Point",
-        "coordinates": [-116.214531, 51.417611],
-        "day": 1
-      },
-      {
-        "_id": "5c88fa8cf4afda39709c2953",
-        "description": "Jasper National Park",
-        "type": "Point",
-        "coordinates": [-118.076152, 52.875223],
-        "day": 3
-      },
-      {
-        "_id": "5c88fa8cf4afda39709c2952",
-        "description": "Glacier National Park of Canada",
-        "type": "Point",
-        "coordinates": [-117.490309, 51.261937],
-        "day": 5
-      }
     ]
   },
   {
-    "startLocation": {
-      "description": "Aspen, USA",
-      "type": "Point",
-      "coordinates": [-106.822318, 39.190872],
-      "address": "419 S Mill St, Aspen, CO 81611, USA"
-    },
-    "ratingsAverage": 4.5,
-    "ratingsQuantity": 6,
-    "images": ["tour-3-1.jpg", "tour-3-2.jpg", "tour-3-3.jpg"],
-    "startDates": [
-      "2022-01-05T10:00:00.000Z",
-      "2022-02-12T10:00:00.000Z",
-      "2023-01-06T10:00:00.000Z"
-    ],
     "_id": "5c88fa8cf4afda39709c295a",
-    "name": "The Snow Adventurer",
-    "duration": 4,
-    "maxGroupSize": 10,
-    "difficulty": "difficult",
-    "guides": [
+    "title": "Advanced CSS and Sass",
+    "subtitle": "The most advanced and modern CSS course on the internet!",
+    "category": "IT & Computer Science",
+    "ratingsAverage": 4.8,
+    "ratingsQuantity": 654,
+    "studentsEnrolled": 846,
+    "langSound": ["English", "German"],
+    "langSubs": ["English", "German"],
+    "image": "card__photo--6.jpg",
+    "priceValue": 179.9,
+    "priceDiscount": 80,
+    "includesVideos": 34,
+    "includesArticles": 9,
+    "includesContent": 14,
+    "learnSummary": [
+      "Tons of modern CSS techniques to create stunning designs and effects",
+      "How CSS works behind the scenes: the cascade, specificity, inheritance, etc.",
+      "Flexbox layouts: build a huge real-world project with flexbox",
+      "Using Sass in real-world projects: global variables, architecting CSS, managing media queries, etc.",
+      "Responsive images in HTML and CSS for faster pageloads",
+      "The NPM ecosystem: development workflows and building processes",
+      "Downloadable lectures, code and design assets for all projects",
+      "Advanced responsive design: media queries, mobile-first vs desktop-first, em vs rem units, etc."
+    ],
+    "description": [
+      "Tons of modern cutting-edge CSS techniques to create stunning designs and effects: clip-path, background-clip, mask-image, background-blend-mode, shape-outside, filter, backdrop-filter, object-fit, transform, column-count, hyphens, perspective, calc() and custom CSS properties.",
+      "Advanced CSS animations with @keyframes, animation and transition.",
+      "Advanced CSS selectors, pseudo-classes and pseudo-elements required for modern CSS development.",
+      "How CSS works behind the scenes: the cascade, specificity, inheritance, value processing, the visual formatting model, the box model, box types, positioning schemes and stacking contexts.",
+      "CSS architecture: The 7-1 rule, component-based design, the BEM methodology, writing reusable, maintainable and scalable code.",
+      "Introduction to Sass: variables, nesting, partials, imports, mixins, functions, extends, and more.",
+      "Using Sass in real-world projects: setting global variables, building for reusability, architecting CSS and managing media queries.",
+      "The NPM ecosystem: setting up a development process to compile Sass and automatic browser reload, and creating a build process to concatenate, prefix and compress CSS files",
+      "Modern responsive design: fluid grids, layout types, flexible images, using media queries to test for different screen widths, pixel densities and touch capabilities",
+      "Flexbox layouts: main concepts, introduction to both flex container and flex item specific properties, advanced positioning techniques applied to a huge real-world project",
+      "CSS Grid layouts: main concepts, CSS grid vs flexbox, and layout techniques applied to a real-world project. This part alone could be an entire course!"
+    ],
+    "requirements": [
+      "This not a beginner course — You should be confident in coding HTML and CSS before taking the course",
+      "Any computer and OS will work — Windows, macOS or Linux",
+      "There is no need for any paid software — The text editor you already have works just fine"
+    ],
+    "teachers": [
       "5c8a21d02f8fb814b56fa189",
       "5c8a23412f8fb814b56fa18c",
       "5c8a1f4e2f8fb814b56fa185"
-    ],
-    "price": 997,
-    "summary": "Exciting adventure in the snow with snowboarding and skiing",
-    "description": "Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua, ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum!\nDolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur, exercitation ullamco laboris nisi ut aliquip. Lorem ipsum dolor sit amet, consectetur adipisicing elit!",
-    "imageCover": "tour-3-cover.jpg",
-    "locations": [
-      {
-        "_id": "5c88fa8cf4afda39709c295c",
-        "description": "Aspen Highlands",
-        "type": "Point",
-        "coordinates": [-106.855385, 39.182677],
-        "day": 1
-      },
-      {
-        "_id": "5c88fa8cf4afda39709c295b",
-        "description": "Beaver Creek",
-        "type": "Point",
-        "coordinates": [-106.516623, 39.60499],
-        "day": 2
-      }
     ]
   },
   {
-    "startLocation": {
-      "description": "Las Vegas, USA",
-      "type": "Point",
-      "coordinates": [-115.172652, 36.110904],
-      "address": "3663 S Las Vegas Blvd, Las Vegas, NV 89109, USA"
-    },
-    "ratingsAverage": 4.7,
-    "ratingsQuantity": 7,
-    "images": ["tour-5-1.jpg", "tour-5-2.jpg", "tour-5-3.jpg"],
-    "startDates": [
-      "2021-08-05T09:00:00.000Z",
-      "2022-03-20T10:00:00.000Z",
-      "2022-08-12T09:00:00.000Z"
-    ],
     "_id": "5c88fa8cf4afda39709c2961",
-    "name": "The Park Camper",
-    "duration": 10,
-    "maxGroupSize": 15,
-    "difficulty": "medium",
-    "guides": [
+    "title": "Become a Product Manager",
+    "subtitle": "The most complete course available on Product Management.",
+    "category": "Business & Management",
+    "ratingsAverage": 4.5,
+    "ratingsQuantity": 323,
+    "studentsEnrolled": 122,
+    "langSound": ["English", "German"],
+    "langSubs": ["English", "German"],
+    "image": "card__photo--6.jpg",
+    "priceValue": 119.9,
+    "priceDiscount": 90,
+    "includesVideos": 13,
+    "includesArticles": 25,
+    "includesContent": 121,
+    "learnSummary": [
+      "Understand the varying role of a Product Manager through different types and sizes of companies",
+      "Decide which type of Product Manger best fits one's goals and personality",
+      "Understand the Product Lifecycle and how it applies to every product",
+      "Understand the modern Product Development Process that both Fortune 500s and Startups adhere to",
+      "Know how to identify ideas worth pursuing and dedicating resources to",
+      "Understand how to get at the root of customer pain points",
+      "Understand and communicate customer pain by type and frequency",
+      "Assess the core problem of a product"
+    ],
+    "description": [
+      "The most updated and complete Product Management course on Udemy! You'll learn the skills that make up the entire Product Management job and process: from ideation to market research, to UX wireframing to prototyping, technology, metrics, and finally to building the product with user stories, project management, scoping, and leadership. We even have interviews with real life PMs, Q&A sessions with students, and a comprehensive guide to preparing and interviewing for a Product Management job.",
+      "Right now, there are over 3,000+ job listings worldwide that are looking for Product Managers, that pay on average $100,000 / year.",
+      "The demand for Product Management is increasing at an insane rate. More and more companies are finally figuring out how important this discipline and this role is to their success.",
+      "But how exactly do you get into the field? There aren't any degrees in Product Management & there are no certifications. Most Product Managers get into the field through luck or connections. That ends here - we'll get you up to date on ALL the skills you need to learn Product Management AND have the best chance at getting the job you want. There's no more ambiguity to it. We'll show you what you need to know and what you have to do - all taught from a Product Management insider.",
+      "Students aren't required to know anything beforehand - we'll teach you the fundamentals, how to apply them, how to develop into an advanced product manager, and finally how to maximize your chances to get a job as a Product Manager."
+    ],
+    "requirements": [
+      "No pre-requisites, although familiarity with basic business concepts is helpful"
+    ],
+    "teachers": [
       "5c8a21f22f8fb814b56fa18a",
       "5c8a23412f8fb814b56fa18c",
       "5c8a201e2f8fb814b56fa186"
-    ],
-    "price": 1497,
-    "summary": "Breathing in Nature in America's most spectacular National Parks",
-    "description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.\nDuis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum!",
-    "imageCover": "tour-5-cover.jpg",
-    "locations": [
-      {
-        "_id": "5c88fa8cf4afda39709c2965",
-        "description": "Zion Canyon National Park",
-        "type": "Point",
-        "coordinates": [-112.987418, 37.198125],
-        "day": 1
-      },
-      {
-        "_id": "5c88fa8cf4afda39709c2964",
-        "description": "Antelope Canyon",
-        "type": "Point",
-        "coordinates": [-111.376161, 36.86438],
-        "day": 4
-      },
-      {
-        "_id": "5c88fa8cf4afda39709c2963",
-        "description": "Grand Canyon National Park",
-        "type": "Point",
-        "coordinates": [-112.115763, 36.058973],
-        "day": 5
-      },
-      {
-        "_id": "5c88fa8cf4afda39709c2962",
-        "description": "Joshua Tree National Park",
-        "type": "Point",
-        "coordinates": [-116.107963, 34.011646],
-        "day": 9
-      }
     ]
   },
   {
-    "startLocation": {
-      "description": "NYC, USA",
-      "type": "Point",
-      "coordinates": [-73.985141, 40.75894],
-      "address": "Manhattan, NY 10036, USA"
-    },
-    "ratingsAverage": 4.6,
-    "ratingsQuantity": 5,
-    "images": ["tour-4-1.jpg", "tour-4-2.jpg", "tour-4-3.jpg"],
-    "startDates": [
-      "2021-03-11T10:00:00.000Z",
-      "2021-05-02T09:00:00.000Z",
-      "2021-06-09T09:00:00.000Z"
-    ],
     "_id": "5c88fa8cf4afda39709c295d",
-    "name": "The City Wanderer",
-    "duration": 9,
-    "maxGroupSize": 20,
-    "difficulty": "easy",
-    "guides": ["5c8a22c62f8fb814b56fa18b", "5c8a201e2f8fb814b56fa186"],
-    "price": 1197,
-    "summary": "Living the life of Wanderlust in the US' most beatiful cities",
-    "description": "Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat lorem ipsum dolor sit amet.\nConsectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur, nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat!",
-    "imageCover": "tour-4-cover.jpg",
-    "locations": [
-      {
-        "_id": "5c88fa8cf4afda39709c2960",
-        "description": "New York",
-        "type": "Point",
-        "coordinates": [-73.967696, 40.781821],
-        "day": 1
-      },
-      {
-        "_id": "5c88fa8cf4afda39709c295f",
-        "description": "Los Angeles",
-        "type": "Point",
-        "coordinates": [-118.324396, 34.097984],
-        "day": 3
-      },
-      {
-        "_id": "5c88fa8cf4afda39709c295e",
-        "description": "San Francisco",
-        "type": "Point",
-        "coordinates": [-122.408865, 37.787825],
-        "day": 5
-      }
-    ]
+    "title": "The Complete Financial Analyst Course 2020",
+    "subtitle": "Excel, Accounting, Financial Statement Analysis, Business Analysis, Financial Math, PowerPoint: Everything is Included!",
+    "category": "Business & Management",
+    "ratingsAverage": 4.6,
+    "ratingsQuantity": 213,
+    "studentsEnrolled": 335,
+    "langSound": ["English", "Italian"],
+    "langSubs": ["English", "Italian"],
+    "image": "card__photo--6.jpg",
+    "priceValue": 119.9,
+    "priceDiscount": 80,
+    "includesVideos": 17,
+    "includesArticles": 3,
+    "includesContent": 463,
+    "learnSummary": [
+      "Work comfortably with Microsoft Excel",
+      "Format spreadsheets in a professional way",
+      "Be much faster carrying out regular tasks",
+      "Create professional charts in Microsoft Excel",
+      "Work with large amounts of data without difficulty",
+      "Understand Accounting and Bookkeeping principles",
+      "Build a company’s P&L from scratch",
+      "Build a company’s Balance Sheet from scratch"
+    ],
+    "description": [
+      "High quality of production: HD video and animations (this isn’t a collection of boring lectures!)",
+      "Knowledgeable instructor (experience in companies like Pwc and Coca-Cola)",
+      "Complete training: We will cover all major topics and skills you need to become a top-class Financial Analyst",
+      "Extensive Case Studies: To help you reinforce everything you’ve learned",
+      "Course Challenge: Solve our Course Challenge and make this course an interactive experience",
+      "Excellent support: If you don’t understand a concept or you simply want to drop us a line, you’ll receive an answer within 1 business day",
+      "Dynamic: We don’t want to waste your time! The instructor keeps up a very good pace throughout the whole course"
+    ],
+    "requirements": [
+      "Absolutely no experience is required. We will start from the basics and gradually build up your knowledge. Everything is in the course.",
+      "You will need Microsoft Excel 2010, 2013, 2016, or 2020",
+      "You will need Microsoft PowerPoint 2010, 2013, 2016, or 2020"
+    ],
+    "teachers": ["5c8a22c62f8fb814b56fa18b", "5c8a201e2f8fb814b56fa186"]
   },
   {
-    "startLocation": {
-      "description": "California, USA",
-      "type": "Point",
-      "coordinates": [-118.803461, 34.006072],
-      "address": "29130 Cliffside Dr, Malibu, CA 90265, USA"
-    },
-    "ratingsAverage": 3.9,
-    "ratingsQuantity": 7,
-    "images": ["tour-6-1.jpg", "tour-6-2.jpg", "tour-6-3.jpg"],
-    "startDates": [
-      "2021-07-19T09:00:00.000Z",
-      "2021-09-06T09:00:00.000Z",
-      "2022-03-18T10:00:00.000Z"
-    ],
     "_id": "5c88fa8cf4afda39709c2966",
-    "name": "The Sports Lover",
-    "duration": 14,
-    "maxGroupSize": 8,
-    "difficulty": "difficult",
-    "guides": [
+    "title": "The Business Intelligence Analyst Course 2020",
+    "subtitle": "The skills you need to become a BI Analyst - Statistics, Database theory, SQL, Tableau – Everything is included",
+    "category": "Business & Management",
+    "ratingsAverage": 4.5,
+    "ratingsQuantity": 123,
+    "studentsEnrolled": 259,
+    "langSound": ["English", "Italian"],
+    "langSubs": ["English", "Italian"],
+    "image": "card__photo--6.jpg",
+    "priceValue": 119.9,
+    "priceDiscount": 50,
+    "includesVideos": 20,
+    "includesArticles": 149,
+    "includesContent": 136,
+    "learnSummary": [
+      "Become an expert in Statistics, SQL, Tableau, and problem solving",
+      "Boost your resume with in-demand skills",
+      "Gather, organize, analyze and visualize data",
+      "Use data for improved business decision-making",
+      "Present information in the form of metrics, KPIs, reports, and dashboards",
+      "Perform quantitative and qualitative business analysis",
+      "Analyze current and historical data",
+      "Discover how to find trends, market conditions, and research competitor positioning"
+    ],
+    "description": [
+      "These are the precise technical skills recruiters are looking for when hiring BI Analysts. And today, you have the chance of acquiring an invaluable advantage to get ahead of other candidates. This course will be the secret to your success. And your success is our success, so let’s make it happen!",
+      "Here are some more details of what you get with The Business Intelligence Analyst Course:",
+      "Complete training: We will cover all major topics and skills you need to become a top-class Financial Analyst",
+      "Introduction to Data and Data Science – Make sense of terms like business intelligence, traditional and big data, traditional statistical methods, machine learning, predictive analytics, supervised learning, unsupervised learning, reinforcement learning, and many more;",
+      "Statistics and Excel – Understand statistical testing and build a solid foundation. Modern software packages and programming languages are automating most of these activities, but this part of the course gives you something more valuable – critical thinking abilities;",
+      "Database theory – Before you start using SQL, it is highly beneficial to learn about the underlying database theory and acquire an understanding of why databases are created and how they can help us manage data",
+      "SQL - when you can work with SQL, it means you don’t have to rely on others sending you data and executing queries for you. You can do that on your own. This allows you to be independent and dig deeper into the data to obtain the answers to questions that might improve the way your company does its business",
+      "Tableau – one of the most powerful and intuitive data visualization tools available out there. Almost all large companies use such tools to enhance their BI capabilities. Tableau is the #1 best-in-class solution that helps you create powerful charts and dashboards"
+    ],
+    "requirements": [
+      "No prior experience is required. We will start from the very basics",
+      "You’ll need to install MySQL, Tableau Public, and Anaconda. We will show you how to do it step by step",
+      "Microsoft Excel 2003, 2010, 2013, 2016, or 365"
+    ],
+    "teachers": [
       "5c8a21f22f8fb814b56fa18a",
       "5c8a1f292f8fb814b56fa184",
       "5c8a1f4e2f8fb814b56fa185"
-    ],
-    "price": 2997,
-    "summary": "Surfing, skating, parajumping, rock climbing and more, all in one tour",
-    "description": "Nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.\nVoluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur!",
-    "imageCover": "tour-6-cover.jpg",
-    "locations": [
-      {
-        "_id": "5c88fa8cf4afda39709c296b",
-        "description": "Point Dume Beach",
-        "type": "Point",
-        "coordinates": [-118.809361, 34.003098],
-        "day": 1
-      },
-      {
-        "_id": "5c88fa8cf4afda39709c296a",
-        "description": "Venice Skate Park",
-        "type": "Point",
-        "coordinates": [-118.47549, 33.987367],
-        "day": 4
-      },
-      {
-        "_id": "5c88fa8cf4afda39709c2969",
-        "description": "San Diego Skydive",
-        "type": "Point",
-        "coordinates": [-116.830104, 33.022843],
-        "day": 6
-      },
-      {
-        "_id": "5c88fa8cf4afda39709c2968",
-        "description": "Kern River Rafting",
-        "type": "Point",
-        "coordinates": [-118.4547, 35.710359],
-        "day": 7
-      },
-      {
-        "_id": "5c88fa8cf4afda39709c2967",
-        "description": "Yosemite National Park",
-        "type": "Point",
-        "coordinates": [-119.600492, 37.742371],
-        "day": 10
-      }
     ]
   },
   {
-    "startLocation": {
-      "description": "Utah, USA",
-      "type": "Point",
-      "coordinates": [-109.55099, 37.283469],
-      "address": "Bluff, UT 84512, USA"
-    },
-    "ratingsAverage": 4.8,
-    "ratingsQuantity": 6,
-    "images": ["tour-8-1.jpg", "tour-8-2.jpg", "tour-8-3.jpg"],
-    "startDates": [
-      "2021-03-23T10:00:00.000Z",
-      "2021-10-25T09:00:00.000Z",
-      "2022-01-30T10:00:00.000Z"
-    ],
     "_id": "5c88fa8cf4afda39709c2970",
-    "name": "The Star Gazer",
-    "duration": 9,
-    "maxGroupSize": 8,
-    "difficulty": "medium",
-    "guides": ["5c8a21d02f8fb814b56fa189", "5c8a1f292f8fb814b56fa184"],
-    "price": 2997,
-    "summary": "The most remote and stunningly beautiful places for seeing the night sky",
-    "description": "Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.\nLorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
-    "imageCover": "tour-8-cover.jpg",
-    "locations": [
-      {
-        "_id": "5c88fa8cf4afda39709c2973",
-        "description": "Natural Bridges National Monument",
-        "type": "Point",
-        "coordinates": [-109.99953, 37.629017],
-        "day": 1
-      },
-      {
-        "_id": "5c88fa8cf4afda39709c2972",
-        "description": "Horseshoe Bend",
-        "type": "Point",
-        "coordinates": [-111.50954, 36.883269],
-        "day": 3
-      },
-      {
-        "_id": "5c88fa8cf4afda39709c2971",
-        "description": "Death Valley National Park",
-        "type": "Point",
-        "coordinates": [-117.07399, 36.501435],
-        "day": 6
-      }
-    ]
+    "title": "Master Discrete Mathematics: Sets, Math Logic, and More",
+    "subtitle": "Master Discrete Mathematics: Learn and master all of Discrete Math - Logic, Set Theory Etc",
+    "category": "Science, Engineering & Math",
+    "ratingsAverage": 4.4,
+    "ratingsQuantity": 92,
+    "studentsEnrolled": 174,
+    "langSound": ["English", "French"],
+    "langSubs": ["English", "French"],
+    "image": "card__photo--6.jpg",
+    "priceValue": 159.9,
+    "priceDiscount": 90,
+    "includesVideos": 6.5,
+    "includesArticles": 5,
+    "includesContent": 3,
+    "learnSummary": [
+      "Fully Understand Mathematical Logic",
+      "Grasp the Complex Topic of Counting for Advanced Mathematics",
+      "Gather, organize, analyze and visualize data",
+      "Know When to Use Combinations or Permutations",
+      "Solve Real World Problems Using Combinations and Permutations",
+      "Discover How to Solve Mathematical Proofs Using a Variety of Methods",
+      "Analyze current and historical data",
+      "Learn Mathematical Notation to be able to Understand Complex Proofs"
+    ],
+    "description": [
+      "Set Theory: Students will leave this course understanding what sets are, the nuances of sets, and how to find power sets.",
+      "Mathematical Logic: After this course students students will understand mathematical logic and truth tables. They will learn the many logic laws that help computers run complex algorithms while also learning how to solve basic proofs using truth tables.",
+      "Advanced Counting Techniques: Students will learn the advanced counting techniques used by poker players and statisticians that help them analyze complex problems. Students will be exposed to the sum and product principles along with the combination and permutation formulas. There will be an abundance of practice problems in this section due to its difficulty!",
+      "Mathematical Proofs: Students will learn the foundations of writing mathematical proofs. We will discuss the many different methods of mathematical proofs and go through many examples. This section is often important as you go into other math classes that can be very proof heavy.",
+      "Graph Theory: We finish the course with a section on graph theory. Graph theory is a huge and important part of mathematics that we begin to scratch the surface on in this course. Students will begin to see the wide ranging applications of graph theory when they learn about Euler and Hamilton paths/circuits, complete/bipartite graphs, and more."
+    ],
+    "requirements": [
+      "Fundamentals of Mathematics (Up to Algebra)",
+      "Willingness to Learn"
+    ],
+    "teachers": ["5c8a21d02f8fb814b56fa189", "5c8a1f292f8fb814b56fa184"]
   },
   {
-    "startLocation": {
-      "description": "Yellowknife, CAN",
-      "type": "Point",
-      "coordinates": [-114.406097, 62.439943],
-      "address": "Yellowknife, NT X1A 2L2, Canada"
-    },
-    "ratingsAverage": 4.7,
-    "ratingsQuantity": 7,
-    "images": ["tour-9-1.jpg", "tour-9-2.jpg", "tour-9-3.jpg"],
-    "startDates": [
-      "2021-12-16T10:00:00.000Z",
-      "2022-01-16T10:00:00.000Z",
-      "2022-12-12T10:00:00.000Z"
-    ],
     "_id": "5c88fa8cf4afda39709c2974",
-    "name": "The Northern Lights",
-    "duration": 3,
-    "maxGroupSize": 12,
-    "difficulty": "easy",
-    "guides": [
+    "title": "Electricity & electronics - Robotics, learn by building",
+    "subtitle": "Open career opportunities and have fun learning electronics focused on building robots/automation!",
+    "category": "Science, Engineering & Math",
+    "ratingsAverage": 4.6,
+    "ratingsQuantity": 124,
+    "studentsEnrolled": 326,
+    "langSound": ["English", "Indonesian"],
+    "langSubs": ["English", "Indonesian"],
+    "image": "card__photo--6.jpg",
+    "priceValue": 139.9,
+    "priceDiscount": 77,
+    "includesVideos": 10,
+    "includesArticles": 1,
+    "includesContent": 30,
+    "learnSummary": [
+      "Develop and build analog electronics circuits",
+      "You will build multiple circuits from sound buzzers to bionics where we actually control a servo motor by reading signals from your muscles",
+      "Solve kinematic models; plan geometrical paths and dynamic trajectories; tune motion control systems; calibrate tools and cells.",
+      "Solve Real World Problems Using Combinations and Permutations",
+      "We focus on a standard 6-axes anthropomorphic robot, because is one of the most commonly used robots in the industry",
+      "One of the most complicated ones, so that once you understand how this one works you should be able to solve models for all the others."
+    ],
+    "description": [
+      "Learn how an industrial 6-axes anthropomorphic robot works.",
+      "We will start by building its kinematic model step-by-step, then plan geometrical paths and optimize motion trajectories.",
+      "We will learn how to correctly size the electric motors and understand the fine-tuning procedures for the servo drives.",
+      "We will describe calibration procedures for the arm, tool and cell, and finally generate a realistic digital twin for your simulations!"
+    ],
+    "requirements": [
+      "This class is not too complicated and you should be able to follow along quite easily if you have a good base of mathematics: specifically, trigonometry, linear algebra and some calculus.",
+      "Basic programming skills would also be nice, but are not strictly required. This is not a programming class and you will be able to follow along until the end even if you don’t program a single line of code, but for sure it would be much nicer and beneficial for you if you implement the models we study here into real code, and test them on a real or simulated robot. C is normally the language of choice in the industry, but the final call is totally up to you."
+    ],
+    "teachers": [
       "5c8a21f22f8fb814b56fa18a",
       "5c8a201e2f8fb814b56fa186",
       "5c8a23412f8fb814b56fa18c"
-    ],
-    "price": 1497,
-    "summary": "Enjoy the Northern Lights in one of the best places in the world",
-    "description": "Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua, ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum!\nDolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur, exercitation ullamco laboris nisi ut aliquip. Lorem ipsum dolor sit amet, consectetur adipisicing elit!",
-    "imageCover": "tour-9-cover.jpg",
-    "locations": [
-      {
-        "_id": "5c88fa8cf4afda39709c2975",
-        "description": "Yellowknife",
-        "type": "Point",
-        "coordinates": [-114.406097, 62.439943],
-        "day": 1
-      }
     ]
   },
   {
-    "startLocation": {
-      "description": "California, USA",
-      "type": "Point",
-      "coordinates": [-122.29286, 38.294065],
-      "address": "560 Jefferson St, Napa, CA 94559, USA"
-    },
+    "_id": "5c88fa8cf4afda39709c2970",
+    "title": "Master Discrete Mathematics: Sets, Math Logic, and More",
+    "subtitle": "Master Discrete Mathematics: Learn and master all of Discrete Math - Logic, Set Theory Etc",
+    "category": "Science, Engineering & Math",
     "ratingsAverage": 4.4,
-    "ratingsQuantity": 7,
-    "images": ["tour-7-1.jpg", "tour-7-2.jpg", "tour-7-3.jpg"],
-    "startDates": [
-      "2021-02-12T10:00:00.000Z",
-      "2021-04-14T09:00:00.000Z",
-      "2021-09-01T09:00:00.000Z"
+    "ratingsQuantity": 92,
+    "studentsEnrolled": 174,
+    "langSound": ["English", "French"],
+    "langSubs": ["English", "French"],
+    "image": "card__photo--6.jpg",
+    "priceValue": 159.9,
+    "priceDiscount": 90,
+    "includesVideos": 6.5,
+    "includesArticles": 5,
+    "includesContent": 3,
+    "learnSummary": [
+      "Fully Understand Mathematical Logic",
+      "Grasp the Complex Topic of Counting for Advanced Mathematics",
+      "Gather, organize, analyze and visualize data",
+      "Know When to Use Combinations or Permutations",
+      "Solve Real World Problems Using Combinations and Permutations",
+      "Discover How to Solve Mathematical Proofs Using a Variety of Methods",
+      "Analyze current and historical data",
+      "Learn Mathematical Notation to be able to Understand Complex Proofs"
     ],
-    "_id": "5c88fa8cf4afda39709c296c",
-    "name": "The Wine Taster",
-    "duration": 5,
-    "maxGroupSize": 8,
-    "difficulty": "easy",
-    "guides": ["5c8a22c62f8fb814b56fa18b", "5c8a23412f8fb814b56fa18c"],
-    "price": 1997,
-    "summary": "Exquisite wines, scenic views, exclusive barrel tastings,  and much more",
-    "description": "Consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.\nIrure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.",
-    "imageCover": "tour-7-cover.jpg",
-    "locations": [
-      {
-        "_id": "5c88fa8cf4afda39709c296f",
-        "description": "Beringer Vineyards",
-        "type": "Point",
-        "coordinates": [-122.479887, 38.510312],
-        "day": 1
-      },
-      {
-        "_id": "5c88fa8cf4afda39709c296e",
-        "description": "Clos Pegase Winery & Tasting Room",
-        "type": "Point",
-        "coordinates": [-122.582948, 38.585707],
-        "day": 3
-      },
-      {
-        "_id": "5c88fa8cf4afda39709c296d",
-        "description": "Raymond Vineyard and Cellar",
-        "type": "Point",
-        "coordinates": [-122.434697, 38.482181],
-        "day": 5
-      }
-    ]
+    "description": [
+      "Set Theory: Students will leave this course understanding what sets are, the nuances of sets, and how to find power sets.",
+      "Mathematical Logic: After this course students students will understand mathematical logic and truth tables. They will learn the many logic laws that help computers run complex algorithms while also learning how to solve basic proofs using truth tables.",
+      "Advanced Counting Techniques: Students will learn the advanced counting techniques used by poker players and statisticians that help them analyze complex problems. Students will be exposed to the sum and product principles along with the combination and permutation formulas. There will be an abundance of practice problems in this section due to its difficulty!",
+      "Mathematical Proofs: Students will learn the foundations of writing mathematical proofs. We will discuss the many different methods of mathematical proofs and go through many examples. This section is often important as you go into other math classes that can be very proof heavy.",
+      "Graph Theory: We finish the course with a section on graph theory. Graph theory is a huge and important part of mathematics that we begin to scratch the surface on in this course. Students will begin to see the wide ranging applications of graph theory when they learn about Euler and Hamilton paths/circuits, complete/bipartite graphs, and more."
+    ],
+    "requirements": [
+      "Fundamentals of Mathematics (Up to Algebra)",
+      "Willingness to Learn"
+    ],
+    "teachers": ["5c8a21d02f8fb814b56fa189", "5c8a1f292f8fb814b56fa184"]
+  },
+  {
+    "_id": "5c88fa8cf4afda39709c296e",
+    "title": "Elevate Your Tennis Game",
+    "subtitle": "Level up your tennis game with the next best thing to a private lesson.",
+    "category": "Other",
+    "ratingsAverage": 4.6,
+    "ratingsQuantity": 124,
+    "studentsEnrolled": 326,
+    "langSound": ["English", "Polish"],
+    "langSubs": ["English", "Polish"],
+    "image": "card__photo--6.jpg",
+    "priceValue": 169.9,
+    "priceDiscount": 77,
+    "includesVideos": 1,
+    "includesArticles": 8,
+    "includesContent": 8,
+    "learnSummary": [
+      "Learn techniques for essential swings (forehand, backhand, serve, and more)",
+      "Develop game strategies to defeat your opponent",
+      "Practice Andre's own drills proven to advance your game.",
+      "Build confidence in your tennis strengths and abilities",
+      "Adopt the mental approach of a champion",
+      "Master insider secrets and a winner’s mindset."
+    ],
+    "description": [
+      "Learn the fundamentals and improve every shot in your game including forehand, backhand, serve, volley, overhead, tweener, drop shot, and more",
+      "Understand best practices for racket grips, body positioning, and when specific shots are most effectively played",
+      "Identify the secrets of Andre’s signature moves: the two-handed backhand and return serve",
+      "Learn how to listen to the sounds of the game to read the ball and anticipate how it will move",
+      "Apply strategies that will keep your opponents off balance and unable to guess what you will do next",
+      "Practice Andre’s own proven drills to improve your skills, both alone or with a partner",
+      "Adopt the champion’s mindset that took Andre years to develop"
+    ],
+    "requirements": [
+      "Students should have a basic to intermediate knowledge of tennis, including a basic understanding of each swing and tennis rules",
+      "All a student needs to take this course is a computer or mobile device with internet connection"
+    ],
+    "teachers": ["5c8a22c62f8fb814b56fa18b", "5c8a23412f8fb814b56fa18c"]
   }
 ]

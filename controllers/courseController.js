@@ -1,7 +1,7 @@
 const Course = require('./../models/courseModel');
-const APIFeatures = require('./../utils/apiFeatures');
+// const APIFeatures = require('./../utils/apiFeatures');
 const catchAsync = require('./../utils/catchAsync');
-const AppError = require('./../utils/appError');
+// const AppError = require('./../utils/appError');
 const factory = require('./handlerFactory');
 
 exports.aliasTopCourses = (req, res, next) => {
@@ -12,42 +12,46 @@ exports.aliasTopCourses = (req, res, next) => {
   next();
 };
 
-exports.getAllCourses = catchAsync(async (req, res, next) => {
-  // EXECUTE QUERY
-  const features = new APIFeatures(Course.find(), req.query)
-    .filter()
-    .sort()
-    .limitFields()
-    .paginate();
-  const courses = await features.query;
-  // query.sort().select().skip().limit()
+exports.getAllCourses = factory.getAll(Course);
 
-  // SEND RESPONSE
-  res.status(200).json({
-    status: 'success',
-    results: courses.length,
-    data: {
-      courses
-    }
-  });
-});
+// exports.getAllCourses = catchAsync(async (req, res, next) => {
+//   // EXECUTE QUERY
+//   const features = new APIFeatures(Course.find(), req.query)
+//     .filter()
+//     .sort()
+//     .limitFields()
+//     .paginate();
+//   const courses = await features.query;
+//   // query.sort().select().skip().limit()
 
-exports.getCourse = catchAsync(async (req, res, next) => {
-  // console.log(req.params);
-  const course = await Course.findById(req.params.id).populate('reviews');
-  // Couse.findOne({ _id: req.params.id })
+//   // SEND RESPONSE
+//   res.status(200).json({
+//     status: 'success',
+//     results: courses.length,
+//     data: {
+//       courses
+//     }
+//   });
+// });
 
-  if (!course) {
-    return next(new AppError('No course found with that ID!', 404));
-  }
+exports.getCourse = factory.getOne(Course, { path: 'reviews' });
 
-  res.status(200).json({
-    status: 'success',
-    data: {
-      course
-    }
-  });
-});
+// exports.getCourse = catchAsync(async (req, res, next) => {
+//   // console.log(req.params);
+//   const course = await Course.findById(req.params.id).populate('reviews');
+//   // Couse.findOne({ _id: req.params.id })
+
+//   if (!course) {
+//     return next(new AppError('No course found with that ID!', 404));
+//   }
+
+//   res.status(200).json({
+//     status: 'success',
+//     data: {
+//       course
+//     }
+//   });
+// });
 
 exports.createCourse = factory.createOne(Course);
 
