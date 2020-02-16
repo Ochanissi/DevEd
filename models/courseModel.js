@@ -134,6 +134,9 @@ const courseSchema = new mongoose.Schema(
   }
 );
 
+// courseSchema.index({ priceValue: 1 });
+courseSchema.index({ priceValue: 1, ratingsAverage: -1 });
+
 courseSchema.virtual('includesVideosMinutes').get(function() {
   return this.includesVideos * 10;
 });
