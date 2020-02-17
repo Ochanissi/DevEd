@@ -1,6 +1,6 @@
 const mongoose = require('mongoose');
 const slugify = require('slugify');
-// const User = require('./userModel');
+const User = require('./userModel');
 // const validator = require('validator');
 
 const courseSchema = new mongoose.Schema(
@@ -112,15 +112,9 @@ const courseSchema = new mongoose.Schema(
       type: String,
       required: [true, 'A course must have a category!'],
       enum: {
-        values: [
-          'Business & Management',
-          'IT & Computer Science',
-          'Science, Engineering & Math',
-          'Teaching',
-          'Other'
-        ],
+        values: ['bm', 'itcs', 'engi', 'other'],
         message:
-          'Category should be either: Business & Management, IT & Computer Science, Science, Engineering & Math, Teaching or Other!'
+          'Category should be either: [bm] Business & Management, [itcs] IT & Computer Science, [engi] Science, Engineering & Math or [other] Other!'
       }
     },
     secretCourse: {
@@ -134,8 +128,9 @@ const courseSchema = new mongoose.Schema(
   }
 );
 
-// courseSchema.index({ priceValue: 1 });
-courseSchema.index({ priceValue: 1, ratingsAverage: -1 });
+courseSchema.index({ priceValue: 1 });
+courseSchema.index({ slug: 1 });
+// courseSchema.index({ priceValue: 1, ratingsAverage: -1 });
 
 courseSchema.virtual('includesVideosMinutes').get(function() {
   return this.includesVideos * 10;
@@ -155,25 +150,25 @@ courseSchema.pre('save', function(next) {
   next();
 });
 
-// courseSchema.pre('save', async function(next) {
-//   const teachersPromises = this.teachers.map(
-//     async id => await User.findById(id)
-//   );
+courseSchema.pre('save', async function(next) {
+  const teachersPromises = this.teachers.map(
+    async id => await User.findById(id)
+  );
 
-//   this.teachers = await Promise.all(teachersPromises);
+  this.teachers = await Promise.all(teachersPromises);
 
-//   next();
-// });
+  next();
+});
 
-// courseSchema.pre('save', function(next) {
-//   console.log('Will same document...');
-//   next();
-// });
+courseSchema.pre('save', function(next) {
+  console.log('Will same document...');
+  next();
+});
 
-// courseSchema.post('save', function(doc, next) {
-//   console.log(doc);
-//   next();
-// });
+courseSchema.post('save', function(doc, next) {
+  console.log(doc);
+  next();
+});
 
 // QUERY MIDDLEWARE
 courseSchema.pre(/^find/, function(next) {
