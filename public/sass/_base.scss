@@ -27,8 +27,8 @@ $font-primary: 'Maven Pro', sans-serif;
 $font-display: 'Maven Pro', sans-serif;
 
 // RESPONSIVE BREAKPOINTS
-// $bp-largest: 81.25em; // 1300px
-// $bp-large: 62.5em; // 1000px
+$bp-largest: 75em; // 1200px
+$bp-large: 50em; // 800px
 // $bp-medium: 53.12em; // 850px
 // $bp-small: 43.75em; // 700px
 // $bp-smallest: 31.25em; // 500px
@@ -46,9 +46,9 @@ html {
   box-sizing: border-box;
   font-size: 62.5%; // 10px / 16px = 62.5% => 1rem = 10px
 
-  // @media only screen and (max-width: $bp-largest) {
-  //   font-size: 50%;
-  // }
+  @media only screen and (max-width: $bp-largest) {
+    font-size: 50%;
+  }
 
   // @media only screen and (max-width: $bp-phone) {
   //   font-size: 40%;
