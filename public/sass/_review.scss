@@ -24,7 +24,7 @@
 
   overflow-x: hidden;
 
-  @media only screen and (max-width: $bp-large) {
+  @media only screen and (max-width: $bp-medium) {
     padding: 5rem 0 5rem 0;
   }
 
@@ -56,7 +56,7 @@
 
     padding: 5rem 0;
 
-    @media only screen and (max-width: $bp-large) {
+    @media only screen and (max-width: $bp-medium) {
       grid-template-columns: auto;
     }
 

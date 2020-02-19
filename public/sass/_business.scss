@@ -16,7 +16,7 @@
   justify-items: center;
   align-items: center;
 
-  @media only screen and (max-width: $bp-large) {
+  @media only screen and (max-width: $bp-medium) {
     grid-template-columns: auto;
     grid-template-rows: repeat(2, 1fr);
 
@@ -39,7 +39,7 @@
     justify-items: center;
     align-items: center;
 
-    @media only screen and (max-width: $bp-large) {
+    @media only screen and (max-width: $bp-medium) {
       grid-row: 2 / 3;
     }
 
@@ -106,7 +106,7 @@
     flex-direction: column;
     justify-content: center;
 
-    @media only screen and (max-width: $bp-large) {
+    @media only screen and (max-width: $bp-medium) {
       grid-row: 1 / 2;
     }
 
