@@ -15,6 +15,10 @@
   justify-items: center;
   align-items: center;
 
+  @media only screen and (max-width: $bp-large) {
+    padding: 5rem;
+  }
+
   color: white;
   &__title {
     font-size: 4rem;

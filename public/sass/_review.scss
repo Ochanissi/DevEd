@@ -7,7 +7,7 @@
   padding: 10rem 0;
 
   display: grid;
-  grid-template-rows: repeat(5, min-content);
+  // grid-template-rows: repeat(5, min-content);
   grid-template-columns:
     [full-start] minmax(6rem, 1fr) [center-start] repeat(
       8,
@@ -23,6 +23,10 @@
   align-items: center;
 
   overflow-x: hidden;
+
+  @media only screen and (max-width: $bp-large) {
+    padding: 5rem 0 5rem 0;
+  }
 
   &__title {
     // background-color: blue;
@@ -50,17 +54,24 @@
 
     text-align: center;
 
-    padding: 5rem;
+    padding: 5rem 0;
+
+    @media only screen and (max-width: $bp-large) {
+      grid-template-columns: auto;
+    }
 
     &-1,
     &-2,
     &-3 {
       box-shadow: 0 0 20px 20px rgba(0, 0, 0, 0.1);
       padding: 3rem;
+
+      max-width: 50rem;
     }
 
     &--name {
       color: $color-primary;
+      font-weight: 500;
     }
 
     &--text {

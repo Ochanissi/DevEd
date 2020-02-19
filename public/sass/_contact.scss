@@ -9,6 +9,10 @@
   padding: 10rem 0;
   text-align: center;
 
+  @media only screen and (max-width: $bp-large) {
+    padding: 5rem 0 5rem 0;
+  }
+
   &__title {
     padding-bottom: 5rem;
     display: flex;
