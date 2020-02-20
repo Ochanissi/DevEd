@@ -28,6 +28,10 @@
     display: grid;
     grid-auto-flow: column;
     grid-gap: 5rem;
+
+    @media only screen and (max-width: $bp-large) {
+      grid-auto-flow: row;
+    }
   }
 
   &__content {
@@ -45,5 +49,9 @@
 
     grid-gap: 5rem;
     // padding: 0 2rem;
+
+    @media only screen and (max-width: $bp-large) {
+      grid-template-columns: auto;
+    }
   }
 }
