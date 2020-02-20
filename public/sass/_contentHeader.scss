@@ -10,7 +10,7 @@
   align-content: start;
   align-items: center;
   justify-items: center;
-  grid-gap: 3rem;
+  // grid-gap: 3rem;
 
   text-align: center;
 
@@ -19,7 +19,7 @@
 
     background-color: $color-grey-dark-5;
 
-    padding: 15rem 0 10rem 0;
+    padding: 15rem 3rem 10rem 3rem;
     width: 100vw;
 
     h1,
@@ -94,9 +94,22 @@
 
   &__body {
     display: grid;
+    justify-content: center;
+    grid-auto-flow: column;
+    // align-items: center;
+    justify-items: center;
     grid-template-columns: repeat(3, minmax(min-content, 30rem));
-    grid-template-rows: repeat(2, min-content);
+    // grid-template-rows: repeat(2, min-content);
     grid-gap: 5rem;
+
+    padding: 5rem;
+
+    @media only screen and (max-width: $bp-medium) {
+      grid-template-columns: auto;
+      grid-template-rows: repeat(2, 1fr);
+
+      align-items: center;
+    }
 
     &--left {
       background-color: $color-grey-light-1;
@@ -146,6 +159,11 @@
 
       box-shadow: 0 0 1px 1px rgba($color-black, 0.1),
         0 3px 1px 0 rgba($color-black, 0.1);
+
+      @media only screen and (max-width: $bp-medium) {
+        grid-row: 1 / 2;
+        grid-column: 1 / -1;
+      }
     }
 
     &--right {
@@ -178,6 +196,11 @@
       background-color: $color-grey-light-1;
       padding: 3rem;
 
+      @media only screen and (max-width: $bp-medium) {
+        grid-row: 2 / 3;
+        grid-column: 1 / -1;
+      }
+
       &--title {
         font-size: 3rem;
         font-weight: 700;
@@ -189,6 +212,14 @@
         display: grid;
         grid-template-columns: 1fr 1fr;
         grid-gap: 2.5rem;
+
+        @media only screen and (max-width: $bp-smallest) {
+          grid-template-columns: auto;
+        }
+
+        @media only screen and (max-width: $bp-smallest) {
+          grid-gap: 0;
+        }
 
         ion-icon {
           vertical-align: middle;
@@ -204,6 +235,11 @@
       &--column-1 {
         border-right: 1px solid $color-grey-light-3;
         padding-right: 2.5rem;
+
+        @media only screen and (max-width: $bp-smallest) {
+          border-right: 0;
+          padding: 0;
+        }
       }
 
       &--column-2 {

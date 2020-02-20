@@ -23,6 +23,10 @@
 
   overflow-x: hidden;
 
+  @media only screen and (max-width: $bp-smallest) {
+    padding: 5rem 0 7.5rem 0;
+  }
+
   &__title {
     // background-color: blue;
 
