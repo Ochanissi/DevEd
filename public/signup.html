@@ -72,10 +72,21 @@
       </ul>
     </nav>
 
-    <section class="login">
-      <div class="login__form">
-        <h2 class="heading-2--form mb-lg">Log into your account</h2>
+    <section class="signup">
+      <div class="signup__form">
+        <h2 class="heading-2--form mb-lg">Sign up to DevEd</h2>
         <form class="form">
+          <div class="form__group">
+            <label class="form__label" for="name">Full name</label
+            ><input
+              class="form__input"
+              id="name"
+              type="text"
+              placeholder="John Doe"
+              required=""
+              minlength="5"
+            />
+          </div>
           <div class="form__group">
             <label class="form__label" for="email">Email address</label
             ><input
@@ -97,12 +108,24 @@
               minlength="8"
             />
           </div>
+          <div class="form__group ma-bt-md">
+            <label class="form__label" for="passwordConfirm"
+              >Confirm Password</label
+            ><input
+              class="form__input"
+              id="passwordConfirm"
+              type="password"
+              placeholder="••••••••"
+              required=""
+              minlength="8"
+            />
+          </div>
           <div class="login__form--btns">
             <div class="form__group">
-              <button class="btn btn__form--primary">Log in</button>
+              <button class="btn btn__form--primary">Sign up</button>
             </div>
             <div class="form__group">
-              <button class="btn btn__form--secondary">Sign up</button>
+              <button class="btn btn__form--secondary">Log in</button>
             </div>
           </div>
         </form>
