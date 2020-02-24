@@ -72,7 +72,42 @@
       </ul>
     </nav>
 
-    <section class="login">Log in content</section>
+    <section class="login">
+      <div class="login__form">
+        <h2 class="heading-2--form mb-lg">Log into your account</h2>
+        <form class="form">
+          <div class="form__group">
+            <label class="form__label" for="email">Email address</label
+            ><input
+              class="form__input"
+              id="email"
+              type="email"
+              placeholder="you@example.com"
+              required=""
+            />
+          </div>
+          <div class="form__group ma-bt-md">
+            <label class="form__label" for="password">Password</label
+            ><input
+              class="form__input"
+              id="password"
+              type="password"
+              placeholder="••••••••"
+              required=""
+              minlength="8"
+            />
+          </div>
+          <div class="login__form--btns">
+            <div class="form__group">
+              <button class="btn btn__form--login">Log in</button>
+            </div>
+            <div class="form__group">
+              <button class="btn btn__form--signup">Sign up</button>
+            </div>
+          </div>
+        </form>
+      </div>
+    </section>
 
     <footer class="footer" id="footer">
       <div class="footer__title  navbar__main--home mb-sm">

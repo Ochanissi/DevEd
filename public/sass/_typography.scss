@@ -35,6 +35,13 @@
     color: $color-grey-dark-1;
   }
 
+  &--form {
+    @extend .heading-2;
+    text-transform: uppercase;
+    color: $color-grey-dark-3;
+    font-weight: 500;
+  }
+
   // @media only screen and (max-width: $bp-small) {
   //   font-size: 3rem;
   // }
@@ -160,6 +167,31 @@
   @extend .btn;
   padding: 0.75rem 1rem;
   font-weight: 500;
+}
+
+.btn__form--login,
+.btn__form--login:link,
+.btn__form--login:visited {
+  @extend .btn;
+  padding: 0.75rem 1rem;
+  font-weight: 500;
+  margin: 0 5rem 0 0;
+}
+
+.btn__form--signup,
+.btn__form--signup:link,
+.btn__form--signup:visited {
+  @extend .btn;
+  background-color: transparent;
+  color: $color-secondary;
+  border-color: $color-secondary;
+  padding: 0.75rem 1rem;
+  font-weight: 500;
+  &:hover {
+    background: $color-secondary;
+    border: 2px solid $color-secondary-dark;
+    color: $color-white;
+  }
 }
 
 .mb-sm {
