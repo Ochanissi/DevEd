@@ -28,8 +28,14 @@
     }
   }
 
-  &__group:not(:last-child) {
-    margin-bottom: 2.5rem;
+  &__group {
+    &:not(:last-child) {
+      margin-bottom: 2.5rem;
+    }
+
+    &--btn {
+      margin-left: auto;
+    }
   }
 
   &__label {
@@ -48,8 +54,18 @@
   &__user-photo {
     height: 7.5rem;
     width: 7.5rem;
-    border-radius: 50%;
+    // border-radius: 50%;
     margin-right: 2rem;
+    clip-path: polygon(
+      30% 0%,
+      70% 0%,
+      100% 30%,
+      100% 70%,
+      70% 100%,
+      30% 100%,
+      0% 70%,
+      0% 30%
+    );
   }
 
   &__upload {
