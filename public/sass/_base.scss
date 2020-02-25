@@ -74,6 +74,13 @@ body {
     )
     [center-end] minmax(6rem, 1fr) [full-end];
 
+  @media only screen and (max-width: $bp-smallest) {
+    grid-template-rows: minmax(calc(100vh - 140px), min-content) repeat(
+        6,
+        min-content
+      );
+  }
+
   & > * {
     // padding: 40px;
     font-size: 1.75rem;
