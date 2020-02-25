@@ -16,13 +16,30 @@
   justify-items: center;
   align-items: center;
 
+  @media only screen and (max-width: $bp-smallest) {
+    padding: 10rem 0 0 0;
+  }
+
   &__form {
     box-shadow: 0 0 30px 20px rgba(0, 0, 0, 0.1);
 
     // background-color: $color-grey-light-1;
     padding: 10rem;
 
-    min-width: 60rem;
+    min-width: 50rem;
+
+    @media only screen and (max-width: $bp-medium) {
+      padding: 5rem;
+      min-width: 50rem;
+    }
+
+    @media only screen and (max-width: $bp-smallest) {
+      box-shadow: none;
+
+      padding: 0;
+
+      min-width: 0;
+    }
 
     &--btns {
       display: flex;
