@@ -1,0 +1,31 @@
+nav.navbar
+  input#menu-toggle(type='checkbox')
+  label.menu-button-container(for='menu-toggle')
+    .menu-button
+  
+  ul.navbar__main
+    li.navbar__main--item
+      a.navbar__main--link(href='#header') Home
+    li.navbar__main--item
+      a.navbar__main--link(href='#about') Courses
+    li.navbar__main--item.navbar__main--home
+      a(href='#header')
+        img.navbar__main--logo(src='./img/logo.png' alt='WebDev Logo')
+    li.navbar__main--item
+      a.navbar__main--link(href='#projects') About
+    li.navbar__main--item
+      a.navbar__main--link(href='#contact') Contact
+
+  ul.navbar__secondary.navbar__secondary--in
+    li.navbar__main--item
+      a.btn.btn__nav--primary(href='#') Log in
+    li.navbar__main--item
+      a.btn.btn__nav--secondary(href='#') Sign up
+
+
+  //- ul.navbar__secondary.navbar__secondary--out
+  //-   li.navbar__main--item
+  //-     a.btn.btn__nav--primary(href='#') Log out
+  //-   li.navbar__main--item
+  //-     a(href='#')
+  //-       img.navbar__secondary--img(src='./img/review__photo--4.jpg' alt='')

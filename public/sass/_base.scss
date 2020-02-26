@@ -61,7 +61,7 @@ body {
   font-weight: 300;
   line-height: 1.6;
 
-  overflow-x: hidden;
+  // overflow-x: hidden !important;
 }
 
 .container {
@@ -81,7 +81,7 @@ body {
       );
   }
 
-  overflow-x: hidden;
+  // overflow-x: hidden !important;
 
   & > * {
     // padding: 40px;

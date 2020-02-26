@@ -8,48 +8,20 @@ html
     link(href='./img/logo.png' rel='shortcut icon' type='img/png')
     link(href='https://fonts.googleapis.com/css?family=Maven+Pro:400,500,700&display=swap'
       rel='stylesheet')
-    title DevEd | Online Courses
+    title DevEd | #{title}
 
 
 
 
   body.container
     // NAVBAR
-    nav.navbar
-      input#menu-toggle(type='checkbox')
-      label.menu-button-container(for='menu-toggle')
-        .menu-button
-      
-      ul.navbar__main
-        li.navbar__main--item
-          a.navbar__main--link(href='#header') Home
-        li.navbar__main--item
-          a.navbar__main--link(href='#about') Courses
-        li.navbar__main--item.navbar__main--home
-          a(href='#header')
-            img.navbar__main--logo(src='./img/logo.png' alt='WebDev Logo')
-        li.navbar__main--item
-          a.navbar__main--link(href='#projects') About
-        li.navbar__main--item
-          a.navbar__main--link(href='#contact') Contact
+    include _navbar
 
-      ul.navbar__secondary
-        li.navbar__main--item
-          a.btn.btn__nav--primary Log in
-        li.navbar__main--item
-          a.btn.btn__nav--secondary Sign up
+    // CONTENT
+    block content
+      h1 This is a placeholder heading
 
-    // CONTENT 
-    header.header
 
 
     // FOOTER
-    footer.footer
-      .footer__title.navbar__main--home.mb-sm
-        a(href='#header')
-          img.footer__title--home.navbar__main--logo(src='./img/logo.png' alt='WebDev Logo')
-
-      .footer__content Copyright &copy; 2020
-        span.footer__content--name
-          a.footer__content--link(href='https://github.com/Ochanissi/' target='_blank')  Mirel Bițoi
-        span.footer__content--rights . All rights reserved.
+    include _footer
