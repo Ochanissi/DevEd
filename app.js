@@ -12,6 +12,7 @@ const globalErrorHandler = require('./controllers/errorController');
 const courseRouter = require('./routes/courseRoutes');
 const userRouter = require('./routes/userRoutes');
 const reviewRouter = require('./routes/reviewRoutes');
+const viewRouter = require('./routes/viewRoutes');
 
 const app = express();
 
@@ -82,13 +83,7 @@ app.use((req, res, next) => {
 // app.delete('/api/v1/courses/:id', deleteCourse);
 
 // ROUTES
-app.get('/', (req, res) => {
-  res.status(200).render('base', {
-    course: 'The Complete JS Developer',
-    user: 'Mirel'
-  });
-});
-
+app.use('/', viewRouter);
 app.use('/api/v1/courses', courseRouter);
 app.use('/api/v1/users', userRouter);
 app.use('/api/v1/reviews', reviewRouter);
