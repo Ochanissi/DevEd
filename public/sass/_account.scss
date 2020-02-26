@@ -16,6 +16,10 @@
   justify-items: center;
   align-items: center;
 
+  @media only screen and (max-width: $bp-medium) {
+    padding: 44px 0 0 0;
+  }
+
   &__block {
     box-shadow: 0 0 30px 20px rgba(0, 0, 0, 0.1);
 
@@ -28,6 +32,17 @@
     display: grid;
     grid-template-columns: repeat(2, max-content);
 
+    @media only screen and (max-width: $bp-large) {
+      grid-template-columns: auto;
+      grid-template-rows: repeat(2, min-content);
+    }
+
+    @media only screen and (max-width: $bp-medium) {
+      min-width: 0;
+
+      box-shadow: none;
+    }
+
     &--menu {
       grid-column: 1 / 2;
 
@@ -35,6 +50,18 @@
       padding: 5rem 0;
 
       min-width: 30rem;
+
+      @media only screen and (max-width: $bp-large) {
+        grid-column: 1 / -1;
+        grid-row: 1 / 2;
+
+        padding: 0;
+      }
+
+      @media only screen and (max-width: $bp-medium) {
+        width: 100vw;
+        min-width: 0;
+      }
 
       ion-icon {
         // color: white;
@@ -50,8 +77,22 @@
       padding: 5rem 0rem;
       min-width: 90rem;
 
+      @media only screen and (max-width: $bp-large) {
+        grid-column: 1 / -1;
+        grid-row: 2 / 3;
+      }
+
+      @media only screen and (max-width: $bp-medium) {
+        width: 100vw;
+        min-width: 0;
+      }
+
       &--container {
         padding: 0 10rem;
+
+        @media only screen and (max-width: $bp-medium) {
+          padding: 0 5rem;
+        }
       }
     }
   }
@@ -60,15 +101,40 @@
 .side-nav {
   list-style: none;
 
+  @media only screen and (max-width: $bp-large) {
+    display: grid;
+
+    grid-auto-flow: column;
+    justify-content: center;
+    align-content: center;
+    justify-items: center;
+    align-items: center;
+  }
+
+  @media only screen and (max-width: $bp-medium) {
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+  }
+
   li {
     margin: 1rem 0;
     border-left: 0 solid $color-white;
     transition: all 0.3s;
+
+    @media only screen and (max-width: $bp-large) {
+      border-left: none;
+      border-bottom: 0 solid $color-white;
+    }
   }
 
   &--active,
   li:hover {
     border-left: 5px solid $color-white !important;
+
+    @media only screen and (max-width: $bp-large) {
+      border-left: 0 !important;
+      border-bottom: 5px solid $color-white !important;
+    }
   }
 
   &--active a {
