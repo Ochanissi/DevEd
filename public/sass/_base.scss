@@ -81,6 +81,8 @@ body {
       );
   }
 
+  overflow-x: hidden;
+
   & > * {
     // padding: 40px;
     font-size: 1.75rem;
