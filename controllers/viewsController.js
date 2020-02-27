@@ -1,5 +1,11 @@
 exports.getOverview = (req, res) => {
   res.status(200).render('overview', {
+    title: 'Online Courses'
+  });
+};
+
+exports.getAllCourses = (req, res) => {
+  res.status(200).render('overview', {
     title: 'All Courses'
   });
 };
