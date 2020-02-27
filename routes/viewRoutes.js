@@ -5,6 +5,8 @@ const router = express.Router();
 
 router.get('/', viewsController.getOverview);
 
+router.get('/courses', viewsController.getAllCourses);
+
 router.get('/course', viewsController.getCourse);
 
 module.exports = router;
