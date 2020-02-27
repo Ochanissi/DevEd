@@ -66,18 +66,19 @@ const courseSchema = new mongoose.Schema(
       type: Number,
       required: [true, 'A course must have a price!']
     },
+    // priceDiscount: {
+    //   type: Number,
+    //   validate: {
+    //     validator: function(val) {
+    //       // this only points to current doc on NEW document creation
+    //       return val < this.priceValue;
+    //     },
+    //     message: 'Discount price ({{VALUE}) should be below the regular price'
+    //   }
+    // },
     priceDiscount: {
       type: Number,
-      validate: {
-        validator: function(val) {
-          // this only points to current doc on NEW document creation
-          return val < this.priceValue;
-        },
-        message: 'Discount price ({{VALUE}) should be below the regular price'
-      }
-    },
-    pricePercentage: {
-      type: Number
+      default: 0
     },
     includesVideos: {
       type: Number,

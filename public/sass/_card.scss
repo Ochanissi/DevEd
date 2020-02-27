@@ -70,7 +70,7 @@
 
   &__footer {
     background-color: #f7f7f7;
-    padding: 2rem 3rem;
+    padding: 2rem 2.5rem;
     border-top: 1px solid #f1f1f1;
     font-size: 1.4rem;
     display: grid;
@@ -87,8 +87,12 @@
       color: $color-grey-dark-1;
     }
 
-    &--ratings {
+    &--price {
       grid-row: 2 / 3;
+    }
+
+    &--ratings {
+      grid-row: 1 / 2;
     }
   }
 
