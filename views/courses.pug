@@ -25,7 +25,7 @@ block content
               p.card__footer--price
                 span.card__footer--value= `Price: €${(course.priceValue - (course.priceValue * course.priceDiscount / 100)).toFixed(2)} `
                 span.card__footer--text per person
-              a.btn.btn__card(href=`/courses/${course.slug}`) Details
+              a.btn.btn__card(href=`/course/${course.slug}`) Details
   
   section.courses
     .courses__heading Find the right online course for you
