@@ -7,16 +7,9 @@ block content
       h2.heading-2.mb-sm= course.subtitle
       .contentHeader__head--stats
         .contentHeader__head--rating
-          svg.contentHeader__head--star.contentHeader__head--star--active
-            use(xlink:href="/img/icons.svg#icon-star")
-          svg.contentHeader__head--star.contentHeader__head--star--active
-            use(xlink:href="/img/icons.svg#icon-star")
-          svg.contentHeader__head--star.contentHeader__head--star--active
-            use(xlink:href="/img/icons.svg#icon-star")
-          svg.contentHeader__head--star.contentHeader__head--star--active
-            use(xlink:href="/img/icons.svg#icon-star")
-          svg.contentHeader__head--star.contentHeader__head--star--active
-            use(xlink:href="/img/icons.svg#icon-star")
+          each star in [1, 2, 3, 4, 5]
+            svg.contentHeader__head--star(class=`contentHeader__head--star--${course.ratingsAverage >= star ? 'active' : 'inactive'}`)
+              use(xlink:href="/img/icons.svg#icon-star")
         .contentHeader__head--ratings= `${course.ratingsAverage} (${course.ratingsQuantity} ratings)`
         .contentHeader__head--students= `${course.studentsEnrolled} students enrolled`
       .contentHeader__head--about
@@ -28,12 +21,12 @@ block content
           ion-icon(name="text")
           | 
           each lang in course.langSound
-            span= course.langSound
+            span= lang
         .contentHeader__head--lang--subs
           ion-icon(name="logo-closed-captioning") 
           | 
           each lang in course.langSubs
-            span= course.langSubs
+            span= lang
 
     .contentHeader__body
       .contentHeader__body--card
@@ -50,91 +43,89 @@ block content
           .contentHeader__body--right--content
             .contentHeader__body--right--content--row
               ion-icon(name='videocam')
-              span= `${course.includesVideos} hours on-demand video`
+              span= ` ${course.includesVideos} hours on-demand video`
             .contentHeader__body--right--content--row
               ion-icon(name='document')
-              span= `${course.includesArticles} articles`
+              span= ` ${course.includesArticles} articles`
             .contentHeader__body--right--content--row
               ion-icon(name='cloud-download')
-              span= `${course.includesContent} downloadable resource`
+              span= ` ${course.includesContent} downloadable resource`
             .contentHeader__body--right--content--row
               ion-icon(name='infinite')
-              span Full lifetime access
+              span  Full lifetime access
             .contentHeader__body--right--content--row
               ion-icon(name='phone-portrait')
-              span Access on mobile and TV
+              span  Access on mobile and TV
             .contentHeader__body--right--content--row
               ion-icon(name='checkbox-outline')
-              span Certificate of Completion
+              span  Certificate of Completion
+      .contentHeader__body--learn
+        .contentHeader__body--learn--title What you'll learn
+        .contentHeader__body--learn--content
+          .contentHeader__body--learn--column-1
+            each row in course.learnSummary.slice(0, course.learnSummary.length / 2)
+              .contentHeader__body--learn--row
+                ion-icon(name='checkmark')
+                | 
+                span= row
+          .contentHeader__body--learn--column-2
+            each row in course.learnSummary.slice(course.learnSummary.length / 2)
+              .contentHeader__body--learn--row
+                ion-icon(name='checkmark')
+                | 
+                span= row
+
+  section.description
+    .description__title
+      h3.heading-3 Description
+    .description__content
+      each row in course.description
+        p
+          ion-icon(name='remove')
+          = row
+
+  section.requirements
+    .requirements__title
+      h3.heading-3 Requirements
+    .requirements__content
+      each row in course.requirements
+        p
+          ion-icon(name='add')
+          =row
+
+  section.teachers
+    .teachers__title
+      h3.heading-3
+    .teachers__features
+      each teacher in course.teachers
+        .teachers__features--entry
+          img.teachers__description--img(src=`/img/users/${teacher.photo}` alt=`${teacher.name}`)
+          h4.heading-4--dark.teachers__features--name= teacher.name
+          p.teachers__features--text-1= `${teacher.role[0].toUpperCase() + teacher.role.slice(1, teacher.role.length)}`
+          p.teachers__features--text-2= teacher.country || 'Somewhere on Earth'
+          p.teachers__features--text-3 &mdash;&mdash;&mdash;
+          p.teachers__features--text-4= teacher.about || '404 Description not found'
 
 
-
-              <div class="contentHeader__body--learn">
-          <div class="contentHeader__body--learn--title">
-            What you'll learn
-          </div>
-          <div class="contentHeader__body--learn--content">
-            <div class="contentHeader__body--learn--column-1">
-              <div class="contentHeader__body--learn--row">
-                <ion-icon name="checkmark"></ion-icon>
-                <span>
-                  Go from a total beginner to an advanced JavaScript
-                  developer</span
-                >
-              </div>
-              <div class="contentHeader__body--learn--row">
-                <ion-icon name="checkmark"></ion-icon>
-                <span>
-                  JavaScript and programming fundamentals: variables, boolean
-                  logic, if/else, loops, functions, arrays, etc.</span
-                >
-              </div>
-              <div class="contentHeader__body--learn--row">
-                <ion-icon name="checkmark"></ion-icon>
-                <span>
-                  Asynchronous JavaScript: The event loop, promises,
-                  async/await, AJAX and APIs</span
-                >
-              </div>
-              <div class="contentHeader__body--learn--row">
-                <ion-icon name="checkmark"></ion-icon>
-                <span>
-                  Downloadable lectures, code and design assets for all
-                  projects</span
-                >
-              </div>
-            </div>
-            <div class="contentHeader__body--learn--column-2">
-              <div class="contentHeader__body--learn--row">
-                <ion-icon name="checkmark"></ion-icon>
-                <span>
-                  A true understanding of how JavaScript works behind the
-                  scenes</span
-                >
-              </div>
-              <div class="contentHeader__body--learn--row">
-                <ion-icon name="checkmark"></ion-icon>
-                <span>
-                  Practice your new skills with coding challenges (solutions
-                  included)</span
-                >
-              </div>
-              <div class="contentHeader__body--learn--row">
-                <ion-icon name="checkmark"></ion-icon>
-                <span>
-                  Organize and structure your code using JavaScript patterns
-                  like modules</span
-                >
-              </div>
-              <div class="contentHeader__body--learn--row">
-                <ion-icon name="checkmark"></ion-icon>
-                <span>
-                  Modern JavaScript for 2020: NPM, Webpack, Babel and ES6
-                  modules</span
-                >
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </header>
+  section.feedback
+    .feedback__title
+      h3.heading-3 Reviews
+    .feedback__subtitle= `Course Rating: ${course.ratingsAverage}`
+      .feedback__subtitle--rating
+        each star in [1, 2, 3, 4, 5]
+          svg.contentHeader__head--star(class=`contentHeader__head--star--${course.ratingsAverage >= star ? 'active' : 'inactive'}`)
+            use(xlink:href="/img/icons.svg#icon-star")
+    .feedback__content
+      each review in course.reviews
+        .feedback__content--review
+          .feedback__content--review--col-1
+            img.feedback__content--review--img(src=`/img/users/${review.user.photo}` alt=`${review.user.name}`)
+            h4.feedback__content--review--name= review.user.name
+            .feedback__content--review--country= review.user.country || 'Somewhere on Earth'
+            .feedback__content--review--date= review.createdAt.toLocaleString('ru', {day: 'numeric', month: '2-digit', year: 'numeric'})
+          .feedback__content--review--col-2
+            .feedback__content--review--rating
+              each star in [1, 2, 3, 4, 5]
+                svg.contentHeader__head--star(class=`contentHeader__head--star--${review.rating >= star ? 'active' : 'inactive'}`)
+                  use(xlink:href="/img/icons.svg#icon-star")
+            p.feedback__content--review--text= review.review
