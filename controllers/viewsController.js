@@ -21,8 +21,19 @@ exports.getAllCourses = catchAsync(async (req, res, next) => {
   });
 });
 
-exports.getCourse = (req, res) => {
-  res.status(200).render('course', {
-    title: 'The Complete JS Developer'
+exports.getCourse = catchAsync(async (req, res) => {
+  // 1. Get the data for the requested course (including reviews and guides)
+  const course = await Course.findOne({ slug: req.params.slug }).populate({
+    path: 'reviews',
+    fields: 'review rating user'
   });
-};
+
+  // 2. Build template
+
+  // 3. Render template using the data from 1.
+
+  res.status(200).render('course', {
+    title: 'The Complete JS Developer',
+    course
+  });
+});

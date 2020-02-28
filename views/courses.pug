@@ -9,12 +9,12 @@ block content
       .featured__popular--title Explore our popular courses
       .featured__popular--content
 
-        each course in courses.slice(0, 3)
+        each course in courses.sort((a, b) =>  b.ratingsAverage - a.ratingsAverage).slice(0, 3)
           .card
             .card__header
               .card__picture
                 .card__picture--overlay &nbsp;
-                img.card__picture--img(src=`img/courses/${course.image}` alt=`${course.name}`)
+                img.card__picture--img(src=`/img/courses/${course.image}` alt=`${course.name}`)
             .card__details
               h3.card__details--title= course.title
               p.card__details--subtitle= course.subtitle
@@ -23,6 +23,60 @@ block content
                 span.card__footer--value= `Rating: ${course.ratingsAverage} `
                 span.card__footer--text= `(${course.ratingsQuantity} ratings)`
               p.card__footer--price
-                span.card__footer--value= `Price: $${(course.priceValue - (course.priceValue * course.priceDiscount / 100)).toFixed(2)} `
+                span.card__footer--value= `Price: €${(course.priceValue - (course.priceValue * course.priceDiscount / 100)).toFixed(2)} `
                 span.card__footer--text per person
               a.btn.btn__card(href=`/courses/${course.slug}`) Details
+  
+  section.courses
+    .courses__heading Find the right online course for you
+    .courses__filters
+      label(for="dropdown")
+        select#dropdown(name="select")
+          option(value="0") All subjects
+          option(value="1") Business & Management
+          option(value="2") IT & Computer Science
+          option(value="3") Science, Engineering & Math
+          option(value="4") Other
+      label(for="dropdown")
+        select#dropdown(name="select")
+          option(value="0") All courses
+          option(value="1") Premium courses
+          option(value="2") Free trials
+      label(for="dropdown")
+        select#dropdown(name="select")
+          option(value="0") Sort by
+          option(value="1") Popularity
+          option(value="2") Average rating
+          option(value="3") Latest published
+          option(value="4") Price - Lowest
+          option(value="5") Price - Highest
+    .courses__content
+      each course in courses.sort((a, b) =>  b.priceDiscount - a.priceDiscount)
+        .card
+          .card__header
+            .card__picture
+              .card__picture--overlay &nbsp;
+              img.card__picture--img(src=`/img/courses/${course.image}` alt=`${course.name}`)
+          .card__details
+            h3.card__details--title= course.title
+            p.card__details--subtitle= course.subtitle
+            .card__details--data
+              ion-icon(name="videocam")
+              span 28 hours on-demand video
+            .card__details--data
+              ion-icon(name="document")
+              span 11 articles to study
+            .card__details--data
+              ion-icon(name="infinite")
+              span Full lifetime access
+            .card__details--data
+              ion-icon(name="checkbox-outline")
+              span Certificate of Completion
+          .card__footer
+            p.card__footer--ratings
+              span.card__footer--value= `Rating: ${course.ratingsAverage} `
+              span.card__footer--text= `(${course.ratingsQuantity} ratings)`
+            p.card__footer--price
+              span.card__footer--value= `Price: €${(course.priceValue - (course.priceValue * course.priceDiscount / 100)).toFixed(2)} `
+              span.card__footer--text per person
+            a.btn.btn__card(href=`/course/${course.slug}`) Details

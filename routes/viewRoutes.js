@@ -7,6 +7,6 @@ router.get('/', viewsController.getOverview);
 
 router.get('/courses', viewsController.getAllCourses);
 
-router.get('/course', viewsController.getCourse);
+router.get('/course/:slug', viewsController.getCourse);
 
 module.exports = router;
