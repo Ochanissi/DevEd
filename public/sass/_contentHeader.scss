@@ -35,6 +35,8 @@
     }
 
     &--rating {
+      display: flex;
+      align-items: center;
     }
 
     &--star {
@@ -72,22 +74,20 @@
       display: grid;
       justify-content: center;
       grid-auto-flow: column;
-      // align-items: center;
-      // justify-items: center;
+      align-items: center;
+      justify-items: center;
+      align-content: center;
       grid-gap: 3rem;
 
+      ion-icon {
+        vertical-align: middle;
+        font-size: 2rem;
+      }
+
       &--sound {
-        ion-icon {
-          vertical-align: middle;
-          font-size: 2rem;
-        }
       }
 
       &--subs {
-        ion-icon {
-          vertical-align: middle;
-          font-size: 2rem;
-        }
       }
     }
   }
