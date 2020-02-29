@@ -1,9 +1,10 @@
 /* eslint-disable */
 import '@babel/polyfill';
-import { login } from './login';
+import { login, logout } from './login';
 
 // DOM ELEMENTS
 const loginForm = document.querySelector('.form');
+const logoutBtn = document.querySelector('#btn__logout');
 
 // DELEGATION
 if (loginForm) {
@@ -14,3 +15,5 @@ if (loginForm) {
     login(email, password);
   });
 }
+
+if (logoutBtn) logoutBtn.addEventListener('click', logout);
