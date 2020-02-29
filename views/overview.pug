@@ -2,7 +2,7 @@ extends base
 
 block content
   header.header
-    img.header__logo(src='./img/logo.png' alt='WebDev Logo')
+    img.header__logo(src='./img/logo.png', alt='WebDev Logo')
     h1.heading-1 Your Course to Success
     h2.heading-2.mb-sm Build skills with courses, certificates, and degrees online from world-class universities and companies
     a.btn(href='#') View courses
@@ -33,21 +33,30 @@ block content
       h3.heading-3 From the DevEd community
     .review__features
       .review__features-1
-        img.review__description--img(src='/img/users/_user-4.jpg' alt='Review Photo 1')
+        img.review__description--img(
+          src='/img/users/_user-4.jpg',
+          alt='Review Photo 1'
+        )
         h4.heading-4--dark.review__features--name Vladimir Bratislav
         p.review__features--text-1 Cybersecurity Engineer
         p.review__features--text-2 Russia
         p.review__features--text-3 &mdash;&mdash;&mdash;
         p.review__features--text-4 "I started at stage zero. With DevEd I was able to start learning online and eventually build up enough knowledge and skills to <strong>transition into a well-paying career</strong>."
       .review__features-2
-        img.review__description--img(src='/img/users/_user-3.jpg' alt='Review Photo 2')
+        img.review__description--img(
+          src='/img/users/_user-3.jpg',
+          alt='Review Photo 2'
+        )
         h4.heading-4--dark.review__features--name Kara Marko
         p.review__features--text-1 Web Developer
         p.review__features--text-2 United States
         p.review__features--text-3 &mdash;&mdash;&mdash;
         p.review__features--text-4 "<strong>Recruiters saw my Professional Certificate</strong> on my LinkedIn profile. During the interview, they told me <strong>they were impressed with my skills</strong>. I got the job!"
       .review__features-3
-        img.review__description--img(src='/img/users/_user-2.jpg' alt='Review Photo 3')
+        img.review__description--img(
+          src='/img/users/_user-2.jpg',
+          alt='Review Photo 3'
+        )
         h4.heading-4--dark.review__features--name Jay Morgan
         p.review__features--text-1 DevOps Engineer
         p.review__features--text-2 United Kingdom
@@ -63,15 +72,42 @@ block content
 
   section.business
     .business__photo
-      img.business__photo--1(src='./img/business/business__photo--1.png' alt='Business Photo 1')
-      img.business__photo--2(src='./img/business/business__photo--2.png' alt='Business Photo 2')
-      img.business__photo--3(src='./img/business/business__photo--3.png' alt='Business Photo 3')
-      img.business__photo--4(src='./img/business/business__photo--4.png' alt='Business Photo 4')
-      img.business__photo--5(src='./img/business/business__photo--5.png' alt='Business Photo 5')
-      img.business__photo--6(src='./img/business/business__photo--6.png' alt='Business Photo 6')
-      img.business__photo--7(src='./img/business/business__photo--7.png' alt='Business Photo 7')
-      img.business__photo--8(src='./img/business/business__photo--8.png' alt='Business Photo 8')
-      img.business__photo--9(src='./img/business/business__photo--9.png' alt='Business Photo 9')
+      img.business__photo--1(
+        src='./img/business/business__photo--1.png',
+        alt='Business Photo 1'
+      )
+      img.business__photo--2(
+        src='./img/business/business__photo--2.png',
+        alt='Business Photo 2'
+      )
+      img.business__photo--3(
+        src='./img/business/business__photo--3.png',
+        alt='Business Photo 3'
+      )
+      img.business__photo--4(
+        src='./img/business/business__photo--4.png',
+        alt='Business Photo 4'
+      )
+      img.business__photo--5(
+        src='./img/business/business__photo--5.png',
+        alt='Business Photo 5'
+      )
+      img.business__photo--6(
+        src='./img/business/business__photo--6.png',
+        alt='Business Photo 6'
+      )
+      img.business__photo--7(
+        src='./img/business/business__photo--7.png',
+        alt='Business Photo 7'
+      )
+      img.business__photo--8(
+        src='./img/business/business__photo--8.png',
+        alt='Business Photo 8'
+      )
+      img.business__photo--9(
+        src='./img/business/business__photo--9.png',
+        alt='Business Photo 9'
+      )
     .business__content
       p.business__content__title DevEd for Business
       p.business__content__text We’ve got the solution: world-class training and development programs developed by top universities and companies. All on DevEd for Business.
@@ -85,9 +121,18 @@ block content
       .contact__content--links
         a.btn.btn__contact(href='mailto:mirelalex2094@gmail.com') 
           ion-icon(name='mail')
-        a.btn.btn__contact(href='https://github.com/Ochanissi/' target='_blank')
+        a.btn.btn__contact(
+          href='https://github.com/Ochanissi/',
+          target='_blank'
+        )
           ion-icon(name='logo-github')
-        a.btn.btn__contact(href='https://github.com/Ochanissi/' target='_blank')
+        a.btn.btn__contact(
+          href='https://github.com/Ochanissi/',
+          target='_blank'
+        )
           ion-icon(name='logo-codepen')
-        a.btn.btn__contact(href='https://github.com/Ochanissi/' target='_blank')
+        a.btn.btn__contact(
+          href='https://github.com/Ochanissi/',
+          target='_blank'
+        )
           ion-icon(name='logo-linkedin')

@@ -26,7 +26,7 @@
         $color-secondary,
         $color-secondary-dark
       );
-      opacity: 0.75;
+      opacity: 0.5;
     }
 
     &--img {
@@ -70,7 +70,7 @@
 
   &__footer {
     background-color: #f7f7f7;
-    padding: 2rem 2.5rem;
+    padding: 2rem 2.25rem;
     border-top: 1px solid #f1f1f1;
     font-size: 1.4rem;
     display: grid;

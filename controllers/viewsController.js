@@ -33,7 +33,13 @@ exports.getCourse = catchAsync(async (req, res) => {
   // 3. Render template using the data from 1.
 
   res.status(200).render('course', {
-    title: 'The Complete JS Developer',
+    title: course.title,
     course
+  });
+});
+
+exports.getLoginForm = catchAsync(async (req, res) => {
+  res.status(200).render('login', {
+    title: 'Log into your account'
   });
 });

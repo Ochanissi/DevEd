@@ -18,15 +18,13 @@ block content
         .contentHeader__head--about--updated= `Last updated ${course.lastUpdate.toLocaleString('ru', {day: 'numeric', month: '2-digit', year: 'numeric'})}`
       .contentHeader__head--lang
         .contentHeader__head--lang--sound
-          ion-icon(name="text")
+          ion-icon(name='volume-high-outline')
           | 
-          each lang in course.langSound
-            span= lang
+          span= course.langSound.join(', ')
         .contentHeader__head--lang--subs
-          ion-icon(name="logo-closed-captioning") 
+          ion-icon(name='logo-closed-captioning') 
           | 
-          each lang in course.langSubs
-            span= lang
+          span= course.langSubs.join(', ')
 
     .contentHeader__body
       .contentHeader__body--card

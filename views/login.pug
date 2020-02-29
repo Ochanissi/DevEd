@@ -1,0 +1,29 @@
+extends base
+
+block content
+  section.login
+    .login__form
+      h2.heading-2--form.mb-lg Log into your account
+      form.form
+        .form__group
+          label.form__label(for='email') Email address
+          input#email.form__input(
+            ,
+            type='email',
+            placeholder='you@example.com',
+            required=''
+          )
+        .form__group.ma-bt-md
+          label.form__label(for='password') Password
+          input#password.form__input(
+            ,
+            type='password',
+            placeholder='••••••••',
+            required='',
+            minlength='8'
+          )
+        .login__form--btns
+          .form__group
+            button.btn.btn__form--primary Log in
+          .form_group
+            button.btn.btn__form--secondary Sign up
