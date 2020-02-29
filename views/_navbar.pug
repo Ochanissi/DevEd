@@ -2,7 +2,7 @@ nav.navbar
   input#menu-toggle(type='checkbox')
   label.menu-button-container(for='menu-toggle')
     .menu-button
-  
+
   ul.navbar__main
     li.navbar__main--item
       a.navbar__main--link(href='/') Home
@@ -10,7 +10,7 @@ nav.navbar
       a.navbar__main--link(href='/courses') Courses
     li.navbar__main--item.navbar__main--home
       a(href='#header')
-        img.navbar__main--logo(src='/img/logo.png' alt='WebDev Logo')
+        img.navbar__main--logo(src='/img/logo.png', alt='WebDev Logo')
     li.navbar__main--item
       a.navbar__main--link(href='#') About
     li.navbar__main--item
@@ -18,10 +18,9 @@ nav.navbar
 
   ul.navbar__secondary.navbar__secondary--in
     li.navbar__main--item
-      a.btn.btn__nav--primary(href='#') Log in
+      a.btn.btn__nav--primary(href='/login') Log in
     li.navbar__main--item
       a.btn.btn__nav--secondary(href='#') Sign up
-
 
   //- ul.navbar__secondary.navbar__secondary--out
   //-   li.navbar__main--item
