@@ -19,10 +19,10 @@ block content
               p.card__details--subtitle= course.subtitle
             .card__footer
               p.card__footer--ratings
-                span.card__footer--value= ;`Rating: ${course.ratingsAverage} `
-                span.card__footer--text= ;`(${course.ratingsQuantity} ratings)`
+                span.card__footer--value= `Rating: ${course.ratingsAverage} `
+                span.card__footer--text= `(${course.ratingsQuantity} ratings)`
               p.card__footer--price
-                span.card__footer--value= ;`Price: €${(course.priceValue - (course.priceValue * course.priceDiscount) / 100).toFixed(2)} `
+                span.card__footer--value= `Price: €${(course.priceValue - (course.priceValue * course.priceDiscount) / 100).toFixed(2)} `
                 span.card__footer--text per person
               a.btn.btn__card(href=`/course/${course.slug}`) Details
 
@@ -73,9 +73,9 @@ block content
               span Certificate of Completion
           .card__footer
             p.card__footer--ratings
-              span.card__footer--value= ;`Rating: ${course.ratingsAverage} `
-              span.card__footer--text= ;`(${course.ratingsQuantity} ratings)`
+              span.card__footer--value= `Rating: ${course.ratingsAverage} `
+              span.card__footer--text= `(${course.ratingsQuantity} ratings)`
             p.card__footer--price
-              span.card__footer--value= ;`Price: €${(course.priceValue - (course.priceValue * course.priceDiscount) / 100).toFixed(2)} `
+              span.card__footer--value= `Price: €${(course.priceValue - (course.priceValue * course.priceDiscount) / 100).toFixed(2)} `
               span.card__footer--text per person
             a.btn.btn__card(href=`/course/${course.slug}`) Details
