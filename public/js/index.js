@@ -1,9 +1,9 @@
 /* eslint-disable */
-import '@babel/polyfill';
+// import '@babel/polyfill';
 import { login, logout } from './login';
 
 // DOM ELEMENTS
-const loginForm = document.querySelector('.form');
+const loginForm = document.querySelector('.form__login');
 const logoutBtn = document.querySelector('#btn__logout');
 
 // DELEGATION
