@@ -18,7 +18,10 @@ block content
       .account__block--content
         .account__block--content--container
           h2.heading-2--form.mb-lg Log into your account
-          form.form.form-user-data(action='/submit-user-data' method='POST')
+          //- WITHOUT API
+          //- form.form.form-user-data(action='/submit-user-data' method='POST')
+          //- WITH API
+          form.form.form-user-data
             .form__group
               label.form__label(for='name') Full Name
               input.form__input#name(type='text' value=`${user.name}` required='' name='name')
@@ -47,4 +50,4 @@ block content
               label.form__label(for='password-confirm') Confirm password
               input.form__input#password-confirm(type='password' placeholder='••••••••' required='' minlength='8')
             .form__group
-              button.btn.form__group--btn Save password
+              button.btn.form__group--btn.btn--save-password Save password
