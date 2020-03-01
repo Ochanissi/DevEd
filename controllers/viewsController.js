@@ -47,3 +47,13 @@ exports.getLoginForm = catchAsync(async (req, res) => {
     title: 'Log into your account'
   });
 });
+
+exports.getAccount = (req, res) => {
+  res.status(200).render('account', {
+    title: 'Your account'
+  });
+};
+
+exports.updateUserData = (req, res, next) => {
+  console.log('UPDATING USER ' + req.body);
+};
