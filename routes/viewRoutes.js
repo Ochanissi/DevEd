@@ -1,12 +1,18 @@
 const express = require('express');
 const viewsController = require('./../controllers/viewsController');
 const authController = require('../controllers/authController');
+const mycoursesController = require('../controllers/mycoursesController');
 
 const router = express.Router({ mergeParams: true });
 
 // router.use(authController.isLoggedIn);
 
-router.get('/', authController.isLoggedIn, viewsController.getOverview);
+router.get(
+  '/',
+  mycoursesController.createBuyCheckout,
+  authController.isLoggedIn,
+  viewsController.getOverview
+);
 router.get(
   '/courses',
   authController.isLoggedIn,
