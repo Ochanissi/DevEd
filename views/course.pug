@@ -1,6 +1,8 @@
 extends base
 
 block content
+  script(src='https://js.stripe.com/v3/')
+
   header.contentHeader
     .contentHeader__head
       h1.heading-1.mb-sm= course.title
@@ -34,7 +36,11 @@ block content
             span.contentHeader__body--left--price--value= `€${(course.priceValue - (course.priceValue * course.priceDiscount / 100)).toFixed(2)} `
             span.contentHeader__body--left--price--discount= `€${course.priceValue.toFixed(2)}`
             span.contentHeader__body--left--price--percentage= ` (${course.priceDiscount}% off)`
-          a.btn.btn__card(href='#') Buy now
+
+          if user
+            a.btn.btn__card#buy-course(data-course-id=`${course.id}`) Buy now
+          else
+            a.btn.btn__card(href='/login') Log in to buy
         .contentHeader__body--right
           .contentHeader__body--right--title
             span This course includes

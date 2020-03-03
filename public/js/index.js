@@ -2,12 +2,14 @@
 // import '@babel/polyfill';
 import { login, logout } from './login';
 import { updateSettings } from './updateSettings';
+import { buyCourse } from './stripe';
 
 // DOM ELEMENTS
 const loginForm = document.querySelector('.form__login');
-const logoutBtn = document.querySelector('#btn__logout');
+const logoutBtn = document.getElementById('btn__logout');
 const userDataForm = document.querySelector('.form-user-data');
 const userPasswordForm = document.querySelector('.form-user-password');
+const buyBtn = document.getElementById('buy-course');
 
 // DELEGATION
 if (loginForm) {
@@ -50,5 +52,13 @@ if (userPasswordForm) {
     document.getElementById('password-current').value = '';
     document.getElementById('password').value = '';
     document.getElementById('password-confirm').value = '';
+  });
+}
+
+if (buyBtn) {
+  buyBtn.addEventListener('click', e => {
+    e.target.textContent = 'Processing...';
+    const { courseId } = e.target.dataset;
+    buyCourse(courseId);
   });
 }
