@@ -28,7 +28,7 @@ const mycoursesSchema = new mongoose.Schema({
 mycoursesSchema.pre(/^find/, function(next) {
   this.populate('user').populate({
     path: 'course',
-    select: 'name'
+    select: 'title'
   });
 });
 
