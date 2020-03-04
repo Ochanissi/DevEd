@@ -63,3 +63,9 @@ exports.createBuyCheckout = catchAsync(async (req, res, next) => {
 
   res.redirect(req.originalUrl.split('?')[0]);
 });
+
+exports.createMyCourse = factory.createOne(MyCourses);
+exports.getMyCourse = factory.getOne(MyCourses);
+exports.getAllMyCourse = factory.getAll(MyCourses);
+exports.updateMyCourse = factory.updateOne(MyCourses);
+exports.deleteMyCourse = factory.deleteOne(MyCourses);

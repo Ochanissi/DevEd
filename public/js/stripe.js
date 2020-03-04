@@ -7,10 +7,11 @@ export const buyCourse = async courseId => {
   try {
     // 1. Get session from API
     const session = await axios(
-      `http://127.0.0.1:3000/api/v1/my-courses/checkout-session/${courseId}`
+      // `http://127.0.0.1:3000/api/v1/my-courses/checkout-session/${courseId}`
+      `/api/v1/my-courses/checkout-session/${courseId}`
     );
 
-    console.log(session);
+    // console.log(session);
     // 2. Create checkout forn + charge credit card
     await stripe.redirectToCheckout({
       sessionId: session.data.session.id

@@ -190,21 +190,21 @@ courseSchema.pre(/^find/, function(next) {
   next();
 });
 
-courseSchema.post(/^find/, function(docs, next) {
-  console.log(`Query took ${Date.now() - this.start} milliseconds!`);
-  // console.log(docs);
+// courseSchema.post(/^find/, function(docs, next) {
+//   console.log(`Query took ${Date.now() - this.start} milliseconds!`);
+//   // console.log(docs);
 
-  next();
-});
+//   next();
+// });
 
 // AGGREGATION MIDDLEWARE
-courseSchema.pre('aggregate', function(next) {
-  this.pipeline().unshift({ $match: { secretCourse: { $ne: true } } });
+// courseSchema.pre('aggregate', function(next) {
+//   this.pipeline().unshift({ $match: { secretCourse: { $ne: true } } });
 
-  console.log(this.pipeline());
+//   console.log(this.pipeline());
 
-  next();
-});
+//   next();
+// });
 
 const Course = mongoose.model('Course', courseSchema);
 
