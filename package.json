@@ -2,7 +2,7 @@
   "name": "deved",
   "version": "1.0.0",
   "description": "DevEd Project",
-  "main": "index.js",
+  "main": "app.js",
   "scripts": {
     "start": "node server.js",
     "start:dev": "nodemon server.js",
@@ -80,6 +80,7 @@
     "xss-clean": "^0.1.1"
   },
   "engines": {
-    "node": "^12"
+    "node": "^10",
+    "npm": "^13"
   }
 }
