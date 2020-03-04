@@ -30,6 +30,8 @@ mycoursesSchema.pre(/^find/, function(next) {
     path: 'course',
     select: 'title'
   });
+
+  next();
 });
 
 const MyCourses = mongoose.model('MyCourses', mycoursesSchema);
