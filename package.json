@@ -4,7 +4,8 @@
   "description": "DevEd Project",
   "main": "index.js",
   "scripts": {
-    "start": "nodemon server.js",
+    "start": "node server.js",
+    "start:dev": "nodemon server.js",
     "start:prod": "set NODE_ENV=production&&nodemon server.js",
     "debug": "ndb server.js",
     "watch:sass": "node-sass sass/main.scss css/style.css -w",
