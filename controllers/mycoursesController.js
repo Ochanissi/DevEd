@@ -15,7 +15,11 @@ exports.getCheckoutSession = catchAsync(async (req, res, next) => {
     payment_method_types: ['card'],
     success_url: `${req.protocol}://${req.get('host')}/?course=${
       req.params.courseId
-    }$user=${req.user.id}&price=${course.priceValue}`,
+    }&user=${req.user.id}&price=${(
+      course.priceValue -
+      (course.priceValue * course.priceDiscount) / 100
+    ).toFixed(2)}`,
+    // success_url: `${req.protocol}://${req.get('host')}/my-courses`,
     cancel_url: `${req.protocol}://${req.get('host')}/course/${course.slug}`,
     customer_email: req.user.email,
     client_reference_id: req.params.courseId,

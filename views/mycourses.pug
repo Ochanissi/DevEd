@@ -1,0 +1,37 @@
+extends base
+
+block content
+  section.mycourses
+    h3.heading-3 My Courses
+    .mycourses__content
+      each course in courses
+        .card
+          .card__header
+            .card__picture
+              .card__picture--overlay &nbsp;
+              img.card__picture--img(src=`/img/courses/${course.image}`, alt=`${course.name}`)
+          .card__details
+            h3.card__details--title= course.title
+            p.card__details--subtitle= course.subtitle
+            .card__details--data
+              ion-icon(name='videocam')
+              span 28 hours on-demand video
+            .card__details--data
+              ion-icon(name='document')
+              span 11 articles to study
+            .card__details--data
+              ion-icon(name='infinite')
+              span Full lifetime access
+            .card__details--data
+              ion-icon(name='checkbox-outline')
+              span Certificate of Completion
+          .card__footer
+            p.card__footer--ratings
+              span.card__footer--value= `Rating: ${course.ratingsAverage} `
+              span.card__footer--text= `(${course.ratingsQuantity} ratings)`
+            p.card__footer--price
+              span.card__footer--value= `Price: €${(course.priceValue - (course.priceValue * course.priceDiscount) / 100).toFixed(2)} `
+              span.card__footer--text per person
+            a.btn.btn__card(href=`/course/${course.slug}`) Details
+
+

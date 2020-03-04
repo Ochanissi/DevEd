@@ -25,6 +25,7 @@ router.get(
 );
 router.get('/login', authController.isLoggedIn, viewsController.getLoginForm);
 router.get('/me', authController.protect, viewsController.getAccount);
+router.get('/my-courses', authController.protect, viewsController.getMyCourses);
 
 router.post(
   '/submit-user-data',

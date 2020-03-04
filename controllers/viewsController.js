@@ -2,6 +2,7 @@ const Course = require('../models/courseModel');
 const User = require('../models/userModel');
 const catchAsync = require('../utils/catchAsync');
 const AppError = require('../utils/appError');
+const MyCourses = require('../models/mycoursesModel');
 
 exports.getOverview = (req, res) => {
   res.status(200).render('overview', {
@@ -54,6 +55,20 @@ exports.getAccount = (req, res) => {
     title: 'Your account'
   });
 };
+
+exports.getMyCourses = catchAsync(async (req, res, next) => {
+  // 1. Find all bought courses
+  const mycourses = await MyCourses.find({ user: req.user.id });
+
+  // 2. Find courses with the returned IDs
+  const courseIDs = mycourses.map(el => el.course);
+  const courses = await Course.find({ _id: { $in: courseIDs } });
+
+  res.status(200).render('mycourses', {
+    title: 'My Courses',
+    courses
+  });
+});
 
 exports.updateUserData = catchAsync(async (req, res, next) => {
   // console.log('UPDATING USER ' + req.body);
