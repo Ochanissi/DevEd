@@ -12,18 +12,16 @@ const signToken = id => {
   });
 };
 
-const createSendToken = (user, statusCode, res) => {
+const createSendToken = (user, statusCode, req, res) => {
   const token = signToken(user._id);
-  const cookieOptions = {
+
+  res.cookie('jwt', token, {
     expires: new Date(
       Date.now() + process.env.JWT_COOKIE_EXPIRES_IN * 24 * 60 * 60 * 1000
     ),
-    httpOnly: true
-  };
-
-  if (process.env.NODE_ENV === 'production') cookieOptions.secure = true;
-
-  res.cookie('jwt', token, cookieOptions);
+    httpOnly: true,
+    secure: req.secure || req.headers('x-forwarded-proto') === 'https'
+  });
 
   // Remove the password from output
   user.password = undefined;
@@ -71,7 +69,7 @@ exports.login = catchAsync(async (req, res, next) => {
   // console.log(user);
 
   // 3. If everything is ok, send token to client
-  createSendToken(user, 200, res);
+  createSendToken(user, 200, req, res);
 });
 
 exports.protect = catchAsync(async (req, res, next) => {
@@ -264,5 +262,5 @@ exports.updatePassword = catchAsync(async (req, res, next) => {
   // User.findByIdAndUpdate will NOT work as intended!
 
   // 4. Log user in, send JWT
-  createSendToken(user, 200, res);
+  createSendToken(user, 200, req, res);
 });
