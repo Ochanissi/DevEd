@@ -11,7 +11,12 @@
   justify-items: center;
   grid-gap: 3rem;
 
-  padding: 0 15rem;
+  // padding: 0 15rem;
+  // max-width: 100rem;
+  .heading-1,
+  .heading-2 {
+    max-width: 80rem;
+  }
 
   text-align: center;
 
@@ -26,7 +31,15 @@
   // position: relative;
 
   &__logo {
-    height: 30rem;
+    max-height: 30rem;
     width: auto;
+
+    @media only screen and (max-width: $bp-medium) {
+      max-height: 25rem;
+    }
+
+    @media only screen and (max-width: $bp-smallest) {
+      max-height: 15rem;
+    }
   }
 }
