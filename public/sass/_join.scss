@@ -24,17 +24,33 @@
     font-size: 4rem;
     max-width: 90rem;
     text-align: center;
+
+    @media only screen and (max-width: $bp-smallest) {
+      font-size: 3rem;
+    }
   }
 
   &__text {
     font-size: 2rem;
+    text-align: center;
   }
 
   &__btns {
     display: flex;
+    justify-content: center;
+    align-items: center;
+
+    @media only screen and (max-width: $bp-smallest) {
+      flex-direction: column;
+    }
 
     &--1 {
       margin-right: 5rem;
+
+      @media only screen and (max-width: $bp-smallest) {
+        margin-right: 0;
+        margin-bottom: 3rem;
+      }
     }
 
     &--2 {
