@@ -9,6 +9,10 @@
   color: $color-grey-dark-3;
   line-height: 1;
 
+  @media only screen and (max-width: $bp-smallest) {
+    font-size: 4.5rem;
+  }
+
   &--name {
     @extend .heading-1;
     color: $color-secondary;
@@ -24,6 +28,10 @@
   font-size: 3rem;
   color: $color-grey-dark-2;
   line-height: 1;
+
+  @media only screen and (max-width: $bp-smallest) {
+    font-size: 2.5rem;
+  }
 
   &--light {
     @extend .heading-2;
@@ -97,6 +105,7 @@
   color: $color-white;
   font-family: $font-display;
   font-weight: 700;
+  text-align: center;
   text-transform: uppercase;
   text-decoration: none;
   font-size: 1.5rem;
