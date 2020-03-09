@@ -1,0 +1,24 @@
+extends base
+
+block content
+  section.signup
+    .signup__form
+      h2.heading-2--form.mb-lg Sign up to DevEd
+      form.form
+        .form__group
+          label.form__label(for='name') Full name
+            input.form__input#name(type='text' placeholder='John Doe' required='' minlength='5')
+        .form__group
+          label.form__label(for='email') Email address
+            input.form__input#email(type='email' placeholder='you@example.com' required='')
+        .form__group
+          label.form__label(for='password') Password
+            input.form__input#password(type='password' placeholder='••••••••' required='' minlength='8')
+        .form__group
+          label.form__label(for='passwordConfirm') Confirm Password
+            input.form__input#passwordConfirm(type='password' placeholder='••••••••' required='' minlength='8')
+      .login__form--btns
+        .form__group
+          button.btn.btn__form--primary Sign up
+        .form__group
+          button.btn.btn__form--secondary Log in
