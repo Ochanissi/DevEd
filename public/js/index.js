@@ -1,11 +1,13 @@
 /* eslint-disable */
 // import '@babel/polyfill';
 import { login, logout } from './login';
+import { signup } from './signup';
 import { updateSettings } from './updateSettings';
 import { buyCourse } from './stripe';
 
 // DOM ELEMENTS
 const loginForm = document.querySelector('.form__login');
+const signupForm = document.querySelector('.form__signup');
 const logoutBtn = document.getElementById('btn__logout');
 const userDataForm = document.querySelector('.form-user-data');
 const userPasswordForm = document.querySelector('.form-user-password');
@@ -21,6 +23,17 @@ if (loginForm) {
   });
 }
 
+if (signupForm) {
+  signupForm.addEventListener('submit', e => {
+    e.preventDefault();
+    const name = document.getElementById('name').value;
+    const email = document.getElementById('email').value;
+    const password = document.getElementById('password').value;
+    const passwordConfirm = document.getElementById('password-confirm').value;
+    signup(name, email, password, passwordConfirm);
+  });
+}
+
 if (logoutBtn) logoutBtn.addEventListener('click', logout);
 
 if (userDataForm) {
@@ -30,7 +43,6 @@ if (userDataForm) {
     form.append('name', document.getElementById('name').value);
     form.append('email', document.getElementById('email').value);
     form.append('photo', document.getElementById('photo').files[0]);
-    // console.log(form);
     updateSettings(form, 'data');
   });
 }
