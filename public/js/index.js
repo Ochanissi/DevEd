@@ -42,6 +42,9 @@ if (userDataForm) {
     const form = new FormData();
     form.append('name', document.getElementById('name').value);
     form.append('email', document.getElementById('email').value);
+    form.append('occupation', document.getElementById('occupation').value);
+    form.append('country', document.getElementById('country').value);
+    form.append('about', document.getElementById('about').value);
     form.append('photo', document.getElementById('photo').files[0]);
     updateSettings(form, 'data');
   });
