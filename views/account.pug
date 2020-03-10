@@ -28,6 +28,15 @@ block content
             .form__group
               label.form__label(for='email') Email address
               input.form__input#email(type='email' value=`${user.email}` required='' name='email')
+            .form__group
+              label.form__label(for='occupation') Occupation
+              input.form__input#occupation(type='text' value=`${user.occupation}` required='' name='occupation')
+            .form__group
+              label.form__label(for='country') Country
+              input.form__input#country(type='country' value=`${user.country}` required='' name='country')
+            .form__group
+              label.form__label(for='about') About yourself
+              input.form__input#about(type='about' value=`${user.about}` required='' name='about')
             .form__group.form__photo-upload
               img.form__user-photo(src=`/img/users/${user.photo}` alt=`Photo of ${user.name}`)
               input.form__upload#photo(type='file' accept='image/*' name='photo')
