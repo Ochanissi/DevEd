@@ -4,7 +4,7 @@ block content
   section.signup
     .signup__form
       h2.heading-2--form.mb-lg Sign up to DevEd
-      form.form
+      form.form__signup
         .form__group
           label.form__label(for='name') Full name
             input.form__input#name(type='text' placeholder='John Doe' required='' minlength='5')
@@ -16,9 +16,9 @@ block content
             input.form__input#password(type='password' placeholder='••••••••' required='' minlength='8')
         .form__group
           label.form__label(for='passwordConfirm') Confirm Password
-            input.form__input#passwordConfirm(type='password' placeholder='••••••••' required='' minlength='8')
-      .login__form--btns
-        .form__group
-          button.btn.btn__form--primary Sign up
-        .form__group
-          button.btn.btn__form--secondary Log in
+            input.form__input#password-confirm(type='password' placeholder='••••••••' required='' minlength='8')
+        .login__form--btns
+          .form__group
+            button.btn.btn__form--primary Sign up
+          .form__group
+            button.btn.btn__form--secondary Log in
