@@ -97,13 +97,13 @@ block content
 
   section.teachers
     .teachers__title
-      h3.heading-3
+      h3.heading-3 Teachers
     .teachers__features
       each teacher in course.teachers
         .teachers__features--entry
           img.teachers__description--img(src=`/img/users/${teacher.photo}` alt=`${teacher.name}`)
           h4.heading-4--dark.teachers__features--name= teacher.name
-          p.teachers__features--text-1= `${teacher.role[0].toUpperCase() + teacher.role.slice(1, teacher.role.length)}`
+          p.teachers__features--text-1= teacher.occupation || `${teacher.role[0].toUpperCase() + teacher.role.slice(1, teacher.role.length)}`
           p.teachers__features--text-2= teacher.country || 'Somewhere on Earth'
           p.teachers__features--text-3 &mdash;&mdash;&mdash;
           p.teachers__features--text-4= teacher.about || '404 Description not found'
@@ -123,7 +123,8 @@ block content
           .feedback__content--review--col-1
             img.feedback__content--review--img(src=`/img/users/${review.user.photo}` alt=`${review.user.name}`)
             h4.feedback__content--review--name= review.user.name
-            .feedback__content--review--country= review.user.country || 'Somewhere on Earth'
+            .feedback__content--review--occupation= review.user.occupation
+            .feedback__content--review--country= review.user.country
             .feedback__content--review--date= review.createdAt.toLocaleString('ru', {day: 'numeric', month: '2-digit', year: 'numeric'})
           .feedback__content--review--col-2
             .feedback__content--review--rating

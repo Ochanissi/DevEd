@@ -44,7 +44,7 @@
   {
     "_id": "5c88fa8cf4afda39709c2951",
     "title": "Build Responsive Real World Websites",
-    "subtitle": "The easiest way to learn modern web design, HTML5 and CSS3 step-by-step from scratch.",
+    "subtitle": "The easiest way to learn modern web design, HTML5 and CSS3.",
     "category": "itcs",
     "ratingsAverage": 4.6,
     "ratingsQuantity": 123,
@@ -90,7 +90,7 @@
   },
   {
     "_id": "5c88fa8cf4afda39709c295a",
-    "title": "Advanced CSS and Sass",
+    "title": "Advanced CSS and Sass, Animations and more",
     "subtitle": "The most advanced and modern CSS course on the internet!",
     "category": "itcs",
     "ratingsAverage": 4.8,
@@ -140,7 +140,7 @@
   },
   {
     "_id": "5c88fa8cf4afda39709c2961",
-    "title": "Become a Product Manager",
+    "title": "Become a Product Manager in 2020",
     "subtitle": "The most complete course available on Product Management.",
     "category": "bm",
     "ratingsAverage": 4.5,
@@ -183,7 +183,7 @@
   {
     "_id": "5c88fa8cf4afda39709c295d",
     "title": "The Complete Financial Analyst Course 2020",
-    "subtitle": "Excel, Accounting, Financial Statement Analysis, Business Analysis, Financial Math, PowerPoint: Everything is Included!",
+    "subtitle": "Excel, Accounting, Financial Statement Analysis, Business Analysis",
     "category": "bm",
     "ratingsAverage": 4.6,
     "ratingsQuantity": 213,
@@ -225,7 +225,7 @@
   {
     "_id": "5c88fa8cf4afda39709c2966",
     "title": "The Business Intelligence Analyst Course 2020",
-    "subtitle": "The skills you need to become a BI Analyst - Statistics, Database theory, SQL, Tableau – Everything is included",
+    "subtitle": "The skills you need to become a BI Analyst - Statistics, SQL",
     "category": "bm",
     "ratingsAverage": 4.5,
     "ratingsQuantity": 123,
@@ -271,7 +271,7 @@
   },
   {
     "_id": "5c88fa8cf4afda39709c2970",
-    "title": "Master Discrete Mathematics",
+    "title": "Master Discrete Mathematics in 2020",
     "subtitle": "Learn and master all of Discrete Math - Logic, Set Theory Etc",
     "category": "engi",
     "ratingsAverage": 4.4,
@@ -311,7 +311,7 @@
   {
     "_id": "5c88fa8cf4afda39709c2974",
     "title": "Electricity & electronics - Robotics",
-    "subtitle": "Open career opportunities and have fun learning electronics focused on building robots/automation!",
+    "subtitle": "Open career opportunities and have fun learning electronics",
     "category": "engi",
     "ratingsAverage": 4.6,
     "ratingsQuantity": 124,
@@ -350,7 +350,7 @@
   },
   {
     "_id": "5c88fa8cf4afda39709c296e",
-    "title": "Elevate Your Tennis Game",
+    "title": "Elevate Your Tennis Game in 2020",
     "subtitle": "Level up your tennis game with the next best thing to a private lesson.",
     "category": "other",
     "ratingsAverage": 4.6,

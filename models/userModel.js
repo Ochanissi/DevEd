@@ -24,6 +24,31 @@ const userSchema = new mongoose.Schema({
     enum: ['user', 'guide', 'tour-guide', 'admin'],
     default: 'user'
   },
+  occupation: {
+    type: String,
+    default: 'Newcomer',
+    trim: true,
+    maxlength: [
+      30,
+      'An occupation must have less or equal than 30 characters!'
+    ],
+    minlength: [3, 'An occupation must have more or equal than 3 characters!']
+  },
+  country: {
+    type: String,
+    default: 'Somewhere on Earth',
+    trim: true
+  },
+  about: {
+    type: String,
+    default: '404 Description not found',
+    trim: true,
+    maxlength: [
+      200,
+      'An occupation must have less or equal than 200 characters!'
+    ],
+    minlength: [5, 'An occupation must have more or equal than 5 characters!']
+  },
   password: {
     type: String,
     required: [true, 'Please provide a password!'],
