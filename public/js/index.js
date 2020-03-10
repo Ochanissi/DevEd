@@ -24,7 +24,6 @@ if (loginForm) {
 }
 
 if (signupForm) {
-  console.log('lel');
   signupForm.addEventListener('submit', e => {
     e.preventDefault();
     const name = document.getElementById('name').value;
@@ -32,7 +31,6 @@ if (signupForm) {
     const password = document.getElementById('password').value;
     const passwordConfirm = document.getElementById('password-confirm').value;
     signup(name, email, password, passwordConfirm);
-    console.log(name, email, password, passwordConfirm);
   });
 }
 
@@ -45,7 +43,6 @@ if (userDataForm) {
     form.append('name', document.getElementById('name').value);
     form.append('email', document.getElementById('email').value);
     form.append('photo', document.getElementById('photo').files[0]);
-    // console.log(form);
     updateSettings(form, 'data');
   });
 }

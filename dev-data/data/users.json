@@ -1,5 +1,14 @@
 [
   {
+    "_id": "5e5e934556f8ac532c2d3b56",
+    "name": "Mirel Alex",
+    "email": "mirelalex2094@gmail.com",
+    "role": "admin",
+    "active": true,
+    "photo": "user-5e5e934556f8ac532c2d3b56-1583344972551.jpeg",
+    "password": "$2a$12$E5YCt04mgHVzwcTEPwW1audmPvX8v5vhGLy3pekn9Y7C5htP6PzpC"
+  },
+  {
     "_id": "5c8a1d5b0190b214360dc057",
     "name": "Mirel Bitoi",
     "email": "admin@webed.com",
