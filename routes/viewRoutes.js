@@ -7,9 +7,11 @@ const router = express.Router({ mergeParams: true });
 
 // router.use(authController.isLoggedIn);
 
+router.use(viewsController.alerts);
+
 router.get(
   '/',
-  mycoursesController.createBuyCheckout,
+  // mycoursesController.createBuyCheckout,
   authController.isLoggedIn,
   viewsController.getOverview
 );

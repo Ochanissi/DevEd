@@ -4,6 +4,15 @@ const catchAsync = require('../utils/catchAsync');
 const AppError = require('../utils/appError');
 const MyCourses = require('../models/mycoursesModel');
 
+exports.alerts = (req, res, next) => {
+  const { alert } = req.query;
+  if (alert === 'booking') {
+    res.locals.alert =
+      'Your purchase was successful! Please check your email for confirmation!';
+  }
+  next();
+};
+
 exports.getOverview = (req, res) => {
   res.status(200).render('overview', {
     title: 'Online Courses'
