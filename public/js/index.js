@@ -4,6 +4,7 @@ import { login, logout } from './login';
 import { signup } from './signup';
 import { updateSettings } from './updateSettings';
 import { buyCourse } from './stripe';
+import { showAlert } from './alerts';
 
 // DOM ELEMENTS
 const loginForm = document.querySelector('.form__login');
@@ -76,4 +77,9 @@ if (buyBtn) {
     const { courseId } = e.target.dataset;
     buyCourse(courseId);
   });
+}
+
+const alertMessage = document.querySelector('body').dataset.alert;
+if (alert) {
+  showAlert('success', alertMessage, 20);
 }

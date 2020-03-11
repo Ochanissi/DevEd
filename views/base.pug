@@ -11,7 +11,7 @@ html
     script(nomodule='' src='https://unpkg.com/ionicons@5.0.0/dist/ionicons/ionicons.js')
     title DevEd | #{title}
 
-  body.container
+  body.container(data-alert=`${alert ? alert : ''}`)
     // NAVBAR
     include _navbar
 

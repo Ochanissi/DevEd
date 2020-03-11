@@ -20,7 +20,9 @@ exports.getCheckoutSession = catchAsync(async (req, res, next) => {
     //   course.priceValue -
     //   (course.priceValue * course.priceDiscount) / 100
     // ).toFixed(2)}`,
-    success_url: `${req.protocol}://${req.get('host')}/my-courses`,
+    success_url: `${req.protocol}://${req.get(
+      'host'
+    )}/my-courses?alert=booking`,
     cancel_url: `${req.protocol}://${req.get('host')}/course/${course.slug}`,
     customer_email: req.user.email,
     client_reference_id: req.params.courseId,
@@ -68,7 +70,7 @@ exports.getCheckoutSession = catchAsync(async (req, res, next) => {
 const createBuyCheckout = async session => {
   const course = session.client_reference_id;
   const user = (await User.findOne({ email: session.customer_email })).id;
-  const price = session.line_items[0].amount / 100;
+  const price = session.display_items[0].amount / 100;
   await MyCourses.create({ course, user, price });
 };
 
@@ -87,7 +89,7 @@ exports.webhookCheckout = (req, res, next) => {
     res.status(400).send(`Webhook error: ${err.message}`);
   }
 
-  if (event.type === 'checkout.session.complete') {
+  if (event.type === 'checkout.session.completed') {
     createBuyCheckout(event.data.object);
   }
 
