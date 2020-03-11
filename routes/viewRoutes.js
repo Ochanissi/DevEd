@@ -9,7 +9,7 @@ const router = express.Router({ mergeParams: true });
 
 router.get(
   '/',
-  mycoursesController.createBuyCheckout,
+  // mycoursesController.createBuyCheckout,
   authController.isLoggedIn,
   viewsController.getOverview
 );
