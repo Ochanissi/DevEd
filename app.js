@@ -45,7 +45,7 @@ app.options('*', cors());
 // app.use(express.static(`${__dirname}/public`));
 app.use(express.static(path.join(__dirname, 'public')));
 
-// Set cecurity HTTP headers
+// Set security HTTP headers
 app.use(helmet());
 
 // Development logging
