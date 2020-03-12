@@ -22,7 +22,7 @@ exports.getCheckoutSession = catchAsync(async (req, res, next) => {
     // ).toFixed(2)}`,
     success_url: `${req.protocol}://${req.get(
       'host'
-    )}/my-courses?alert=booking`,
+    )}/my-courses?alert=my-courses`,
     cancel_url: `${req.protocol}://${req.get('host')}/course/${course.slug}`,
     customer_email: req.user.email,
     client_reference_id: req.params.courseId,
@@ -39,7 +39,7 @@ exports.getCheckoutSession = catchAsync(async (req, res, next) => {
             (course.priceValue * course.priceDiscount) / 100
           ).toFixed(2) * 100
         ),
-        currency: 'usd',
+        currency: 'eur',
         quantity: 1
       }
     ]

@@ -46,7 +46,7 @@ exports.signup = catchAsync(async (req, res, next) => {
 
   const url = `${req.protocol}://${req.get('host')}/me`;
   // console.log(url);
-  // await new Email(newUser, url).sendWelcome();
+  await new Email(newUser, url).sendWelcome();
 
   createSendToken(newUser, 201, req, res);
 });
@@ -63,7 +63,7 @@ exports.login = catchAsync(async (req, res, next) => {
   const user = await User.findOne({ email }).select('+password');
 
   if (!user || !(await user.correctPassword(password, user.password))) {
-    return next(new AppError('Incorrect Email or password!', 401));
+    return next(new AppError('Incorrect email or password!', 401));
   }
 
   // console.log(user);
@@ -173,7 +173,7 @@ exports.restrictTo = (...roles) => {
   };
 };
 
-exports.forgotPassowrd = catchAsync(async (req, res, next) => {
+exports.forgotPassword = catchAsync(async (req, res, next) => {
   // 1. Get user based on POSTed email
   const user = await User.findOne({ email: req.body.email });
 
@@ -185,18 +185,11 @@ exports.forgotPassowrd = catchAsync(async (req, res, next) => {
   const resetToken = user.createPasswordResetToken();
   await user.save({ validateBeforeSave: false });
 
-  // const message = `Forgot your password? Submit a PATCH request with your new password and password Confirm to: ${resetURL}. \n If you didn't forget your password, please ignore this email!`;
-
   try {
     // 3. Send it to the user's email
     const resetURL = `${req.protocol}://${req.get(
       'host'
     )}/api/v1/users/resetPassword/${resetToken}`;
-    // await sendEmail({
-    //   email: user.email,
-    //   subject: 'Your password reset token (valid for 10 min)',
-    //   message
-    // });
 
     await new Email(user, resetURL).sendPasswordReset();
 
@@ -220,13 +213,13 @@ exports.forgotPassowrd = catchAsync(async (req, res, next) => {
 
 exports.resetPassword = catchAsync(async (req, res, next) => {
   // 1. Get user based on the token
-  const hasedToken = crypto
+  const hashedToken = crypto
     .createHash('sha256')
     .update(req.params.token)
     .digest('hex');
 
   const user = await User.findOne({
-    passwordResetToken: hasedToken,
+    passwordResetToken: hashedToken,
     passwordResetExpires: { $gt: Date.now() }
   });
 

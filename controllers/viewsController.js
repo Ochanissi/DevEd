@@ -6,7 +6,7 @@ const MyCourses = require('../models/mycoursesModel');
 
 exports.alerts = (req, res, next) => {
   const { alert } = req.query;
-  if (alert === 'booking') {
+  if (alert === 'my-courses') {
     res.locals.alert =
       'Your purchase was successful! Please check your email for confirmation!';
   }
