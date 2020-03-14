@@ -134,8 +134,11 @@ courseSchema.index({ priceValue: 1 });
 courseSchema.index({ slug: 1 });
 // courseSchema.index({ priceValue: 1, ratingsAverage: -1 });
 
-courseSchema.virtual('includesVideosMinutes').get(function() {
-  return this.includesVideos * 10;
+courseSchema.virtual('priceFinal').get(function() {
+  return (
+    this.priceValue -
+    (this.priceValue * this.priceDiscount) / 100
+  ).toFixed(2);
 });
 
 // Virtual populate

@@ -3,6 +3,7 @@ const User = require('../models/userModel');
 const catchAsync = require('../utils/catchAsync');
 const AppError = require('../utils/appError');
 const MyCourses = require('../models/mycoursesModel');
+const APIFeatures = require('./../utils/apiFeatures');
 
 exports.alerts = (req, res, next) => {
   const { alert } = req.query;
@@ -19,9 +20,36 @@ exports.getOverview = (req, res) => {
   });
 };
 
+// exports.getAllCourses = catchAsync(async (req, res, next) => {
+//   // 1. Get course data from collection
+//   const courses = await Course.find();
+
+//   // 2. Build template
+
+//   // 3. Render that template using course data from 1.
+
+//   res.status(200).render('courses', {
+//     title: 'All Courses',
+//     courses
+//   });
+// });
+
 exports.getAllCourses = catchAsync(async (req, res, next) => {
+  // Get unfiltered courses
+  const unfilteredCourses = await Course.find();
+
+  let filter = {};
+
+  if (req.params.courseId) filter = { course: req.params.courseId };
+
+  // EXECUTE QUERY
   // 1. Get course data from collection
-  const courses = await Course.find();
+  const features = new APIFeatures(Course.find(filter), req.query)
+    .filter()
+    .sort()
+    .limitFields()
+    .paginate();
+  const courses = await features.query;
 
   // 2. Build template
 
@@ -29,7 +57,8 @@ exports.getAllCourses = catchAsync(async (req, res, next) => {
 
   res.status(200).render('courses', {
     title: 'All Courses',
-    courses
+    courses,
+    unfilteredCourses
   });
 });
 

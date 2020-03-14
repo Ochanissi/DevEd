@@ -13,6 +13,7 @@ const logoutBtn = document.getElementById('btn__logout');
 const userDataForm = document.querySelector('.form-user-data');
 const userPasswordForm = document.querySelector('.form-user-password');
 const buyBtn = document.getElementById('buy-course');
+const dropdown = document.getElementById('dropdown');
 
 // DELEGATION
 if (loginForm) {
@@ -77,6 +78,46 @@ if (buyBtn) {
     const { courseId } = e.target.dataset;
     buyCourse(courseId);
   });
+}
+
+if (dropdown) {
+  const dropdownSubjects = document.querySelector('.dropdown__subjects');
+  const dropdownTypes = document.querySelector('.dropdown__types');
+  const dropdownSort = document.querySelector('.dropdown__sort');
+
+  dropdownSubjects.onchange = function() {
+    localStorage.setItem('dropdown', dropdownSubjects.value);
+    location.assign(`/courses?${dropdownSubjects.value}#courses`);
+  };
+
+  dropdownTypes.onchange = function() {
+    localStorage.setItem('dropdown', dropdownTypes.value);
+    location.assign(`/courses?${dropdownTypes.value}#courses`);
+  };
+
+  dropdownSort.onchange = function() {
+    localStorage.setItem('dropdown', dropdownSort.value);
+    location.assign(`/courses?${dropdownSort.value}#courses`);
+  };
+
+  window.onload = function() {
+    if (localStorage['dropdown']) {
+      if (localStorage['dropdown'].startsWith('category')) {
+        dropdownSubjects.value = localStorage['dropdown'];
+        location.assign(`/courses?${dropdownSubjects.value}#courses`);
+      }
+
+      if (localStorage['dropdown'].startsWith('typ')) {
+        dropdownTypes.value = localStorage['dropdown'];
+        location.assign(`/courses?${dropdownTypes.value}#courses`);
+      }
+
+      if (localStorage['dropdown'].startsWith('sort')) {
+        dropdownSort.value = localStorage['dropdown'];
+        location.assign(`/courses?${dropdownSort.value}#courses`);
+      }
+    }
+  };
 }
 
 const alertMessage = document.querySelector('body').dataset.alert;
