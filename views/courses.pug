@@ -8,7 +8,7 @@ block content
     .featured__popular
       .featured__popular--title Explore our popular courses
       .featured__popular--content
-        each course in courses.sort((a, b) =>  b.ratingsAverage - a.ratingsAverage).slice(0, 3)
+        each course in unfilteredCourses.sort((a, b) =>  b.ratingsAverage - a.ratingsAverage).slice(0, 3)
           .card
             .card__header
               .card__picture
@@ -26,31 +26,31 @@ block content
                 span.card__footer--text per person
               a.btn.btn__card(href=`/course/${course.slug}`) Details
 
-  section.courses
+  section.courses#courses
     .courses__heading Find the right online course for you
     .courses__filters
       label(for='dropdown')
-        select#dropdown(name='select')
-          option(value='0') All subjects
-          option(value='1') Business & Management
-          option(value='2') IT & Computer Science
-          option(value='3') Science, Engineering & Math
-          option(value='4') Other
+        select#dropdown.dropdown__subjects(name='select')
+          option(value='') All subjects
+          option(value='category=bm') Business & Management
+          option(value='category=itcs') IT & Computer Science
+          option(value='category=engi') Science, Engineering & Math
+          option(value='category=other') Other
       label(for='dropdown')
-        select#dropdown(name='select')
-          option(value='0') All courses
-          option(value='1') Premium courses
-          option(value='2') Free trials
+        select#dropdown.dropdown__types(name='select')
+          option(value='') All courses
+          option(value='priceDiscount[lte]=0') Premium courses
+          option(value='priceDiscount[gte]=100') Free trials
       label(for='dropdown')
-        select#dropdown(name='select')
-          option(value='0') Sort by
-          option(value='1') Popularity
-          option(value='2') Average rating
-          option(value='3') Latest published
-          option(value='4') Price - Lowest
-          option(value='5') Price - Highest
+        select#dropdown.dropdown__sort(name='select')
+          option(value='') Sort by: Latest published
+          option(value='sort=-priceDiscount') Discount
+          option(value='sort=-ratingsQuantity') Popularity
+          option(value='sort=-ratingsAverage') Average rating
+          option(value='sort=+priceValue') Price - Lowest
+          option(value='sort=-priceValue') Price - Highest
     .courses__content
-      each course in courses.sort((a, b) =>  b.priceDiscount - a.priceDiscount)
+      each course in courses
         .card
           .card__header
             .card__picture
@@ -76,6 +76,6 @@ block content
               span.card__footer--value= `Rating: ${course.ratingsAverage} `
               span.card__footer--text= `(${course.ratingsQuantity} ratings)`
             p.card__footer--price
-              span.card__footer--value= `Price: €${(course.priceValue - (course.priceValue * course.priceDiscount) / 100).toFixed(2)} `
+              span.card__footer--value= `Price: €${course.priceFinal} `
               span.card__footer--text per person
             a.btn.btn__card(href=`/course/${course.slug}`) Details

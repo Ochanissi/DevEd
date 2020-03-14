@@ -31,7 +31,7 @@ block content
         .contentHeader__body--left
           img.contentHeader__body--left--img(src=`/img/courses/${course.image}` alt=`${course.name}`)
           .contentHeader__body--left--price
-            span.contentHeader__body--left--price--value= `€${(course.priceValue - (course.priceValue * course.priceDiscount / 100)).toFixed(2)} `
+            span.contentHeader__body--left--price--value= `€${course.priceFinal} `
             span.contentHeader__body--left--price--discount= `€${course.priceValue.toFixed(2)}`
             span.contentHeader__body--left--price--percentage= ` (${course.priceDiscount}% off)`
 
