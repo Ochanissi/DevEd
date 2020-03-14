@@ -4,6 +4,7 @@ const catchAsync = require('../utils/catchAsync');
 const AppError = require('../utils/appError');
 const MyCourses = require('../models/mycoursesModel');
 const APIFeatures = require('./../utils/apiFeatures');
+const Review = require('./../models/reviewModel');
 
 exports.alerts = (req, res, next) => {
   const { alert } = req.query;
@@ -111,6 +112,19 @@ exports.getMyCourses = catchAsync(async (req, res, next) => {
   res.status(200).render('mycourses', {
     title: 'My Courses',
     courses
+  });
+});
+
+exports.getMyReviews = catchAsync(async (req, res, next) => {
+  // const user = await User.findById(req.user.id);
+  const reviews = await Review.find({ user: req.user.id });
+
+  // console.log(user);
+  console.log(reviews);
+
+  res.status(200).render('myreviews', {
+    title: 'My Reviews',
+    reviews
   });
 });
 
