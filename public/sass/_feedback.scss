@@ -152,6 +152,15 @@
         margin-bottom: 3rem;
       }
 
+      &--course {
+        font-size: 2rem;
+        font-weight: 500;
+        margin-bottom: 2rem;
+        padding-bottom: 2rem;
+
+        border-bottom: 1px solid $color-grey-light-3;
+      }
+
       &--star {
         height: 3rem;
         width: 3rem;

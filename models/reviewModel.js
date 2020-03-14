@@ -54,6 +54,11 @@ reviewSchema.pre(/^find/, function(next) {
     select: 'name photo country occupation'
   });
 
+  this.populate({
+    path: 'course',
+    select: 'title -teachers'
+  });
+
   next();
 });
 
