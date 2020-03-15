@@ -148,19 +148,19 @@ exports.updateUserData = catchAsync(async (req, res, next) => {
 });
 
 exports.manageCourses = catchAsync(async (req, res, next) => {
-  // const reviews = await Review.find();
-  // res.status(200).render('managereviews', {
-  //   title: 'Manage Reviews',
-  //   reviews
-  // });
+  const courses = await Course.find();
+  res.status(200).render('managecourses', {
+    title: 'Manage Courses',
+    courses
+  });
 });
 
 exports.manageUsers = catchAsync(async (req, res, next) => {
-  // const reviews = await Review.find();
-  // res.status(200).render('managereviews', {
-  //   title: 'Manage Reviews',
-  //   reviews
-  // });
+  const users = await User.find();
+  res.status(200).render('manageusers', {
+    title: 'Manage Users',
+    users
+  });
 });
 
 exports.manageReviews = catchAsync(async (req, res, next) => {

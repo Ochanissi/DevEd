@@ -15,14 +15,15 @@ block content
           +navItem('/my-courses', 'My Courses', 'briefcase-outline', false)
           +navItem('/my-reviews', 'My Reviews', 'star-outline', false)
           +navItem('#', 'Billing', 'card-outline', false)
-
-        h5.side-nav__heading Admin panel
-        ul.side-nav
-          li.side-nav
-            +navItem('/create-course', 'Create course', 'reader-outline', false)
-            +navItem('/manage-courses', 'Manage courses', 'file-tray-full-outline', false)
-            +navItem('/manage-reviews', 'Manage Reviews', 'people-outline', false)
-            +navItem('/manage-users', 'Manage Users', 'stats-chart-outline', false)
+          
+        - if (user.role === 'admin')
+          h5.side-nav__heading Admin panel
+          ul.side-nav
+            li.side-nav
+              +navItem('/create-course', 'Create course', 'reader-outline', false)
+              +navItem('/manage-courses', 'Manage courses', 'file-tray-full-outline', false)
+              +navItem('/manage-reviews', 'Manage Reviews', 'people-outline', false)
+              +navItem('/manage-users', 'Manage Users', 'stats-chart-outline', false)
 
       .account__block--content
         .account__block--content--container
