@@ -29,6 +29,10 @@
   }
 
   &__group {
+    textarea {
+      resize: none;
+    }
+
     &:not(:last-child) {
       margin-bottom: 2.5rem;
     }

@@ -88,6 +88,10 @@
       }
 
       &--container {
+        &:not(:last-child) {
+          margin-bottom: 10rem;
+        }
+
         padding: 0 10rem;
 
         @media only screen and (max-width: $bp-medium) {
