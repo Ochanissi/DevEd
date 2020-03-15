@@ -1,0 +1,21 @@
+extends base
+
+block content
+  section.feedback
+    h3.heading-3 Manage Reviews
+    //- .feedback__content
+    //-   each review in reviews
+    //-     .feedback__content--review
+    //-       .feedback__content--review--col-1
+    //-         img.feedback__content--review--img(src=`/img/users/${review.user.photo}` alt=`${review.user.name}`)
+    //-         h4.feedback__content--review--name= review.user.name
+    //-         .feedback__content--review--occupation= review.user.occupation
+    //-         .feedback__content--review--country= review.user.country
+    //-         .feedback__content--review--date= review.createdAt.toLocaleString('ru', {day: 'numeric', month: '2-digit', year: 'numeric'})
+    //-       .feedback__content--review--col-2
+    //-         .feedback__content--review--course= review.course.title
+    //-         .feedback__content--review--rating
+    //-           each star in [1, 2, 3, 4, 5]
+    //-             svg.contentHeader__head--star(class=`contentHeader__head--star--${review.rating >= star ? 'active' : 'inactive'}`)
+    //-               use(xlink:href="/img/icons.svg#icon-star")
+    //-         p.feedback__content--review--text= review.review

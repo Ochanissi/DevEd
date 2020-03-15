@@ -2,7 +2,7 @@ extends base
 
 block content
   section.feedback
-    h3.heading-3 My Reviews
+    h3.heading-3 Manage Reviews
     .feedback__content
       each review in reviews
         .feedback__content--review
@@ -19,4 +19,3 @@ block content
                 svg.contentHeader__head--star(class=`contentHeader__head--star--${review.rating >= star ? 'active' : 'inactive'}`)
                   use(xlink:href="/img/icons.svg#icon-star")
             p.feedback__content--review--text= review.review
-
