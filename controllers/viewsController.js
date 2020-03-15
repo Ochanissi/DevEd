@@ -120,7 +120,7 @@ exports.getMyReviews = catchAsync(async (req, res, next) => {
   const reviews = await Review.find({ user: req.user.id });
 
   // console.log(user);
-  console.log(reviews);
+  // console.log(reviews);
 
   res.status(200).render('myreviews', {
     title: 'My Reviews',
@@ -144,5 +144,32 @@ exports.updateUserData = catchAsync(async (req, res, next) => {
   res.status(200).render('account', {
     title: 'Your account',
     user: updatedUser
+  });
+});
+
+exports.manageCourses = catchAsync(async (req, res, next) => {
+  const courses = await Course.find();
+  res.status(200).render('managecourses', {
+    title: 'Manage Courses',
+    courses
+  });
+});
+
+exports.manageUsers = catchAsync(async (req, res, next) => {
+  const users = await User.find();
+  res.status(200).render('manageusers', {
+    title: 'Manage Users',
+    users
+  });
+});
+
+exports.manageReviews = catchAsync(async (req, res, next) => {
+  const reviews = await Review.find();
+
+  console.log(reviews);
+
+  res.status(200).render('managereviews', {
+    title: 'Manage Reviews',
+    reviews
   });
 });

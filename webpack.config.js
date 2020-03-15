@@ -17,8 +17,8 @@ module.exports = {
   },
   plugins: [
     new HtmlWebpackPlugin({
-      filename: 'overview.html',
-      template: './public/overview.html'
+      filename: 'account.html',
+      template: './public/account.html'
     }),
     new MiniCssExtractPlugin({
       filename: 'bundle.css'

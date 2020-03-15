@@ -1,0 +1,15 @@
+extends base
+
+block content
+  section.review
+      .review__title
+        h3.heading-3 Manage Users
+      .review__features
+        each user in users
+          .review__features--card
+            img.review__description--img(src=`/img/users/${user.photo}` alt=`${user.name}`)
+            h4.heading-4--dark.review__features--name= user.name
+            p.review__features--text-1= user.occupation
+            p.review__features--text-2= user.country
+            p.review__features--text-3 &mdash;&mdash;&mdash;
+            p.review__features--text-4= user.about

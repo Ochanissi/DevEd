@@ -2,7 +2,7 @@ extends base
 
 block content
   section.mycourses
-    h3.heading-3 My Courses
+    h3.heading-3 Manage Courses
     .mycourses__content
       each course in courses
         .card
@@ -33,5 +33,3 @@ block content
               span.card__footer--value= `Price: €${course.priceFinal} `
               span.card__footer--text per person
             a.btn.btn__card(href=`/course/${course.slug}`) Details
-
-

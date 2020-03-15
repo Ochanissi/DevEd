@@ -105,6 +105,19 @@
 .side-nav {
   list-style: none;
 
+  &__heading {
+    border-top: 0.5px solid $color-white;
+
+    margin-top: 2.5rem;
+    padding-top: 2.5rem;
+    color: $color-white;
+    font-size: 2.5rem;
+    text-transform: uppercase;
+    font-weight: 500;
+    display: flex;
+    justify-content: center;
+  }
+
   @media only screen and (max-width: $bp-large) {
     display: grid;
 

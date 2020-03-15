@@ -31,6 +31,27 @@ router.get('/me', authController.protect, viewsController.getAccount);
 router.get('/my-courses', authController.protect, viewsController.getMyCourses);
 router.get('/my-reviews', authController.protect, viewsController.getMyReviews);
 
+router.get(
+  '/manage-courses',
+  authController.protect,
+  authController.restrictTo('admin'),
+  viewsController.manageCourses
+);
+
+router.get(
+  '/manage-users',
+  authController.protect,
+  authController.restrictTo('admin'),
+  viewsController.manageUsers
+);
+
+router.get(
+  '/manage-reviews',
+  authController.protect,
+  authController.restrictTo('admin'),
+  viewsController.manageReviews
+);
+
 router.post(
   '/submit-user-data',
   authController.protect,
