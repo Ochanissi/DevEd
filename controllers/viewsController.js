@@ -97,7 +97,7 @@ exports.getSignupForm = catchAsync(async (req, res) => {
 
 exports.getAccount = (req, res) => {
   res.status(200).render('account', {
-    title: 'Your account'
+    title: 'Your Account'
   });
 };
 
@@ -142,7 +142,7 @@ exports.updateUserData = catchAsync(async (req, res, next) => {
     }
   );
   res.status(200).render('account', {
-    title: 'Your account',
+    title: 'Your Account',
     user: updatedUser
   });
 });
@@ -166,7 +166,7 @@ exports.manageUsers = catchAsync(async (req, res, next) => {
 exports.manageReviews = catchAsync(async (req, res, next) => {
   const reviews = await Review.find();
 
-  console.log(reviews);
+  // console.log(reviews);
 
   res.status(200).render('managereviews', {
     title: 'Manage Reviews',

@@ -31,14 +31,9 @@ exports.getCheckoutSession = catchAsync(async (req, res, next) => {
         name: `"${course.title}" Course`,
         description: course.subtitle,
         images: [
-          `https://d22ir9aoo7cbf6.cloudfront.net/wp-content/uploads/sites/2/2018/07/online-courses-in-singapore.png`
+          `${req.protocol}://${req.get('host')}/img/courses/${course.image}`
         ],
-        amount: Math.round(
-          (
-            course.priceValue -
-            (course.priceValue * course.priceDiscount) / 100
-          ).toFixed(2) * 100
-        ),
+        amount: course.priceFinal * 100,
         currency: 'eur',
         quantity: 1
       }
