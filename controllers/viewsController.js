@@ -147,6 +147,13 @@ exports.updateUserData = catchAsync(async (req, res, next) => {
   });
 });
 
+exports.createCourse = catchAsync(async (req, res, next) => {
+  // const courses = await Course.find();
+  res.status(200).render('createcourse', {
+    title: 'Create New Course'
+  });
+});
+
 exports.manageCourses = catchAsync(async (req, res, next) => {
   const courses = await Course.find();
   res.status(200).render('managecourses', {

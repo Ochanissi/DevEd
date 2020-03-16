@@ -32,6 +32,13 @@ router.get('/my-courses', authController.protect, viewsController.getMyCourses);
 router.get('/my-reviews', authController.protect, viewsController.getMyReviews);
 
 router.get(
+  '/create-course',
+  authController.protect,
+  authController.restrictTo('admin'),
+  viewsController.createCourse
+);
+
+router.get(
   '/manage-courses',
   authController.protect,
   authController.restrictTo('admin'),

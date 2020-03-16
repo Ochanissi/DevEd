@@ -72,6 +72,14 @@
     );
   }
 
+  &__course-photo {
+    height: 7.5rem;
+    width: 15rem;
+    // border-radius: 50%;
+    margin-right: 2rem;
+    // clip-path: inset(15% 0 15% 0);
+  }
+
   &__upload {
     width: 0.1px;
     height: 0.1px;
