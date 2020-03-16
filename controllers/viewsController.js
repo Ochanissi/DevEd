@@ -148,6 +148,9 @@ exports.updateUserData = catchAsync(async (req, res, next) => {
 });
 
 exports.createCourse = catchAsync(async (req, res, next) => {
+  // const user = await User.findById(req.user.id);
+  // console.log(user);
+  // console.log('lek');
   // const courses = await Course.find();
   res.status(200).render('createcourse', {
     title: 'Create New Course'
