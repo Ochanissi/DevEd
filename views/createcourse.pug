@@ -4,7 +4,7 @@ block content
   section.createcourse
     .createcourse__form
       h2.heading-2--form.mb-lg Create new course
-      form.form
+      form.form.form__createcourse
         .form__group
           label.form__label(for='course__title') Title
             input.form__input#course__title(type='text' placeholder='The course name' required='' minlength='10' maxlength='50')
@@ -36,11 +36,15 @@ block content
           label.form__label(for='course__requirements') Requirements
             textarea.form__input#course__requirements(type='text' placeholder='The requirements of the course' minlength='20' maxlength='10000' rows='5' required='')
         .form__group
-          label.form__label(for='course__pricevalue') Price
+          label.form__label(for='course__pricevalue') Full Price
             input.form__input#course__pricevalue(type='text' placeholder='The price of the course' required='')
         .form__group
-          label.form__label(for='course__pricediscount') Price
+          label.form__label(for='course__pricediscount') Price Discount
             input.form__input#course__pricediscount(type='text' placeholder='The price discount %' required='')
+        .form__group
+          label.form__label(for='course__teachers') Teachers
+            input.form__input(type='text' placeholder='The course teachers' required='' value=`${user.name}` disabled)
+            input.form__input#course__teachers(type='hidden' value=`${user.id}`)
         .form__group
           label.createcourse__dropdown(for='dropdown')
             select.course__category#dropdown(name='select')
@@ -50,9 +54,9 @@ block content
               option(value='engi') Science, Engineering & Math
               option(value='other') Other
         .form__group.form__photo-upload.createcourse__photo
-          img.form__course-photo(src='/img/courses/course-5c88fa8cf4afda39709c2955.jpg' alt='Course photo')
+          img.form__course-photo(src='/img/courses/default.jpg' alt='Course photo')
           input.form__upload#course__photo(type='file' accept='image/*' name='photo')
           label(for='course__photo') Choose course photo
         .createcourse__form--btns
           .form__group
-            .button.btn.form__group--btn Create new course
+            button.btn.form__group--btn Create new course
