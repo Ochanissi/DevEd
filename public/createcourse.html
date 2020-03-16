@@ -225,6 +225,32 @@
             ></textarea>
           </div>
 
+          <div class="form__group">
+            <label for="dropdown" class="createcourse__dropdown">
+              <select id="dropdown" name="select" class="course__category">
+                <option value="0" selected disabled>Category</option>
+                <option value="bm">Business & Management</option>
+                <option value="itcs">IT & Computer Science</option>
+                <option value="engi">Science, Engineering & Math</option>
+                <option value="other">Other</option>
+              </select>
+            </label>
+          </div>
+
+          <div class="form__group form__photo-upload">
+            <img
+              class="form__user-photo"
+              src="/img/courses/default.jpg"
+              alt="Course photo"
+            /><input
+              class="form__upload"
+              type="file"
+              accept="image/*"
+              id="course__photo"
+              name="photo"
+            /><label for="course__photo">Choose course photo</label>
+          </div>
+
           <div class="login__form--btns">
             <div class="form__group">
               <button class="btn btn__form--primary">Sign up</button>
