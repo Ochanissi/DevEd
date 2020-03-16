@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+
+    <link
+      href="https://fonts.googleapis.com/css?family=Maven+Pro:400,500,700&display=swap"
+      rel="stylesheet"
+    />
+    <!-- <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" /> -->
+    <!-- <link rel="stylesheet" href="css/style.css" /> -->
+    <link rel="shortcut icon" type="image/png" href="./img/logo.png" />
+
+    <title>DevEd &mdash; Web Developer</title>
+    <link href="bundle.css" rel="stylesheet" />
+  </head>
+
+  <body class="container">
+    <nav class="navbar">
+      <input id="menu-toggle" type="checkbox" />
+      <label class="menu-button-container" for="menu-toggle">
+        <div class="menu-button"></div>
+      </label>
+
+      <ul class="navbar__main">
+        <li class="navbar__main--item">
+          <a href="#header" class="navbar__main--link">Home</a>
+        </li>
+        <li class="navbar__main--item">
+          <a href="#about" class="navbar__main--link">Courses</a>
+        </li>
+        <li class="navbar__main--item navbar__main--home">
+          <a href="#header" class=""
+            ><img
+              class="navbar__main--logo"
+              src="./img/logo.png"
+              alt="WebDev Logo"
+          /></a>
+        </li>
+        <li class="navbar__main--item">
+          <a href="#projects" class="navbar__main--link">About</a>
+        </li>
+        <li class="navbar__main--item">
+          <a href="#contact" class="navbar__main--link">Contact</a>
+        </li>
+      </ul>
+
+      <!-- <ul class="navbar__secondary navbar__secondary--in">
+        <li class="navbar__main--item">
+          <a href="#projects" class="btn btn__nav--primary">Log in</a>
+        </li>
+        <li class="navbar__main--item">
+          <a href="#projects" class="btn btn__nav--secondary">Sign up</a>
+        </li>
+      </ul> -->
+
+      <ul class="navbar__secondary navbar__secondary--out">
+        <li class="navbar__main--item">
+          <a href="#projects" class="btn btn__nav--primary">Log out</a>
+        </li>
+        <li class="navbar__main--item">
+          <a href="#projects" class="">
+            <img
+              src="./img/review__photo--4.jpg"
+              alt=""
+              class="navbar__secondary--img"
+            />
+          </a>
+        </li>
+      </ul>
+    </nav>
+
+    <section class="createcourse">
+      <div class="createcourse__form">
+        <h2 class="heading-2--form mb-lg">Create new course</h2>
+        <form class="form">
+          <div class="form__group">
+            <label class="form__label" for="course__title">Title</label
+            ><input
+              class="form__input"
+              id="course__title"
+              type="text"
+              placeholder="The course name"
+              required=""
+              minlength="10"
+              maxlength="50"
+            />
+          </div>
+
+          <div class="form__group">
+            <label class="form__label" for="course__subtitle">Subtitle</label
+            ><input
+              class="form__input"
+              id="course__subtitle"
+              type="text"
+              placeholder="A short description of the course"
+              required=""
+              minlength="10"
+              maxlength="200"
+            />
+          </div>
+
+          <div class="form__group">
+            <label class="form__label" for="course__langsound"
+              >Sound Languages</label
+            ><input
+              class="form__input"
+              id="course__langsound"
+              type="text"
+              placeholder="The available sound languages"
+              required=""
+            />
+          </div>
+
+          <div class="form__group">
+            <label class="form__label" for="course__langsubs"
+              >Subtitle Languages</label
+            ><input
+              class="form__input"
+              id="course__langsubs"
+              type="text"
+              placeholder="The available subtitle languages"
+              required=""
+            />
+          </div>
+
+          <div class="form__group">
+            <label class="form__label" for="course__pricevalue">Price</label
+            ><input
+              class="form__input"
+              id="course__pricevalue"
+              type="text"
+              placeholder="The price of the course"
+              required=""
+            />
+          </div>
+
+          <div class="form__group">
+            <label class="form__label" for="course__pricediscount"
+              >Price discount</label
+            ><input
+              class="form__input"
+              id="course__pricediscount"
+              type="text"
+              placeholder="The price discount %"
+            />
+          </div>
+
+          <div class="form__group">
+            <label class="form__label" for="course__includesvideo"
+              >Number of videos</label
+            ><input
+              class="form__input"
+              id="course__includesvideo"
+              type="text"
+              placeholder="The number of the video lectures"
+              required=""
+            />
+          </div>
+
+          <div class="form__group">
+            <label class="form__label" for="course__includesarticles"
+              >Number of articles</label
+            ><input
+              class="form__input"
+              id="course__includesarticles"
+              type="text"
+              placeholder="The number of the articles"
+              required=""
+            />
+          </div>
+
+          <div class="form__group">
+            <label class="form__label" for="course__includescontent"
+              >Number of content</label
+            ><input
+              class="form__input"
+              id="course__includescontent"
+              type="text"
+              placeholder="The number of the text content"
+              required=""
+            />
+          </div>
+
+          <div class="form__group">
+            <label class="form__label" for="course__summary">Summary</label
+            ><textarea
+              class="form__input"
+              id="course__summary"
+              minlength="50"
+              maxlength="10000"
+              rows="5"
+              placeholder="The summary of the course"
+              required=""
+            ></textarea>
+          </div>
+
+          <div class="form__group">
+            <label class="form__label" for="course__description"
+              >Description</label
+            ><textarea
+              class="form__input"
+              id="course__description"
+              minlength="50"
+              maxlength="10000"
+              rows="5"
+              placeholder="The description of the course"
+              required=""
+            ></textarea>
+          </div>
+
+          <div class="form__group">
+            <label class="form__label" for="course__requirements"
+              >Requirements</label
+            ><textarea
+              class="form__input"
+              id="course__requirements"
+              minlength="20"
+              maxlength="10000"
+              rows="5"
+              placeholder="The requirements of the course"
+              required=""
+            ></textarea>
+          </div>
+
+          <div class="login__form--btns">
+            <div class="form__group">
+              <button class="btn btn__form--primary">Sign up</button>
+            </div>
+          </div>
+        </form>
+      </div>
+    </section>
+
+    <footer class="footer" id="footer">
+      <div class="footer__title  navbar__main--home mb-sm">
+        <a href="#header" class=""
+          ><img
+            class="footer__title--home navbar__main--logo"
+            src="./img/logo.png"
+            alt="WebDev Logo"
+        /></a>
+      </div>
+      <div class="footer__content">
+        Copyright &copy; 2020
+        <span class="footer__content--name"
+          ><a
+            href="https://github.com/Ochanissi/"
+            target="_blank"
+            class="footer__content--link"
+            >Mirel Bițoi</a
+          ></span
+        >. <span class="footer__content--rights">All rights reserved.</span>
+      </div>
+    </footer>
+
+    <script src="https://unpkg.com/ionicons@5.0.0/dist/ionicons.js"></script>
+    <script type="text/javascript" src="bundle.js"></script>
+  </body>
+</html>
