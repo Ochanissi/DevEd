@@ -23,7 +23,15 @@ const courseSchema = new mongoose.Schema(
     subtitle: {
       type: String,
       required: [true, 'A course must have a subtitle!'],
-      trim: true
+      trim: true,
+      maxlength: [
+        200,
+        'A course subtitle must have less or equal than 200 characters!'
+      ],
+      minlength: [
+        10,
+        'A course subtitle must have more or equal than 10 characters!'
+      ]
     },
     slug: String,
     ratingsAverage: {
@@ -94,7 +102,16 @@ const courseSchema = new mongoose.Schema(
     },
     learnSummary: {
       type: [String],
-      required: [true, 'A course must have a learn summary!']
+      required: [true, 'A course must have a learn summary!'],
+      trim: true,
+      maxlength: [
+        10000,
+        'A course summary must have less or equal than 10000 characters!'
+      ],
+      minlength: [
+        50,
+        'A course summary must have more or equal than 50 characters!'
+      ]
     },
     description: {
       type: [String],
@@ -102,7 +119,16 @@ const courseSchema = new mongoose.Schema(
     },
     requirements: {
       type: [String],
-      required: [true, 'A course must have requirements!']
+      required: [true, 'A course must have requirements!'],
+      trim: true,
+      maxlength: [
+        10000,
+        'A course description must have less or equal than 10000 characters!'
+      ],
+      minlength: [
+        20,
+        'A course description must have more or equal than 20 characters!'
+      ]
     },
     teachers: [
       {
