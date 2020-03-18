@@ -68,6 +68,8 @@
       height: 100%;
 
       max-width: 50rem;
+
+      position: relative;
     }
 
     &--name {
@@ -89,6 +91,7 @@
       }
 
       &-4 {
+        margin-bottom: 10rem;
       }
 
       &--img {
@@ -120,6 +123,21 @@
         0% 70%,
         0% 30%
       );
+    }
+
+    &--admin {
+      button {
+        position: absolute;
+        bottom: 3rem;
+        right: 3rem;
+      }
+
+      a {
+        position: absolute;
+        bottom: 3rem;
+        left: 3rem;
+        height: 51px !important;
+      }
     }
   }
 

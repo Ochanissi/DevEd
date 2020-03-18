@@ -105,6 +105,10 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
+
+    a {
+      height: 51px !important;
+    }
   }
 
   .btn__card {

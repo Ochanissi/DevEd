@@ -34,6 +34,6 @@ block content
               span.card__footer--text per person
             a.btn.btn__card(href=`/course/${course.slug}`) Details
           .card__admin
-            input.form__input.admin__delete(type='hidden' value=`${course.id}`)
-            a.btn.btn__card.btn__color(href='') Update
-            btn.btn.btn__card.btn__color.card__admin--delete Delete
+            input.form__input(type='hidden' value=`${course.id}`)
+            a.btn.btn__color(href='') Update
+            button.btn.btn__color.card__admin--delete Delete
