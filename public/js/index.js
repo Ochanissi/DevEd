@@ -128,47 +128,73 @@ if (filters) {
 if (createcourseForm) {
   createcourseForm.addEventListener('submit', e => {
     e.preventDefault();
-    const title = document.getElementById('course__title').value;
-    const subtitle = document.getElementById('course__subtitle').value;
-    const langSound = document
-      .getElementById('course__langsound')
-      .value.split(', ');
-    const langSubs = document
-      .getElementById('course__langsubs')
-      .value.split(', ');
-    const includesVideos = document.getElementById('course__includesvideo')
-      .value;
-    const includesArticles = document.getElementById('course__includesarticles')
-      .value;
-    const includesContent = document.getElementById('course__includescontent')
-      .value;
-    const learnSummary = document
-      .getElementById('course__summary')
-      .value.split('. ')
-      .map(x => (!x.endsWith('.') ? x + '.' : x));
-    const description = document
-      .getElementById('course__description')
-      .value.split('. ')
-      .map(x => (!x.endsWith('.') ? x + '.' : x));
-    const requirements = document
-      .getElementById('course__requirements')
-      .value.split('. ')
-      .map(x => (!x.endsWith('.') ? x + '.' : x));
-    const priceValue = document.getElementById('course__pricevalue').value;
-    const priceDiscount = document.getElementById('course__pricediscount')
-      .value;
-    const teachers = document
-      .getElementById('course__teachers')
-      .value.toString();
-    // const teachers = '4234f4f34f';
-    const category = document.querySelector('.course__category').options[
-      document.querySelector('.course__category').selectedIndex
-    ].value;
-    // const category = 'other';
-    // const image = document.getElementById('course__photo').files[0];
-    const image = 'dawf32a3faf3fa23f23v3w4';
+    const form = new FormData();
+    form.append('title', document.getElementById('course__title').value);
+    form.append('subtitle', document.getElementById('course__subtitle').value);
+    form.append(
+      'langSound',
+      document.getElementById('course__langsound').value
+      // .split(', ')
+    );
+    form.append(
+      'langSubs',
+      document.getElementById('course__langsubs').value
+      // .split(', ')
+    );
+    form.append(
+      'includesVideos',
+      document.getElementById('course__includesvideo').value
+    );
+    form.append(
+      'includesArticles',
+      document.getElementById('course__includesarticles').value
+    );
+    form.append(
+      'includesContent',
+      document.getElementById('course__includescontent').value
+    );
+    form.append(
+      'learnSummary',
+      document.getElementById('course__summary').value
+      // .split('. ')
+      // .map(x => (!x.endsWith('.') ? x + '.' : x))
+    );
+    form.append(
+      'description',
+      document.getElementById('course__description').value
+      // .split('. ')
+      // .map(x => (!x.endsWith('.') ? x + '.' : x))
+    );
+    form.append(
+      'requirements',
+      document.getElementById('course__requirements').value
+      // .split('. ')
+      // .map(x => (!x.endsWith('.') ? x + '.' : x))
+    );
+    form.append(
+      'priceValue',
+      document.getElementById('course__pricevalue').value
+    );
+    form.append(
+      'priceDiscount',
+      document.getElementById('course__pricediscount').value
+    );
+    form.append(
+      'teachers',
+      document.getElementById('course__teachers').value
+      // .toString()
+    );
+    form.append(
+      'category',
+      document.querySelector('.course__category').options[
+        document.querySelector('.course__category').selectedIndex
+      ].value
+    );
+    form.append('image', document.getElementById('course__photo').files[0]);
 
-    console.log(category);
+    console.log(form);
+    // console.log(category);
+    // console.log(image);
 
     // console.log(e);
     // console.log(
@@ -188,23 +214,7 @@ if (createcourseForm) {
     //   image
     // );
 
-    createCourse(
-      title,
-      subtitle,
-      langSound,
-      langSubs,
-      includesVideos,
-      includesArticles,
-      includesContent,
-      learnSummary,
-      description,
-      requirements,
-      priceValue,
-      priceDiscount,
-      teachers,
-      category,
-      image
-    );
+    createCourse(form);
   });
 }
 

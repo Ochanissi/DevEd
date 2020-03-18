@@ -37,6 +37,30 @@ exports.updateOne = Model =>
 
 exports.createOne = Model =>
   catchAsync(async (req, res, next) => {
+    console.log(req.body);
+    // console.log(req.body.description);
+    if (req.body.description)
+      req.body.description = req.body.description
+        .split('. ')
+        .map(x => (!x.endsWith('.') ? x + '.' : x))
+        .slice(0, -1);
+
+    if (req.body.learnSummary)
+      req.body.learnSummary = req.body.learnSummary
+        .split('. ')
+        .map(x => (!x.endsWith('.') ? x + '.' : x))
+        .slice(0, -1);
+
+    if (req.body.requirements)
+      req.body.requirements = req.body.requirements
+        .split('. ')
+        .map(x => (!x.endsWith('.') ? x + '.' : x))
+        .slice(0, -1);
+
+    if (req.body.langSound) req.body.langSound = req.body.langSound.split(', ');
+
+    if (req.body.langSubs) req.body.langSubs = req.body.langSubs.split(', ');
+
     const doc = await Model.create(req.body);
 
     res.status(201).json({

@@ -1,8 +1,45 @@
+const multer = require('multer');
+const sharp = require('sharp');
+const slugify = require('slugify');
 const Course = require('./../models/courseModel');
 // const APIFeatures = require('./../utils/apiFeatures');
 const catchAsync = require('./../utils/catchAsync');
-// const AppError = require('./../utils/appError');
+const AppError = require('./../utils/appError');
 const factory = require('./handlerFactory');
+
+const multerStorage = multer.memoryStorage();
+
+const multerFilter = (req, file, cb) => {
+  if (file.mimetype.startsWith('image')) {
+    cb(null, true);
+  } else {
+    cb(new AppError('Not an image! Please upload only images!', 400), false);
+  }
+};
+
+const upload = multer({
+  storage: multerStorage,
+  fileFilter: multerFilter
+});
+
+exports.uploadCoursePhoto = upload.single('image');
+
+exports.resizeCoursePhoto = catchAsync(async (req, res, next) => {
+  if (!req.file) return next();
+
+  // console.log(req.file);
+  // console.log(req.file.originalname);
+
+  req.body.image = `course-${Date.now()}.jpeg`;
+
+  await sharp(req.file.buffer)
+    .resize(340, 180)
+    .toFormat('jpeg')
+    .jpeg({ quality: 90 })
+    .toFile(`public/img/courses/${req.body.image}`);
+
+  next();
+});
 
 exports.aliasTopCourses = (req, res, next) => {
   req.query.limit = '5';
