@@ -196,6 +196,8 @@
       background-color: $color-grey-light-1;
       padding: 3rem;
 
+      width: 100%;
+
       @media only screen and (max-width: $bp-medium) {
         grid-row: 2 / 3;
         grid-column: 1 / -1;

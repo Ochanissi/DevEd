@@ -65,13 +65,13 @@ block content
         .contentHeader__body--learn--title What you'll learn
         .contentHeader__body--learn--content
           .contentHeader__body--learn--column-1
-            each row in course.learnSummary.slice(0, course.learnSummary.length / 2)
+            each row in course.learnSummary.splice(0, Math.ceil(course.learnSummary.length / 2))
               .contentHeader__body--learn--row
                 ion-icon(name='checkmark')
                 | 
                 span= row
           .contentHeader__body--learn--column-2
-            each row in course.learnSummary.slice(course.learnSummary.length / 2)
+            each row in course.learnSummary
               .contentHeader__body--learn--row
                 ion-icon(name='checkmark')
                 | 

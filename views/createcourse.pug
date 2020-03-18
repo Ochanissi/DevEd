@@ -7,40 +7,40 @@ block content
       form.form.form__createcourse
         .form__group
           label.form__label(for='course__title') Title
-            input.form__input#course__title(type='text' placeholder='The course name' required='' minlength='10' maxlength='50')
+            input.form__input#course__title(type='text' placeholder='The course name' required='' minlength='10' maxlength='50' autocomplete='off')
         .form__group
           label.form__label(for='course__subtitle') Subtitle
-            input.form__input#course__subtitle(type='text' placeholder='A short description of the course' required='' minlength='10' maxlength='200')
+            input.form__input#course__subtitle(type='text' placeholder='A short description of the course' required='' minlength='10' maxlength='200' autocomplete='off')
         .form__group
           label.form__label(for='course__langsound') Sound Languages
-            input.form__input#course__langsound(type='text' placeholder='The available sound languages' required='')
+            input.form__input#course__langsound(type='text' placeholder='The available sound languages' required='' autocomplete='off')
         .form__group
           label.form__label(for='course__langsubs') Subtitle Languages
-            input.form__input#course__langsubs(type='text' placeholder='The available subtitle languages' required='')
+            input.form__input#course__langsubs(type='text' placeholder='The available subtitle languages' required='' autocomplete='off')
         .form__group
           label.form__label(for='course__includesvideo') Number of videos
-            input.form__input#course__includesvideo(type='text' placeholder='The number of the video lectures' required='')
+            input.form__input#course__includesvideo(type='text' placeholder='The number of the video lectures' required='' autocomplete='off')
         .form__group
           label.form__label(for='course__includesarticles') Number of articles
-            input.form__input#course__includesarticles(type='text' placeholder='The number of the articles' required='')
+            input.form__input#course__includesarticles(type='text' placeholder='The number of the articles' required='' autocomplete='off')
         .form__group
           label.form__label(for='course__includescontent') Number of content
-            input.form__input#course__includescontent(type='text' placeholder='The number of the text content' required='')
+            input.form__input#course__includescontent(type='text' placeholder='The number of the text content' required='' autocomplete='off')
         .form__group
           label.form__label(for='course__summary') Summary
-            textarea.form__input#course__summary(type='text' placeholder='The summary of the course' minlength='50' maxlength='10000' rows='5' required='')
+            textarea.form__input#course__summary(type='text' placeholder='The summary of the course' minlength='50' maxlength='10000' rows='5' required='' autocomplete='off')
         .form__group
           label.form__label(for='course__description') Description
-            textarea.form__input#course__description(type='text' placeholder='The description of the course' minlength='50' maxlength='10000' rows='5' required='')
+            textarea.form__input#course__description(type='text' placeholder='The description of the course' minlength='50' maxlength='10000' rows='5' required='' autocomplete='off')
         .form__group
           label.form__label(for='course__requirements') Requirements
-            textarea.form__input#course__requirements(type='text' placeholder='The requirements of the course' minlength='20' maxlength='10000' rows='5' required='')
+            textarea.form__input#course__requirements(type='text' placeholder='The requirements of the course' minlength='20' maxlength='10000' rows='5' required='' autocomplete='off')
         .form__group
           label.form__label(for='course__pricevalue') Full Price
-            input.form__input#course__pricevalue(type='text' placeholder='The price of the course' required='')
+            input.form__input#course__pricevalue(type='text' placeholder='The price of the course' required='' autocomplete='off')
         .form__group
           label.form__label(for='course__pricediscount') Price Discount
-            input.form__input#course__pricediscount(type='text' placeholder='The price discount %' required='')
+            input.form__input#course__pricediscount(type='text' placeholder='The price discount %' required='' autocomplete='off')
         .form__group
           label.form__label(for='course__teachers') Teachers
             input.form__input(type='text' placeholder='The course teachers' required='' value=`${user.name}` disabled)
