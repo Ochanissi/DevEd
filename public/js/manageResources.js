@@ -42,3 +42,23 @@ export const deleteUser = async userId => {
     showAlert('error', 'Something bad happened! Please try again later.');
   }
 };
+
+export const deleteReview = async reviewId => {
+  try {
+    const url = `/api/v1/reviews/${reviewId}`;
+
+    const res = await axios({
+      method: 'DELETE',
+      url
+    });
+
+    if (res.status == '204') {
+      showAlert('success', 'Review successfully deleted!');
+      window.setTimeout(() => {
+        location.reload();
+      }, 1500);
+    }
+  } catch (err) {
+    showAlert('error', 'Something bad happened! Please try again later.');
+  }
+};

@@ -3,7 +3,7 @@
 import { login, logout } from './login';
 import { signup } from './signup';
 import { updateSettings } from './updateSettings';
-import { deleteCourse, deleteUser } from './manageResources';
+import { deleteCourse, deleteUser, deleteReview } from './manageResources';
 import { createCourse } from './createCourse';
 import { buyCourse } from './stripe';
 import { showAlert } from './alerts';
@@ -21,6 +21,7 @@ const buyBtn = document.getElementById('buy-course');
 const filters = document.querySelector('.courses__filters');
 const cardAdminDelete = document.querySelectorAll('.card__admin--delete');
 const userAdminDelete = document.querySelectorAll('.user__admin--delete');
+const reviewAdminDelete = document.querySelectorAll('.review__admin--delete');
 
 // DELEGATION
 if (loginForm) {
@@ -212,6 +213,15 @@ if (userAdminDelete) {
     el.addEventListener('click', e => {
       // console.log(e.target.parentNode.firstChild.value);
       deleteUser(e.target.parentNode.firstChild.value);
+    });
+  });
+}
+
+if (reviewAdminDelete) {
+  reviewAdminDelete.forEach(el => {
+    el.addEventListener('click', e => {
+      // console.log(e.target.parentNode.firstChild.value);
+      deleteReview(e.target.parentNode.firstChild.value);
     });
   });
 }
