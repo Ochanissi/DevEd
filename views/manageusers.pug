@@ -13,3 +13,7 @@ block content
             p.review__features--text-2= user.country
             p.review__features--text-3 &mdash;&mdash;&mdash;
             p.review__features--text-4= user.about
+            .review__features--admin
+              input.form__input(type='hidden' value=`${user.id}`)
+              a.btn.btn__color(href='') Update
+              button.btn.btn__color.user__admin--delete Delete

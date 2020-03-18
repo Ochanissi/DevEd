@@ -37,7 +37,7 @@ exports.updateOne = Model =>
 
 exports.createOne = Model =>
   catchAsync(async (req, res, next) => {
-    console.log(req.body);
+    // console.log(req.body);
     // console.log(req.body.description);
     if (req.body.description)
       req.body.description = req.body.description

@@ -3,6 +3,7 @@
 import { login, logout } from './login';
 import { signup } from './signup';
 import { updateSettings } from './updateSettings';
+import { deleteCourse, deleteUser } from './manageResources';
 import { createCourse } from './createCourse';
 import { buyCourse } from './stripe';
 import { showAlert } from './alerts';
@@ -18,6 +19,8 @@ const userDataForm = document.querySelector('.form-user-data');
 const userPasswordForm = document.querySelector('.form-user-password');
 const buyBtn = document.getElementById('buy-course');
 const filters = document.querySelector('.courses__filters');
+const cardAdminDelete = document.querySelectorAll('.card__admin--delete');
+const userAdminDelete = document.querySelectorAll('.user__admin--delete');
 
 // DELEGATION
 if (loginForm) {
@@ -191,30 +194,25 @@ if (createcourseForm) {
       ].value
     );
     form.append('image', document.getElementById('course__photo').files[0]);
-
-    console.log(form);
-    // console.log(category);
-    // console.log(image);
-
-    // console.log(e);
-    // console.log(
-    //   title,
-    //   subtitle,
-    //   langSound,
-    //   langSubs,
-    //   includesVideos,
-    //   includesArticles,
-    //   includesContent,
-    //   learnSummary,
-    //   description,
-    //   requirements,
-    //   priceValue,
-    //   priceDiscount,
-    //   // category,
-    //   image
-    // );
-
     createCourse(form);
+  });
+}
+
+if (cardAdminDelete) {
+  cardAdminDelete.forEach(el => {
+    el.addEventListener('click', e => {
+      // console.log(e.target.parentNode.firstChild.value);
+      deleteCourse(e.target.parentNode.firstChild.value);
+    });
+  });
+}
+
+if (userAdminDelete) {
+  userAdminDelete.forEach(el => {
+    el.addEventListener('click', e => {
+      // console.log(e.target.parentNode.firstChild.value);
+      deleteUser(e.target.parentNode.firstChild.value);
+    });
   });
 }
 

@@ -70,9 +70,9 @@
   }
 
   &__footer {
-    background-color: #f7f7f7;
+    background-color: $color-grey-light-1;
     padding: 2rem 2.25rem;
-    border-top: 1px solid #f1f1f1;
+    border-top: 1px solid $color-grey-light-2;
     font-size: 1.4rem;
     display: grid;
     grid-template-columns: auto 1fr;
@@ -94,6 +94,20 @@
 
     &--ratings {
       grid-row: 1 / 2;
+    }
+  }
+
+  &__admin {
+    background-color: $color-grey-light-2;
+    padding: 2rem 2.25rem;
+    border-top: 1px solid $color-grey-light-3;
+    font-size: 1.4rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    a {
+      height: 51px !important;
     }
   }
 
