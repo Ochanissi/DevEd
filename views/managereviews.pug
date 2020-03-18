@@ -19,3 +19,7 @@ block content
                 svg.contentHeader__head--star(class=`contentHeader__head--star--${review.rating >= star ? 'active' : 'inactive'}`)
                   use(xlink:href="/img/icons.svg#icon-star")
             p.feedback__content--review--text= review.review
+          .feedback__content--review--admin
+            input.form__input(type='hidden' value=`${review.id}`)
+            a.btn.btn__color(href='') Update
+            button.btn.btn__color.review__admin--delete Delete

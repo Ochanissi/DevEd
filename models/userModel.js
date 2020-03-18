@@ -26,7 +26,7 @@ const userSchema = new mongoose.Schema({
   },
   occupation: {
     type: String,
-    default: 'Newcomer',
+    default: 'Newbie',
     trim: true,
     maxlength: [
       30,
