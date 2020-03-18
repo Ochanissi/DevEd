@@ -5,52 +5,24 @@ import { showAlert } from './alerts';
 const slugify = require('slugify');
 
 // type is either 'password' or 'data'
-export const createCourse = async (
-  title,
-  subtitle,
-  langSound,
-  langSubs,
-  includesVideos,
-  includesArticles,
-  includesContent,
-  learnSummary,
-  description,
-  requirements,
-  priceValue,
-  priceDiscount,
-  teachers,
-  category,
-  image
-) => {
+export const createCourse = async data => {
   try {
     const url = '/api/v1/courses';
 
     const res = await axios({
       method: 'POST',
       url,
-      data: {
-        title,
-        subtitle,
-        langSound,
-        langSubs,
-        includesVideos,
-        includesArticles,
-        includesContent,
-        learnSummary,
-        description,
-        requirements,
-        priceValue,
-        priceDiscount,
-        teachers,
-        category,
-        image
-      }
+      data
     });
 
     if (res.data.status === 'success') {
+      // console.log('5', res.data.data.data.title);
+
       showAlert('success', 'Course successfully created!');
       window.setTimeout(() => {
-        location.assign(`/course/${slugify(title, { lower: true })}`);
+        location.assign(
+          `/course/${slugify(res.data.data.data.title, { lower: true })}`
+        );
       }, 1500);
     }
   } catch (err) {
