@@ -18,10 +18,39 @@ exports.deleteOne = Model =>
 
 exports.updateOne = Model =>
   catchAsync(async (req, res, next) => {
+    // console.log(req.body);
+    // console.log(req.body.image);
+
+    if (req.body.description)
+      req.body.description = req.body.description
+        .split('. ')
+        .map(x => (!x.endsWith('.') ? x + '.' : x))
+        .slice(0, -1);
+
+    if (req.body.learnSummary)
+      req.body.learnSummary = req.body.learnSummary
+        .split('. ')
+        .map(x => (!x.endsWith('.') ? x + '.' : x))
+        .slice(0, -1);
+
+    if (req.body.requirements)
+      req.body.requirements = req.body.requirements
+        .split('. ')
+        .map(x => (!x.endsWith('.') ? x + '.' : x))
+        .slice(0, -1);
+
+    if (req.body.langSound) req.body.langSound = req.body.langSound.split(', ');
+
+    if (req.body.langSubs) req.body.langSubs = req.body.langSubs.split(', ');
+
+    console.log(req.body);
+
     const doc = await Model.findByIdAndUpdate(req.params.id, req.body, {
       new: true,
       runValidators: true
     });
+
+    // console.log(doc);
 
     if (!doc) {
       return next(new AppError('No document found with that ID!', 404));

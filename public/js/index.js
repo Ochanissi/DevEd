@@ -3,8 +3,13 @@
 import { login, logout } from './login';
 import { signup } from './signup';
 import { updateSettings } from './updateSettings';
-import { deleteCourse, deleteUser, deleteReview } from './manageResources';
-import { createCourse } from './createCourse';
+import {
+  createCourse,
+  updateCourse,
+  deleteCourse,
+  deleteUser,
+  deleteReview
+} from './manageResources';
 import { buyCourse } from './stripe';
 import { showAlert } from './alerts';
 
@@ -13,7 +18,8 @@ createCourse;
 // DOM ELEMENTS
 const loginForm = document.querySelector('.form__login');
 const signupForm = document.querySelector('.form__signup');
-const createcourseForm = document.querySelector('.form__createcourse');
+const createCourseForm = document.getElementById('form__createcourse');
+const updateCourseForm = document.getElementById('form__updatecourse');
 const logoutBtn = document.getElementById('btn__logout');
 const userDataForm = document.querySelector('.form-user-data');
 const userPasswordForm = document.querySelector('.form-user-password');
@@ -129,8 +135,8 @@ if (filters) {
   };
 }
 
-if (createcourseForm) {
-  createcourseForm.addEventListener('submit', e => {
+if (createCourseForm) {
+  createCourseForm.addEventListener('submit', e => {
     e.preventDefault();
     const form = new FormData();
     form.append('title', document.getElementById('course__title').value);
@@ -196,6 +202,99 @@ if (createcourseForm) {
     );
     form.append('image', document.getElementById('course__photo').files[0]);
     createCourse(form);
+  });
+}
+
+if (updateCourseForm) {
+  const a = document.getElementById('updatecourse__category').value;
+  const b = document.querySelector('.updatecourse__category').options;
+
+  for (let i = 0; i < b.length; i++) {
+    if (b[i].value === a) {
+      b[i].selected = true;
+    }
+  }
+
+  // console.log(a);
+  // console.log(b);
+
+  updateCourseForm.addEventListener('submit', e => {
+    e.preventDefault();
+    const form = new FormData();
+    const courseId = document.getElementById('updatecourse__courseId').value;
+
+    form.append('title', document.getElementById('updatecourse__title').value);
+    form.append(
+      'subtitle',
+      document.getElementById('updatecoursee__subtitle').value
+    );
+    form.append(
+      'langSound',
+      document.getElementById('updatecourse__langsound').value
+      // .split(', ')
+    );
+    form.append(
+      'langSubs',
+      document.getElementById('updatecourse__langsubs').value
+      // .split(', ')
+    );
+    form.append(
+      'includesVideos',
+      document.getElementById('updatecourse__includesvideo').value
+    );
+    form.append(
+      'includesArticles',
+      document.getElementById('updatecourse__includesarticles').value
+    );
+    form.append(
+      'includesContent',
+      document.getElementById('updatecourse__includescontent').value
+    );
+    form.append(
+      'learnSummary',
+      document.getElementById('updatecourse__summary').value
+      // .split('. ')
+      // .map(x => (!x.endsWith('.') ? x + '.' : x))
+    );
+    form.append(
+      'description',
+      document.getElementById('updatecourse__description').value
+      // .split('. ')
+      // .map(x => (!x.endsWith('.') ? x + '.' : x))
+    );
+    form.append(
+      'requirements',
+      document.getElementById('updatecourse__requirements').value
+      // .split('. ')
+      // .map(x => (!x.endsWith('.') ? x + '.' : x))
+    );
+    form.append(
+      'priceValue',
+      document.getElementById('updatecourse__pricevalue').value
+    );
+    form.append(
+      'priceDiscount',
+      document.getElementById('updatecourse__pricediscount').value
+    );
+    // form.append(
+    //   'teachers',
+    //   document.getElementById('updatecourse__teachers').value
+    //   // .toString()
+    // );
+    form.append(
+      'category',
+      document.querySelector('.updatecourse__category').options[
+        document.querySelector('.updatecourse__category').selectedIndex
+      ].value
+    );
+    form.append(
+      'image',
+      document.getElementById('updatecourse__photo').files[0]
+    );
+
+    // console.log(image);
+
+    updateCourse(courseId, form);
   });
 }
 

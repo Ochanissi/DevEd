@@ -2,6 +2,52 @@
 
 import axios from 'axios';
 import { showAlert } from './alerts';
+const slugify = require('slugify');
+
+export const createCourse = async data => {
+  try {
+    const url = '/api/v1/courses';
+
+    const res = await axios({
+      method: 'POST',
+      url,
+      data
+    });
+
+    if (res.data.status === 'success') {
+      // console.log('5', res.data.data.data.title);
+
+      showAlert('success', 'Course successfully created!');
+      window.setTimeout(() => {
+        location.assign(
+          `/course/${slugify(res.data.data.data.title, { lower: true })}`
+        );
+      }, 1500);
+    }
+  } catch (err) {
+    showAlert('error', err.response.data.message);
+  }
+};
+
+export const updateCourse = async (courseId, data) => {
+  try {
+    const url = `/api/v1/courses/${courseId}`;
+
+    const res = await axios({
+      method: 'PATCH',
+      url,
+      data
+    });
+
+    console.log(res.data);
+
+    if (res.data.status === 'success') {
+      showAlert('success', 'Course successfully updated!');
+    }
+  } catch (err) {
+    showAlert('error', err.response.data.message);
+  }
+};
 
 export const deleteCourse = async courseId => {
   try {
