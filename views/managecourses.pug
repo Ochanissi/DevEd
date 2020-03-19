@@ -35,5 +35,5 @@ block content
             a.btn.btn__card(href=`/course/${course.slug}`) Details
           .card__admin
             input.form__input(type='hidden' value=`${course.id}`)
-            a.btn.btn__color(href='') Update
+            a.btn.btn__color(href=`/manage-courses/update-course/${course.id}`) Update
             button.btn.btn__color.card__admin--delete Delete

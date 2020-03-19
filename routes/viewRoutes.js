@@ -59,6 +59,13 @@ router.get(
   viewsController.manageReviews
 );
 
+router.get(
+  '/manage-courses/update-course/:id',
+  authController.protect,
+  authController.restrictTo('admin'),
+  viewsController.updateCourse
+);
+
 router.post(
   '/submit-user-data',
   authController.protect,
