@@ -183,3 +183,16 @@ exports.manageReviews = catchAsync(async (req, res, next) => {
     reviews
   });
 });
+
+exports.updateCourse = catchAsync(async (req, res, next) => {
+  const course = await Course.findById(req.params.id);
+  // console.log(req.user);
+  // console.log(req.course);
+  // console.log(req.params.id);
+  console.log(course);
+
+  res.status(200).render('updatecourse', {
+    title: 'Update Course',
+    course
+  });
+});
