@@ -4,50 +4,52 @@ block content
   section.createcourse
     .createcourse__form
       h2.heading-2--form.mb-lg Update course
-      form.form.form__createcourse.form__updatecourse
+      form.form.form__createcourse#form__updatecourse
         .form__group
-          label.form__label(for='course__title') Title
+          label.form__label(for='updatecourse__title') Title
             input.form__input#updatecourse__title(type='text' placeholder='The course name' required='' minlength='10' maxlength='50' autocomplete='off' value= course.title)
         .form__group
-          label.form__label(for='course__subtitle') Subtitle
+          label.form__label(for='updatecourse__subtitle') Subtitle
             input.form__input#updatecourse__subtitle(type='text' placeholder='A short description of the course' required='' minlength='10' maxlength='200' autocomplete='off' value= course.subtitle)
         .form__group
-          label.form__label(for='course__langsound') Sound Languages
+          label.form__label(for='updatecourse__langsound') Sound Languages
             input.form__input#updatecourse__langsound(type='text' placeholder='The available sound languages' required='' autocomplete='off' value= course.langSound.join(', '))
         .form__group
-          label.form__label(for='course__langsubs') Subtitle Languages
+          label.form__label(for='updatecourse__langsubs') Subtitle Languages
             input.form__input#updatecourse__langsubs(type='text' placeholder='The available subtitle languages' required='' autocomplete='off' value= course.langSubs.join(', '))
         .form__group
-          label.form__label(for='course__includesvideo') Number of videos
+          label.form__label(for='updatecourse__includesvideo') Number of videos
             input.form__input#updatecourse__includesvideo(type='text' placeholder='The number of the video lectures' required='' autocomplete='off' value= course.includesVideos)
         .form__group
-          label.form__label(for='course__includesarticles') Number of articles
+          label.form__label(for='updatecourse__includesarticles') Number of articles
             input.form__input#updatecourse__includesarticles(type='text' placeholder='The number of the articles' required='' autocomplete='off' value= course.includesArticles)
         .form__group
-          label.form__label(for='course__includescontent') Number of content
+          label.form__label(for='updatecourse__includescontent') Number of content
             input.form__input#updatecourse__includescontent(type='text' placeholder='The number of the text content' required='' autocomplete='off' value= course.includesContent)
         .form__group
-          label.form__label(for='course__summary') Summary
-            textarea.form__input#updatecourse__summary(type='text' placeholder='The summary of the course' minlength='50' maxlength='10000' rows='5' required='' autocomplete='off')= course.learnSummary.join('. ')
+          label.form__label(for='updatecourse__summary') Summary
+            textarea.form__input#updatecourse__summary(type='text' placeholder='The summary of the course' minlength='50' maxlength='10000' rows='5' required='' autocomplete='off')= course.learnSummary.join(' ')
         .form__group
-          label.form__label(for='course__description') Description
-            textarea.form__input#updatecourse__description(type='text' placeholder='The description of the course' minlength='50' maxlength='10000' rows='5' required='' autocomplete='off')= course.description.join('. ')
+          label.form__label(for='updatecourse__description') Description
+            textarea.form__input#updatecourse__description(type='text' placeholder='The description of the course' minlength='50' maxlength='10000' rows='5' required='' autocomplete='off')= course.description.join(' ')
         .form__group
-          label.form__label(for='course__requirements') Requirements
-            textarea.form__input#updatecourse__requirements(type='text' placeholder='The requirements of the course' minlength='20' maxlength='10000' rows='5' required='' autocomplete='off')= course.requirements.join('. ')
+          label.form__label(for='updatecourse__requirements') Requirements
+            textarea.form__input#updatecourse__requirements(type='text' placeholder='The requirements of the course' minlength='20' maxlength='10000' rows='5' required='' autocomplete='off')= course.requirements.join(' ')
         .form__group
-          label.form__label(for='course__pricevalue') Full Price
+          label.form__label(for='updatecourse__pricevalue') Full Price
             input.form__input#updatecourse__pricevalue(type='text' placeholder='The price of the course' required='' autocomplete='off' value= course.priceValue)
         .form__group
-          label.form__label(for='course__pricediscount') Price Discount
+          label.form__label(for='updatecourse__pricediscount') Price Discount
             input.form__input#updatecourse__pricediscount(type='text' placeholder='The price discount %' required='' autocomplete='off' value= course.priceDiscount)
         .form__group
-          label.form__label(for='course__teachers') Teachers
-            input.form__input(type='text' placeholder='The course teachers' required='' value=`${course.teachers.map(x => x.name).join(', ')}` disabled)
+          label.form__label(for='updatecourse__teachers') Teachers
+            input.form__input(type='text' placeholder='The course teachers' value=`${course.teachers.map(x => x.name).join(', ')}` disabled)
+            input.form__input#updatecourse__courseId(type='hidden' value=`${course.id}`)
+            input.form__input#updatecourse__category(type='hidden' value=`${course.category}`)
         .form__group
           label.createcourse__dropdown(for='dropdown')
-            select.course__category#dropdown(name='select')
-              option(value='' disabled selected) Category
+            select.updatecourse__category#dropdown(name='select')
+              option(value='' disabled) Category
               option(value='bm') Business & Management
               option(value='itcs') IT & Computer Science
               option(value='engi') Science, Engineering & Math
@@ -55,7 +57,7 @@ block content
         .form__group.form__photo-upload.createcourse__photo
           img.form__course-photo(src=`/img/courses/${course.image}` alt=`Photo of ${course.name}`)
           input.form__upload#updatecourse__photo(type='file' accept='image/*' name='photo')
-          label(for='course__photo') Choose course photo
+          label(for='updatecourse__photo') Choose course photo
         .createcourse__form--btns
           .form__group
             button.btn.form__group--btn Update course

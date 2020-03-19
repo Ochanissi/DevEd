@@ -47,6 +47,8 @@ router
   .patch(
     authController.protect,
     authController.restrictTo('admin', 'lead-guide'),
+    courseController.uploadCoursePhoto,
+    courseController.resizeCoursePhoto,
     courseController.updateCourse
   )
   .delete(

@@ -4,7 +4,7 @@ block content
   section.createcourse
     .createcourse__form
       h2.heading-2--form.mb-lg Create new course
-      form.form.form__createcourse
+      form.form.form__createcourse#form__createcourse
         .form__group
           label.form__label(for='course__title') Title
             input.form__input#course__title(type='text' placeholder='The course name' required='' minlength='10' maxlength='50' autocomplete='off')
@@ -43,7 +43,7 @@ block content
             input.form__input#course__pricediscount(type='text' placeholder='The price discount %' required='' autocomplete='off')
         .form__group
           label.form__label(for='course__teachers') Teachers
-            input.form__input(type='text' placeholder='The course teachers' required='' value=`${user.name}` disabled)
+            input.form__input(type='text' placeholder='The course teachers' value=`${user.name}` disabled)
             input.form__input#course__teachers(type='hidden' value=`${user.id}`)
         .form__group
           label.createcourse__dropdown(for='dropdown')
