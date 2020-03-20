@@ -19,7 +19,8 @@ exports.deleteOne = Model =>
 exports.updateOne = Model =>
   catchAsync(async (req, res, next) => {
     // console.log(req.body);
-    // console.log(req.body.image);
+    // console.log(req.body.photo);
+    // console.log(req.file);
 
     if (req.body.description)
       req.body.description = req.body.description
