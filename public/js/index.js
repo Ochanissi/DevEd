@@ -7,10 +7,10 @@ import {
   createCourse,
   updateCourse,
   updateReivew,
+  updateUser,
   deleteCourse,
   deleteUser,
-  deleteReview,
-  updateUser
+  deleteReview
 } from './manageResources';
 import { buyCourse } from './stripe';
 import { showAlert } from './alerts';
@@ -23,6 +23,7 @@ const signupForm = document.querySelector('.form__signup');
 const createCourseForm = document.getElementById('form__createcourse');
 const updateCourseForm = document.getElementById('form__updatecourse');
 const updateReviewForm = document.getElementById('form__updatereview');
+const updateUserForm = document.getElementById('form__updateuser');
 const logoutBtn = document.getElementById('btn__logout');
 const userDataForm = document.querySelector('.form-user-data');
 const userPasswordForm = document.querySelector('.form-user-password');
@@ -323,6 +324,38 @@ if (updateReviewForm) {
 
     // console.log(reviewId, { rating, review });
     updateReivew(reviewId, { rating, review });
+  });
+}
+
+if (updateUserForm) {
+  updateUserForm.addEventListener('submit', e => {
+    e.preventDefault();
+    const userId = document.getElementById('updateuser__userId').value;
+
+    const form = new FormData();
+    form.append('name', document.getElementById('updateuser__name').value);
+    form.append('email', document.getElementById('updateuser__email').value);
+    form.append(
+      'occupation',
+      document.getElementById('updateuser__occupation').value
+    );
+    form.append(
+      'country',
+      document.getElementById('updateuser__country').value
+    );
+    form.append('about', document.getElementById('updateuser__about').value);
+
+    if (!document.getElementById('updateuser__photo').value) {
+      // console.log('Please choose a file!');
+    } else {
+      // console.log('File has been chosen');
+      form.append(
+        'photo',
+        document.getElementById('updateuser__photo').files[0]
+      );
+    }
+
+    updateUser(userId, form);
   });
 }
 
