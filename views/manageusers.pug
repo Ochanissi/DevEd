@@ -15,5 +15,5 @@ block content
             p.review__features--text-4= user.about
             .review__features--admin
               input.form__input(type='hidden' value=`${user.id}`)
-              a.btn.btn__color(href='') Update
+              a.btn.btn__color(href=`/manage-users/update-user/${user.id}`) Update
               button.btn.btn__color.user__admin--delete Delete

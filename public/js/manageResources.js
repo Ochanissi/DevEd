@@ -39,7 +39,7 @@ export const updateCourse = async (courseId, data) => {
       data
     });
 
-    console.log(res.data);
+    // console.log(res.data);
 
     if (res.data.status === 'success') {
       showAlert('success', 'Course successfully updated!');

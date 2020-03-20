@@ -1,0 +1,22 @@
+extends base
+
+block content
+  section.createcourse
+    .createcourse__form
+      h2.heading-2--form.mb-lg Update review
+      form.form.form__createcourse#form__updatereview
+        .form__group
+          label.form__label(for='updatereview__course') Course
+            input.form__input#updatereview__course(type='text' placeholder='The course' value= review.course.title disabled)
+        .form__group
+          label.form__label(for='updatereview__reviewer') Reviewer
+            input.form__input#updatereview__reviewer(type='text' placeholder='The reviewer' value= review.user.name disabled)
+        .form__group
+          label.form__label(for='updatereview__rating') Rating
+            input.form__input#updatereview__rating(type='text' placeholder='The rating' required='' autocomplete='off' min='1' max='5' value= review.rating)
+        .form__group
+          label.form__label(for='updatereview__review') Review
+            textarea.form__input#updatereview__review(type='text' placeholder='The review' minlength='10' maxlength='10000' rows='5' required='' autocomplete='off')= review.review
+        .createcourse__form--btns
+          .form__group
+            button.btn.form__group--btn Update review

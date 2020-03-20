@@ -66,6 +66,20 @@ router.get(
   viewsController.updateCourse
 );
 
+router.get(
+  '/manage-reviews/update-review/:id',
+  authController.protect,
+  authController.restrictTo('admin'),
+  viewsController.updateReview
+);
+
+router.get(
+  '/manage-users/update-user/:id',
+  authController.protect,
+  authController.restrictTo('admin'),
+  viewsController.updateUser
+);
+
 router.post(
   '/submit-user-data',
   authController.protect,

@@ -43,7 +43,7 @@ exports.updateOne = Model =>
 
     if (req.body.langSubs) req.body.langSubs = req.body.langSubs.split(', ');
 
-    console.log(req.body);
+    // console.log(req.body);
 
     const doc = await Model.findByIdAndUpdate(req.params.id, req.body, {
       new: true,
