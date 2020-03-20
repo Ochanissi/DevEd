@@ -9,7 +9,8 @@ import {
   updateReivew,
   deleteCourse,
   deleteUser,
-  deleteReview
+  deleteReview,
+  updateUser
 } from './manageResources';
 import { buyCourse } from './stripe';
 import { showAlert } from './alerts';

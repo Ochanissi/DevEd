@@ -69,6 +69,26 @@ export const updateReivew = async (reviewId, data) => {
   }
 };
 
+export const updateUser = async (userId, data) => {
+  try {
+    const url = `/api/v1/users/${userId}`;
+
+    const res = await axios({
+      method: 'PATCH',
+      url,
+      data
+    });
+
+    // console.log(res.data);
+
+    if (res.data.status === 'success') {
+      showAlert('success', 'User successfully updated!');
+    }
+  } catch (err) {
+    showAlert('error', err.response.data.message);
+  }
+};
+
 export const deleteCourse = async courseId => {
   try {
     const url = `/api/v1/courses/${courseId}`;
