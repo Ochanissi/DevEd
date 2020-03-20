@@ -6,6 +6,7 @@ import { updateSettings } from './updateSettings';
 import {
   createCourse,
   updateCourse,
+  updateReivew,
   deleteCourse,
   deleteUser,
   deleteReview
@@ -20,6 +21,7 @@ const loginForm = document.querySelector('.form__login');
 const signupForm = document.querySelector('.form__signup');
 const createCourseForm = document.getElementById('form__createcourse');
 const updateCourseForm = document.getElementById('form__updatecourse');
+const updateReviewForm = document.getElementById('form__updatereview');
 const logoutBtn = document.getElementById('btn__logout');
 const userDataForm = document.querySelector('.form-user-data');
 const userPasswordForm = document.querySelector('.form-user-password');
@@ -306,6 +308,20 @@ if (updateCourseForm) {
     // console.log(image);
 
     updateCourse(courseId, form);
+  });
+}
+
+if (updateReviewForm) {
+  updateReviewForm.addEventListener('submit', e => {
+    e.preventDefault();
+
+    const reviewId = document.getElementById('updatereview__reviewId').value;
+
+    const rating = document.getElementById('updatereview__rating').value;
+    const review = document.getElementById('updatereview__review').value;
+
+    // console.log(reviewId, { rating, review });
+    updateReivew(reviewId, { rating, review });
   });
 }
 
