@@ -191,7 +191,7 @@ exports.updateCourse = catchAsync(async (req, res, next) => {
   //   runValidators: true
   // });
 
-  // console.log(course);
+  console.log(course);
 
   // console.log(req.user);
   // console.log(req.course);

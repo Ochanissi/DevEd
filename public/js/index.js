@@ -220,13 +220,13 @@ if (updateCourseForm) {
 
   updateCourseForm.addEventListener('submit', e => {
     e.preventDefault();
-    const form = new FormData();
     const courseId = document.getElementById('updatecourse__courseId').value;
 
+    const form = new FormData();
     form.append('title', document.getElementById('updatecourse__title').value);
     form.append(
       'subtitle',
-      document.getElementById('updatecoursee__subtitle').value
+      document.getElementById('updatecourse__subtitle').value
     );
     form.append(
       'langSound',
@@ -287,10 +287,21 @@ if (updateCourseForm) {
         document.querySelector('.updatecourse__category').selectedIndex
       ].value
     );
-    form.append(
-      'image',
-      document.getElementById('updatecourse__photo').files[0]
-    );
+
+    if (!document.getElementById('updatecourse__photo').value) {
+      // console.log('Please choose a file!');
+    } else {
+      // console.log('File has been chosen');
+      form.append(
+        'image',
+        document.getElementById('updatecourse__photo').files[0]
+      );
+    }
+
+    // form.append(
+    //   'image',
+    //   document.getElementById('updatecourse__photo').files[0]
+    // );
 
     // console.log(image);
 
