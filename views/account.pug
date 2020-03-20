@@ -43,10 +43,10 @@ block content
               input.form__input#occupation(type='text' value=`${user.occupation}` required='' name='occupation' maxlength='50' autocomplete='off' placeholder='What do you do for a living.')
             .form__group
               label.form__label(for='country') Country
-              input.form__input#country(type='country' value=`${user.country}` required='' name='country' maxlength='50' autocomplete='off' placeholder='Which country you are from.')
+              input.form__input#country(type='text' value=`${user.country}` required='' name='country' maxlength='50' autocomplete='off' placeholder='Which country you are from.')
             .form__group
               label.form__label(for='about') About yourself
-              textarea.form__input#about(type='about' required='' name='about' maxlength='200' rows='3' autocomplete='off' placeholder='Tell us about yourself!')= user.about
+              textarea.form__input#about(type='text' required='' name='about' maxlength='200' rows='3' autocomplete='off' placeholder='Tell us about yourself!')= user.about
             .form__group.form__photo-upload
               img.form__user-photo(src=`/img/users/${user.photo}` alt=`Photo of ${user.name}`)
               input.form__upload#photo(type='file' accept='image/*' name='photo')
