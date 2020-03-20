@@ -191,7 +191,7 @@ exports.updateCourse = catchAsync(async (req, res, next) => {
   //   runValidators: true
   // });
 
-  console.log(course);
+  // console.log(course);
 
   // console.log(req.user);
   // console.log(req.course);
@@ -201,5 +201,45 @@ exports.updateCourse = catchAsync(async (req, res, next) => {
   res.status(200).render('updatecourse', {
     title: 'Update Course',
     course
+  });
+});
+
+exports.updateReview = catchAsync(async (req, res, next) => {
+  const review = await Review.findById(req.params.id);
+  // const updatedCourse = await Course.findByIdAndUpdate(req.params.id, {
+  //   new: true,
+  //   runValidators: true
+  // });
+
+  // console.log(review);
+
+  // console.log(req.user);
+  // console.log(req.course);
+  // console.log(req.params.id);
+  // console.log(course);
+
+  res.status(200).render('updatereview', {
+    title: 'Update Review',
+    review
+  });
+});
+
+exports.updateUser = catchAsync(async (req, res, next) => {
+  const user = await User.findById(req.params.id);
+  // const updatedCourse = await Course.findByIdAndUpdate(req.params.id, {
+  //   new: true,
+  //   runValidators: true
+  // });
+
+  // console.log(user);
+
+  // console.log(req.user);
+  // console.log(req.course);
+  // console.log(req.params.id);
+  // console.log(course);
+
+  res.status(200).render('updateuser', {
+    title: 'Update User',
+    user
   });
 });
