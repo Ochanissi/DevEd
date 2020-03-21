@@ -147,14 +147,14 @@ block content
           - const a = new Date().toString().split(" ").slice(1, 4)
           .feedback__content--review--date= `${a[1]} ${a[0]} ${a[2]}`
         .feedback__content--review--col-2.feedback__content--review--col-2--lr
-          form.form
+          form.form#form__leavereview
             .form__group
-              label.form__label(for='updatereview__rating') Rating
-                input.form__input#updatereview__rating(type='text' name='rating' placeholder='The rating' required='' autocomplete='off' min='1' max='5')
+              label.form__label(for='leavereview__rating') Rating
+                input.form__input#leavereview__rating(type='number' name='rating' placeholder='Please rate the review from 1 to 5 stars!' required='' autocomplete='off' min='1' max='5')
             .form__group
-              label.form__label(for='updatereview__review') Review
-                textarea.form__input#updatereview__review(type='text' name='review' placeholder='The review' minlength='10' maxlength='10000' rows='5' required='' autocomplete='off')
-                input.form__input#updatereview__reviewId(type='hidden' value=``)
+              label.form__label(for='leavereview__review') Review
+                textarea.form__input#leavereview__review(type='text' name='review' placeholder='Tell us about your own personal experience taking this course. Was it a good match for you?' minlength='10' maxlength='10000' rows='5' required='' autocomplete='off')
+                input.form__input#leavereview__courseId(type='hidden' value=course.id)
             .createcourse__form--btns
               .form__group
                 button.btn.form__group--btn.btn__color Leave review

@@ -10,7 +10,8 @@ import {
   updateUser,
   deleteCourse,
   deleteUser,
-  deleteReview
+  deleteReview,
+  leaveReview
 } from './manageResources';
 import { buyCourse } from './stripe';
 import { showAlert } from './alerts';
@@ -20,6 +21,7 @@ createCourse;
 // DOM ELEMENTS
 const loginForm = document.querySelector('.form__login');
 const signupForm = document.querySelector('.form__signup');
+const leaveReviewForm = document.getElementById('form__leavereview');
 const createCourseForm = document.getElementById('form__createcourse');
 const updateCourseForm = document.getElementById('form__updatecourse');
 const updateReviewForm = document.getElementById('form__updatereview');
@@ -52,6 +54,19 @@ if (signupForm) {
     const passwordConfirm = document.getElementById('password-confirm').value;
 
     signup(name, email, password, passwordConfirm);
+  });
+}
+
+if (leaveReviewForm) {
+  leaveReviewForm.addEventListener('submit', e => {
+    e.preventDefault();
+    const courseId = document.getElementById('leavereview__courseId').value;
+
+    const rating = document.getElementById('leavereview__rating').value;
+    const review = document.getElementById('leavereview__review').value;
+
+    // console.log(courseId, rating, review);
+    leaveReview(courseId, { rating, review });
   });
 }
 

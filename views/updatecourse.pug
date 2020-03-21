@@ -19,13 +19,13 @@ block content
             input.form__input#updatecourse__langsubs(type='text' name='langSubs' placeholder='The available subtitle languages' required='' autocomplete='off' value= course.langSubs.join(', '))
         .form__group
           label.form__label(for='updatecourse__includesvideo') Number of videos
-            input.form__input#updatecourse__includesvideo(type='text' name='includesVideos' placeholder='The number of the video lectures' required='' autocomplete='off' value= course.includesVideos)
+            input.form__input#updatecourse__includesvideo(type='number' name='includesVideos' placeholder='The number of the video lectures' required='' autocomplete='off' value= course.includesVideos)
         .form__group
           label.form__label(for='updatecourse__includesarticles') Number of articles
-            input.form__input#updatecourse__includesarticles(type='text' name='includesArticles' placeholder='The number of the articles' required='' autocomplete='off' value= course.includesArticles)
+            input.form__input#updatecourse__includesarticles(type='number' name='includesArticles' placeholder='The number of the articles' required='' autocomplete='off' value= course.includesArticles)
         .form__group
           label.form__label(for='updatecourse__includescontent') Number of content
-            input.form__input#updatecourse__includescontent(type='text' name='includesContent' placeholder='The number of the text content' required='' autocomplete='off' value= course.includesContent)
+            input.form__input#updatecourse__includescontent(type='number' name='includesContent' placeholder='The number of the text content' required='' autocomplete='off' value= course.includesContent)
         .form__group
           label.form__label(for='updatecourse__summary') Summary
             textarea.form__input#updatecourse__summary(type='text' name='learnSummary' placeholder='The summary of the course' minlength='50' maxlength='10000' rows='5' required='' autocomplete='off')= course.learnSummary.join(' ')
@@ -37,10 +37,10 @@ block content
             textarea.form__input#updatecourse__requirements(type='text' name='requirements' placeholder='The requirements of the course' minlength='20' maxlength='10000' rows='5' required='' autocomplete='off')= course.requirements.join(' ')
         .form__group
           label.form__label(for='updatecourse__pricevalue') Full Price
-            input.form__input#updatecourse__pricevalue(type='text' name='priceValue' placeholder='The price of the course' required='' autocomplete='off' value= course.priceValue)
+            input.form__input#updatecourse__pricevalue(type='number' name='priceValue' placeholder='The price of the course' required='' autocomplete='off' value= course.priceValue)
         .form__group
           label.form__label(for='updatecourse__pricediscount') Price Discount
-            input.form__input#updatecourse__pricediscount(type='text' name='priceDiscount' placeholder='The price discount %' required='' autocomplete='off' value= course.priceDiscount)
+            input.form__input#updatecourse__pricediscount(type='number' name='priceDiscount' placeholder='The price discount %' required='' autocomplete='off' value= course.priceDiscount)
         .form__group
           label.form__label(for='updatecourse__teachers') Teachers
             input.form__input(type='text' placeholder='The course teachers' value=`${course.teachers.map(x => x.name).join(', ')}` disabled)
