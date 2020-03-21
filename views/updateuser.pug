@@ -7,24 +7,24 @@ block content
       form.form.form__createcourse#form__updateuser
         .form__group
           label.form__label(for='updateuser__name') Full name
-            input.form__input#updateuser__name(type='text' name='name' placeholder='User name' required='' maxlength='50' autocomplete='off' value= user.name)
+            input.form__input#updateuser__name(type='text' name='name' placeholder='User name' required='' maxlength='50' autocomplete='off' value= updateUser.name)
         .form__group
           label.form__label(for='updateuser__email') Email address
-            input.form__input#updateuser__email(type='email' name='email' placeholder='User email address' required='' autocomplete='off' value= user.email)
+            input.form__input#updateuser__email(type='email' name='email' placeholder='User email address' required='' autocomplete='off' value= updateUser.email)
         .form__group
           label.form__label(for='updateuser__occupation') Occupation
-            input.form__input#updateuser__occupation(type='text' name='occupation' placeholder='User occupation' required='' autocomplete='off' value= user.occupation)
+            input.form__input#updateuser__occupation(type='text' name='occupation' placeholder='User occupation' required='' autocomplete='off' value= updateUser.occupation)
         .form__group
           label.form__label(for='updateuser__country') Country
-            input.form__input#updateuser__country(type='text' name='country' placeholder='User country' required='' autocomplete='off' value= user.country)
+            input.form__input#updateuser__country(type='text' name='country' placeholder='User country' required='' autocomplete='off' value= updateUser.country)
         .form__group
           label.form__label(for='updateuser__about') About
-            textarea.form__input#updateuser__about(type='text' name='about' placeholder='User about' required='' maxlength='200' rows='3' autocomplete='off')= user.about
+            textarea.form__input#updateuser__about(type='text' name='about' placeholder='User about' required='' maxlength='200' rows='3' autocomplete='off')= updateUser.about
         .form__group.form__photo-upload.createcourse__photo
-          img.form__user-photo(src=`/img/users/${user.photo}` alt=`Photo of ${user.name}`)
+          img.form__user-photo(src=`/img/users/${updateUser.photo}` alt=`Photo of ${updateUser.name}`)
           input.form__upload#updateuser__photo(type='file' accept='image/*' name='photo')
           label(for='updateuser__photo') Choose user photo
-          input.form__input#updateuser__userId(type='hidden' value=`${user.id}`)
+          input.form__input#updateuser__userId(type='hidden' value=`${updateUser.id}`)
         .createcourse__form--btns
           .form__group
             button.btn.form__group--btn Update user

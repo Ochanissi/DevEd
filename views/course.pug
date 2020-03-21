@@ -132,3 +132,29 @@ block content
                 svg.contentHeader__head--star(class=`contentHeader__head--star--${review.rating >= star ? 'active' : 'inactive'}`)
                   use(xlink:href="/img/icons.svg#icon-star")
             p.feedback__content--review--text= review.review
+
+  section.feedback.feedback__leave-review
+    .feedback__title
+      h3.heading-3 Leave a review
+    .feedback__subtitle.feedback__subtitle--lr Be the first one to leave a review
+    .feedback__content
+      .feedback__content--review.feedback__content--review--lr
+        .feedback__content--review--col-1
+          img.feedback__content--review--img(src=`/img/users/${user.photo}` alt=`${user.name}`)
+          h4.feedback__content--review--name= user.name
+          .feedback__content--review--occupation= user.occupation
+          .feedback__content--review--country= user.country
+          - const a = new Date().toString().split(" ").slice(1, 4)
+          .feedback__content--review--date= `${a[1]} ${a[0]} ${a[2]}`
+        .feedback__content--review--col-2.feedback__content--review--col-2--lr
+          form.form
+            .form__group
+              label.form__label(for='updatereview__rating') Rating
+                input.form__input#updatereview__rating(type='text' name='rating' placeholder='The rating' required='' autocomplete='off' min='1' max='5')
+            .form__group
+              label.form__label(for='updatereview__review') Review
+                textarea.form__input#updatereview__review(type='text' name='review' placeholder='The review' minlength='10' maxlength='10000' rows='5' required='' autocomplete='off')
+                input.form__input#updatereview__reviewId(type='hidden' value=``)
+            .createcourse__form--btns
+              .form__group
+                button.btn.form__group--btn.btn__color Leave review

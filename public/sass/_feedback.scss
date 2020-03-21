@@ -20,6 +20,12 @@
     padding: 5rem 0 7.5rem 0;
   }
 
+  &__leave-review {
+    background-color: $color-grey-light-1;
+
+    grid-column: full-start / full-end;
+  }
+
   &__title {
   }
 
@@ -38,6 +44,10 @@
 
     padding: 1rem;
     // background-color: $color-grey-light-1;
+
+    &--lr {
+      background-color: $color-white;
+    }
 
     &--rating {
       display: flex;
@@ -74,6 +84,7 @@
     text-align: center;
 
     grid-gap: 5rem;
+
     // padding: 0 2rem;
 
     &--review {
@@ -101,6 +112,10 @@
         grid-template-rows: 1fr 1fr;
 
         align-items: center;
+      }
+
+      &--lr {
+        background-color: $color-white;
       }
 
       &--col-1 {
@@ -131,6 +146,14 @@
           grid-row: 2 / 3;
 
           padding: 2rem;
+        }
+
+        &--lr {
+          min-width: 60rem;
+
+          @media only screen and (max-width: $bp-medium) {
+            min-width: 40rem;
+          }
         }
       }
 
