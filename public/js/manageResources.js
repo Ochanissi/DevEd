@@ -148,3 +148,24 @@ export const deleteReview = async reviewId => {
     showAlert('error', 'Something bad happened! Please try again later.');
   }
 };
+
+export const leaveReview = async (courseId, data) => {
+  try {
+    const url = `/api/v1/courses/${courseId}/reviews`;
+
+    const res = await axios({
+      method: 'POST',
+      url,
+      data
+    });
+
+    if (res.data.status === 'success') {
+      showAlert('success', 'Thank you for the review!');
+      window.setTimeout(() => {
+        location.reload();
+      }, 1500);
+    }
+  } catch (err) {
+    showAlert('error', 'Something bad happened! Please try again later.');
+  }
+};
