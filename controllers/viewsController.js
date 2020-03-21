@@ -225,7 +225,7 @@ exports.updateReview = catchAsync(async (req, res, next) => {
 });
 
 exports.updateUser = catchAsync(async (req, res, next) => {
-  const user = await User.findById(req.params.id);
+  const updateUser = await User.findById(req.params.id);
   // const updatedCourse = await Course.findByIdAndUpdate(req.params.id, {
   //   new: true,
   //   runValidators: true
@@ -240,6 +240,6 @@ exports.updateUser = catchAsync(async (req, res, next) => {
 
   res.status(200).render('updateuser', {
     title: 'Update User',
-    user
+    updateUser
   });
 });
