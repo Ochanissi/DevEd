@@ -73,6 +73,8 @@ exports.getCourse = catchAsync(async (req, res, next) => {
     return next(new AppError('There is no course with that name!', 404));
   }
 
+  // console.log(course.reviews.map(x => x.user.id));
+
   // 2. Build template
 
   // 3. Render template using the data from 1.
