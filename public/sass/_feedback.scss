@@ -1,7 +1,7 @@
 .feedback {
   // background-color: greenyellow;
 
-  grid-column: center-start / center-end;
+  grid-column: full-start / full-end;
 
   padding: 10rem 0;
   // grid-gap: 5rem;
@@ -11,6 +11,13 @@
   align-content: center;
   justify-items: center;
   align-items: center;
+
+  grid-template-columns:
+    [full-start] minmax(6rem, 1fr) [center-start] repeat(
+      8,
+      [col-start] minmax(min-content, 14rem) [col-end]
+    )
+    [center-end] minmax(6rem, 1fr) [full-end];
 
   text-align: center;
 
@@ -22,16 +29,20 @@
 
   &__leave-review {
     background-color: $color-grey-light-1;
-
-    grid-column: full-start / full-end;
   }
 
   &__title {
+    grid-row: 1 / 2;
+    grid-column: center-start / center-end;
   }
 
   &__subtitle {
     display: grid;
     grid-auto-flow: column;
+
+    grid-row: 2 / 3;
+    grid-column: center-start / center-end;
+
     grid-gap: 3rem;
 
     vertical-align: middle;
@@ -39,11 +50,17 @@
     font-size: 3rem;
     font-weight: 500;
 
+    padding: 2rem;
+
     box-shadow: 0 0 1px 1px rgba($color-black, 0.1),
       0 3px 1px 0 rgba($color-black, 0.1);
 
     padding: 1rem;
     // background-color: $color-grey-light-1;
+
+    ion-icon {
+      margin: auto 0;
+    }
 
     &--lr {
       background-color: $color-white;
@@ -74,29 +91,30 @@
     // background-color: red;
 
     display: grid;
-    // grid-template-columns: repeat(3, 1fr);
+    // grid-column: 1 / -1;
+    grid-row: 3 / 4;
+    grid-column: center-start / center-end;
 
-    justify-content: center;
+    // justify-content: center;
     align-content: center;
     justify-items: center;
     align-items: center;
 
     text-align: center;
 
+    width: 100%;
+    // min-width: 99%;
+
     grid-gap: 5rem;
 
     // padding: 0 2rem;
 
     &--review {
-      display: grid;
+      display: flex;
       // justify-content: center;
       // align-content: center;
-      // justify-items: center;
+      // justify-items: left;
       // align-items: center;
-
-      // text-align: center;
-
-      grid-template-columns: max-content, auto;
 
       background-color: $color-grey-light-1;
 
@@ -123,11 +141,15 @@
 
         border-right: 1px solid $color-grey-light-3;
 
-        padding: 3rem 5rem 0 3rem;
+        padding: 3rem 5rem 3rem 3rem;
+
+        width: 30rem;
 
         @media only screen and (max-width: $bp-smallest) {
           grid-column: 1 / -1;
           grid-row: 1 / 2;
+
+          width: auto;
 
           padding: 2rem;
 
@@ -141,19 +163,16 @@
 
         padding: 3rem;
 
+        width: 100%;
+
+        // @media only screen and (max-width: $bp-medium) {
+        //   min-width: 40rem;
+        // }
         @media only screen and (max-width: $bp-smallest) {
           grid-column: 1 / -1;
           grid-row: 2 / 3;
 
           padding: 2rem;
-        }
-
-        &--lr {
-          min-width: 60rem;
-
-          @media only screen and (max-width: $bp-medium) {
-            min-width: 40rem;
-          }
         }
       }
 
