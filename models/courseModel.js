@@ -191,15 +191,15 @@ courseSchema.pre('save', async function(next) {
   next();
 });
 
-courseSchema.pre('save', function(next) {
-  console.log('Will same document...');
-  next();
-});
+// courseSchema.pre('save', function(next) {
+//   console.log('Will same document...');
+//   next();
+// });
 
-courseSchema.post('save', function(doc, next) {
-  console.log(doc);
-  next();
-});
+// courseSchema.post('save', function(doc, next) {
+//   console.log(doc);
+//   next();
+// });
 
 // QUERY MIDDLEWARE
 courseSchema.pre(/^find/, function(next) {

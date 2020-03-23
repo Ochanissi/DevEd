@@ -41,8 +41,8 @@ const reviews = JSON.parse(
 // IMPORT DATA INTO DB
 const importData = async () => {
   try {
-    await User.create(users, { validateBeforeSave: false });
-    await Course.create(courses);
+    // await User.create(users, { validateBeforeSave: false });
+    // await Course.create(courses);
     await Review.create(reviews);
     console.log('Data successfully loaded!');
     process.exit();
@@ -54,8 +54,8 @@ const importData = async () => {
 // DELETE ALL DATA FROM COLLECTION
 const deleteData = async () => {
   try {
-    await User.deleteMany();
-    await Course.deleteMany();
+    // await User.deleteMany();
+    // await Course.deleteMany();
     await Review.deleteMany();
     console.log('Data successfully deleted!');
     process.exit();

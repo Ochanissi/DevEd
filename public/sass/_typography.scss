@@ -66,6 +66,10 @@
 
   position: relative;
 
+  @media only screen and (max-width: $bp-smallest) {
+    font-size: 3rem;
+  }
+
   &:before {
     content: '';
     position: absolute;
@@ -236,6 +240,10 @@
 
 .mb-hg {
   margin-bottom: 8rem;
+}
+
+.mt-hg {
+  margin-top: 10rem;
 }
 
 .line {
