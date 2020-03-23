@@ -1,9 +1,10 @@
 extends base
 
 block content
-  section.feedback
-    h3.heading-3 My Reviews
-    .feedback__content
+  section.feedback.feedback__admin.mt-hg
+    .feedback__title
+      h3.heading-3 My Reviews
+    .feedback__content.feedback__content--admin
       each review in reviews
         .feedback__content--review
           .feedback__content--review--col-1
@@ -19,4 +20,3 @@ block content
                 svg.contentHeader__head--star(class=`contentHeader__head--star--${review.rating >= star ? 'active' : 'inactive'}`)
                   use(xlink:href="/img/icons.svg#icon-star")
             p.feedback__content--review--text= review.review
-
