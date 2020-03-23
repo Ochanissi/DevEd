@@ -60,13 +60,13 @@ if (signupForm) {
 if (leaveReviewForm) {
   leaveReviewForm.addEventListener('submit', e => {
     e.preventDefault();
-    const courseId = document.getElementById('leavereview__courseId').value;
+    const course = document.getElementById('leavereview__courseId').value;
 
     const rating = document.getElementById('leavereview__rating').value;
     const review = document.getElementById('leavereview__review').value;
 
     // console.log(courseId, rating, review);
-    leaveReview(courseId, { rating, review });
+    leaveReview(course, { course, rating, review });
   });
 }
 
@@ -141,7 +141,7 @@ if (filters) {
         location.assign(`/courses?${dropdownSubjects.value}#courses`);
       }
 
-      if (localStorage['dropdown'].startsWith('typ')) {
+      if (localStorage['dropdown'].startsWith('price')) {
         dropdownTypes.value = localStorage['dropdown'];
         location.assign(`/courses?${dropdownTypes.value}#courses`);
       }
