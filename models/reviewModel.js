@@ -10,7 +10,15 @@ const reviewSchema = new mongoose.Schema(
     rating: {
       type: Number,
       min: 1,
-      max: 5
+      max: 5,
+      maxlength: [
+        200,
+        'A course review must have less or equal than 200 characters!'
+      ],
+      minlength: [
+        10,
+        'A course review must have more or equal than 10 characters!'
+      ]
     },
     createdAt: {
       type: Date,

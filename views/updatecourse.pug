@@ -18,13 +18,13 @@ block content
           label.form__label(for='updatecourse__langsubs') Subtitle Languages
             input.form__input#updatecourse__langsubs(type='text' name='langSubs' placeholder='The available subtitle languages' required='' autocomplete='off' value= course.langSubs.join(', '))
         .form__group
-          label.form__label(for='updatecourse__includesvideo') Number of videos
+          label.form__label(for='updatecourse__includesvideo') Hours of video content
             input.form__input#updatecourse__includesvideo(type='number' name='includesVideos' placeholder='The number of the video lectures' required='' autocomplete='off' value= course.includesVideos)
         .form__group
-          label.form__label(for='updatecourse__includesarticles') Number of articles
+          label.form__label(for='updatecourse__includesarticles') Number of articles provided
             input.form__input#updatecourse__includesarticles(type='number' name='includesArticles' placeholder='The number of the articles' required='' autocomplete='off' value= course.includesArticles)
         .form__group
-          label.form__label(for='updatecourse__includescontent') Number of content
+          label.form__label(for='updatecourse__includescontent') Number of downloadable resource
             input.form__input#updatecourse__includescontent(type='number' name='includesContent' placeholder='The number of the text content' required='' autocomplete='off' value= course.includesContent)
         .form__group
           label.form__label(for='updatecourse__summary') Summary
