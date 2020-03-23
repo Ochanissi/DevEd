@@ -171,8 +171,6 @@
       }
 
       &--col-1 {
-        grid-column: 1 / 2;
-
         border-right: 1px solid $color-grey-light-3;
 
         padding: 3rem 5rem 3rem 3rem;
@@ -190,15 +188,13 @@
       }
 
       &--col-2 {
-        grid-column: 2 / 3;
-
         padding: 3rem;
 
         width: 100%;
-
         // @media only screen and (max-width: $bp-medium) {
         //   min-width: 40rem;
         // }
+
         @media only screen and (max-width: $bp-small) {
           padding: 2rem;
         }
