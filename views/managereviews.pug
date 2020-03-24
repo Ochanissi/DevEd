@@ -1,7 +1,7 @@
 extends base
 
 block content
-  section.feedback.feedback__admin
+  section.feedback.feedback__admin.mt-hg
     .feedback__title
       h3.heading-3 Manage Reviews
     .feedback__content
@@ -20,7 +20,7 @@ block content
                 svg.contentHeader__head--star(class=`contentHeader__head--star--${review.rating >= star ? 'active' : 'inactive'}`)
                   use(xlink:href="/img/icons.svg#icon-star")
             p.feedback__content--review--text= review.review
-          .feedback__content--review--admin
-            input.form__input(type='hidden' value=`${review.id}`)
-            a.btn.btn__color(href=`/manage-reviews/update-review/${review.id}`) Update
-            button.btn.btn__color.review__admin--delete Delete
+            .feedback__content--review--admin
+              input.form__input(type='hidden' value=`${review.id}`)
+              a.btn.btn__color(href=`/manage-reviews/update-review/${review.id}`) Update
+              button.btn.btn__color.review__admin--delete Delete
