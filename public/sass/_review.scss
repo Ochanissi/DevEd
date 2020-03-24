@@ -28,6 +28,10 @@
     padding: 5rem 0 5rem 0;
   }
 
+  @media only screen and (max-width: $bp-smallest) {
+    grid-gap: 0;
+  }
+
   &__title {
     // background-color: blue;
 
