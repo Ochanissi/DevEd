@@ -9,8 +9,7 @@ const Review = require('./../models/reviewModel');
 exports.alerts = (req, res, next) => {
   const { alert } = req.query;
   if (alert === 'my-courses') {
-    res.locals.alert =
-      'Your purchase was successful! Please check your email for confirmation!';
+    res.locals.alert = 'Your purchase was successful!';
   }
   next();
 };
