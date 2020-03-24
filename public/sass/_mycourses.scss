@@ -16,8 +16,18 @@
 
   grid-gap: 10rem;
 
+  @media only screen and (max-width: $bp-smallest) {
+    grid-gap: 5rem;
+  }
+
+  &__title {
+    grid-row: 1 / 2;
+  }
+
   &__content {
     // background-color: red;
+
+    grid-row: 2 / 3;
 
     display: grid;
     grid-template-columns: repeat(3, 1fr);
