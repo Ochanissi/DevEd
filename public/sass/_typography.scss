@@ -148,6 +148,16 @@
   padding: 1rem 1.2rem;
 }
 
+.btn__admin,
+.btn__admin:link,
+.btn__admin:visited {
+  height: 51px !important;
+
+  @media only screen and (max-width: $bp-largest) {
+    height: 43px !important;
+  }
+}
+
 .btn__contact,
 .btn__contact:link,
 .btn__contact:visited {
