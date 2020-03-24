@@ -10,7 +10,7 @@ block content
           each star in [1, 2, 3, 4, 5]
             svg.contentHeader__head--star(class=`contentHeader__head--star--${course.ratingsAverage >= star ? 'active' : 'inactive'}`)
               use(xlink:href="/img/icons.svg#icon-star")
-        .contentHeader__head--ratings= `${course.ratingsAverage} (${course.ratingsQuantity} ratings)`
+        .contentHeader__head--ratings= `${course.ratingsQuantity > 0 ? course.ratingsAverage : 'N/A'} (${course.ratingsQuantity} ratings)`
         .contentHeader__head--students= `${course.studentsEnrolled} students enrolled`
       .contentHeader__head--about
         .contentHeader__head--about--created Created by 

@@ -93,7 +93,7 @@ reviewSchema.statics.calcAverageRatings = async function(courseId) {
   } else {
     await Course.findByIdAndUpdate(courseId, {
       ratingsQuantity: 0,
-      ratingsAverage: 4.5
+      ratingsAverage: 0
     });
   }
 };

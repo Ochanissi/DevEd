@@ -19,7 +19,7 @@ block content
               p.card__details--subtitle= course.subtitle
             .card__footer
               p.card__footer--ratings
-                span.card__footer--value= `Rating: ${course.ratingsAverage} `
+                span.card__footer--value= `Rating: ${course.ratingsQuantity > 0 ? course.ratingsAverage : 'N/A'} `
                 span.card__footer--text= `(${course.ratingsQuantity} ratings)`
               p.card__footer--price
                 span.card__footer--value= `Price: ${course.priceFinal > 0 ? '€' + course.priceFinal : 'FREE'} `
@@ -73,7 +73,7 @@ block content
               span Certificate of Completion
           .card__footer
             p.card__footer--ratings
-              span.card__footer--value= `Rating: ${course.ratingsAverage} `
+              span.card__footer--value= `Rating: ${course.ratingsQuantity > 0 ? course.ratingsAverage : 'N/A'} `
               span.card__footer--text= `(${course.ratingsQuantity} ratings)`
             p.card__footer--price
               span.card__footer--value= `Price: ${course.priceFinal > 0 ? '€' + course.priceFinal : 'FREE'} `
