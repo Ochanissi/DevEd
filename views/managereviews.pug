@@ -4,7 +4,7 @@ block content
   section.feedback.feedback__admin.mt-hg
     .feedback__title
       h3.heading-3 Manage Reviews
-    .feedback__content
+    .feedback__content.feedback__content--admin
       each review in reviews
         .feedback__content--review
           .feedback__content--review--col-1
@@ -22,5 +22,5 @@ block content
             p.feedback__content--review--text= review.review
             .feedback__content--review--admin
               input.form__input(type='hidden' value=`${review.id}`)
-              a.btn.btn__color(href=`/manage-reviews/update-review/${review.id}`) Update
+              a.btn.btn__color.btn__admin(href=`/manage-reviews/update-review/${review.id}`) Update
               button.btn.btn__color.review__admin--delete Delete

@@ -1,7 +1,7 @@
 extends base
 
 block content
-  section.review.mt-hg
+  section.review.feedback__admin.mt-hg
       .review__title
         h3.heading-3 Manage Users
       .review__features
@@ -15,5 +15,5 @@ block content
             p.review__features--text-4.review__features--text--admin= user.about
             .review__features--admin
               input.form__input(type='hidden' value=`${user.id}`)
-              a.btn.btn__color(href=`/manage-users/update-user/${user.id}`) Update
+              a.btn.btn__color.btn__admin(href=`/manage-users/update-user/${user.id}`) Update
               button.btn.btn__color.user__admin--delete Delete

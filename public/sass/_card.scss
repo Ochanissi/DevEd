@@ -105,15 +105,11 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-
-    a {
-      height: 51px !important;
-    }
   }
+}
 
-  .btn__card {
-    grid-row: 1 / 3;
-    justify-self: end;
-    align-self: center;
-  }
+.btn__card {
+  grid-row: 1 / 3;
+  justify-self: end;
+  align-self: center;
 }
