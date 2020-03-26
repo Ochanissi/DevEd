@@ -238,5 +238,17 @@
     "active": true,
     "photo": "user-20.jpg",
     "password": "$2a$12$uA9FsDw63v6dkJKGlLQ/8ufYBs8euB7kqIQewyYlZXU5azEKeLEky"
+  },
+  {
+    "_id": "5e78d41c810ae51398c508d3",
+    "name": "Johanna Gates",
+    "email": "mirel_alex94@yahoo.com",
+    "role": "admin",
+    "occupation": "Frontend Developer",
+    "country": "Romania",
+    "about": "I enjoy creating new stuff.",
+    "active": true,
+    "photo": "user-5e78d41c810ae51398c508d3-1584976983461.jpeg",
+    "password": "$2a$12$Zw/dSNli6sG936rHE9r7zezPdE.2X8gQXyZTgCV3DXxTL3ClqJ39."
   }
 ]
