@@ -72,4 +72,5 @@ This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md
 - [Coding Heroes](https://codingheroes.io/resources/) - Coding resources
 - [Ionicons](https://ionicons.com/) - Icons used
 - [Google Fonts](https://fonts.google.com/) - Fonts used
+- [AOS](https://michalsnik.github.io/aos/) - Animate On Scroll Library
 - [Smooth Scroll](https://github.com/cferdinandi/smooth-scroll) - Animate Scrolling Library
