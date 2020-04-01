@@ -2,10 +2,10 @@ extends base
 
 block content
   header.header
-    img.header__logo(src='./img/logo.png', alt='WebDev Logo')
-    h1.heading-1 Your Course to Success
-    h2.heading-2.mb-sm Build skills with courses, certificates, and degrees online from world-class universities and companies
-    a.btn(href='/courses') View courses
+    img.header__logo(src='./img/logo.png', alt='WebDev Logo' data-aos="fade-down" data-aos-offset="0")
+    h1.heading-1(data-aos="fade-left" data-aos-offset="0") Your Course to Success
+    h2.heading-2.mb-sm(data-aos="fade-right" data-aos-offset="0") Build skills with courses, certificates, and degrees online from world-class universities and companies
+    a.btn(href='/courses' data-aos="fade-up" data-aos-offset="0") View courses
 
   section.about#about
     .about__title
