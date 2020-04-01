@@ -120,34 +120,34 @@ if (filters) {
   const dropdownSort = document.querySelector('.dropdown__sort');
 
   dropdownSubjects.onchange = function() {
-    localStorage.setItem('dropdown', dropdownSubjects.value);
+    sessionStorage.setItem('dropdown', dropdownSubjects.value);
     location.assign(`/courses?${dropdownSubjects.value}#courses`);
   };
 
   dropdownTypes.onchange = function() {
-    localStorage.setItem('dropdown', dropdownTypes.value);
+    sessionStorage.setItem('dropdown', dropdownTypes.value);
     location.assign(`/courses?${dropdownTypes.value}#courses`);
   };
 
   dropdownSort.onchange = function() {
-    localStorage.setItem('dropdown', dropdownSort.value);
+    sessionStorage.setItem('dropdown', dropdownSort.value);
     location.assign(`/courses?${dropdownSort.value}#courses`);
   };
 
   window.onload = function() {
-    if (localStorage['dropdown']) {
-      if (localStorage['dropdown'].startsWith('category')) {
-        dropdownSubjects.value = localStorage['dropdown'];
+    if (sessionStorage['dropdown']) {
+      if (sessionStorage['dropdown'].startsWith('category')) {
+        dropdownSubjects.value = sessionStorage['dropdown'];
         location.assign(`/courses?${dropdownSubjects.value}#courses`);
       }
 
-      if (localStorage['dropdown'].startsWith('price')) {
-        dropdownTypes.value = localStorage['dropdown'];
+      if (sessionStorage['dropdown'].startsWith('price')) {
+        dropdownTypes.value = sessionStorage['dropdown'];
         location.assign(`/courses?${dropdownTypes.value}#courses`);
       }
 
-      if (localStorage['dropdown'].startsWith('sort')) {
-        dropdownSort.value = localStorage['dropdown'];
+      if (sessionStorage['dropdown'].startsWith('sort')) {
+        dropdownSort.value = sessionStorage['dropdown'];
         location.assign(`/courses?${dropdownSort.value}#courses`);
       }
     }
