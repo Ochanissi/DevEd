@@ -46,6 +46,8 @@ html {
   box-sizing: border-box;
   font-size: 62.5%; // 10px / 16px = 62.5% => 1rem = 10px
 
+  overflow-x: hidden;
+
   @media only screen and (max-width: $bp-largest) {
     font-size: 50%;
   }
@@ -80,8 +82,6 @@ body {
         min-content
       );
   }
-
-  overflow-x: hidden;
 
   & > * {
     // padding: 40px;

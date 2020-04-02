@@ -3,31 +3,31 @@ extends base
 block content
   header.contentHeader
     .contentHeader__head
-      h1.heading-1.mb-sm= course.title
-      h2.heading-2.mb-lg= course.subtitle
-      .contentHeader__head--stats
+      h1.heading-1.mb-sm(data-aos='fade-left' data-aos-offset='0')= course.title
+      h2.heading-2.mb-lg(data-aos='fade-right' data-aos-offset='0')= course.subtitle
+      .contentHeader__head--stats(data-aos='fade-down' data-aos-offset='0')
         .contentHeader__head--rating
           each star in [1, 2, 3, 4, 5]
             svg.contentHeader__head--star(class=`contentHeader__head--star--${course.ratingsAverage >= star ? 'active' : 'inactive'}`)
-              use(xlink:href="/img/icons.svg#icon-star")
+              use(xlink:href='/img/icons.svg#icon-star')
         .contentHeader__head--ratings= `${course.ratingsQuantity > 0 ? course.ratingsAverage : 'N/A'} (${course.ratingsQuantity} ratings)`
         .contentHeader__head--students= `${course.studentsEnrolled} students enrolled`
       .contentHeader__head--about
-        .contentHeader__head--about--created Created by 
+        .contentHeader__head--about--created(data-aos='fade-right' data-aos-offset='0') Created by 
           span.contentHeader__head--about--created--by= course.teachers[0].name
-        .contentHeader__head--about--updated= `Last updated ${course.lastUpdate.toLocaleString('ru', {day: 'numeric', month: '2-digit', year: 'numeric'})}`
+        .contentHeader__head--about--updated(data-aos='fade-left' data-aos-offset='0')= `Last updated ${course.lastUpdate.toLocaleString('ru', {day: 'numeric', month: '2-digit', year: 'numeric'})}`
       .contentHeader__head--lang
-        .contentHeader__head--lang--sound
+        .contentHeader__head--lang--sound(data-aos='fade-right' data-aos-offset='0')
           ion-icon(name='volume-high-outline')
           | 
           span= course.langSound.join(', ')
-        .contentHeader__head--lang--subs
+        .contentHeader__head--lang--subs(data-aos='fade-left' data-aos-offset='0')
           ion-icon(name='logo-closed-captioning') 
           | 
           span= course.langSubs.join(', ')
 
     .contentHeader__body
-      .contentHeader__body--card
+      .contentHeader__body--card(data-aos='fade-left')
         .contentHeader__body--left
           img.contentHeader__body--left--img(src=`/img/courses/${course.image}` alt=`${course.name}`)
           .contentHeader__body--left--price
@@ -61,7 +61,7 @@ block content
             .contentHeader__body--right--content--row
               ion-icon(name='checkbox-outline')
               span  Certificate of Completion
-      .contentHeader__body--learn
+      .contentHeader__body--learn(data-aos='fade-right')
         .contentHeader__body--learn--title What you'll learn
         .contentHeader__body--learn--content
           .contentHeader__body--learn--column-1
@@ -78,27 +78,27 @@ block content
                 span= row
 
   section.description
-    .description__title
+    .description__title(data-aos='fade-right')
       h3.heading-3 Description
-    .description__content
+    .description__content(data-aos='fade-left')
       each row in course.description
         p
           ion-icon(name='remove')
           = row
 
   section.requirements
-    .requirements__title
+    .requirements__title(data-aos='fade-left')
       h3.heading-3 Requirements
-    .requirements__content
+    .requirements__content(data-aos='fade-right')
       each row in course.requirements
         p
           ion-icon(name='add')
           =row
 
   section.teachers
-    .teachers__title
+    .teachers__title(data-aos='fade-left')
       h3.heading-3 Teachers
-    .teachers__features
+    .teachers__features(data-aos='fade-up')
       each teacher in course.teachers
         .teachers__features--entry
           img.teachers__description--img(src=`/img/users/${teacher.photo}` alt=`${teacher.name}`)
@@ -110,16 +110,16 @@ block content
 
   - if (course.reviews.length >= 1)
     section.feedback
-      .feedback__title
+      .feedback__title(data-aos='fade-right')
         h3.heading-3 Reviews
-      .feedback__subtitle= `Course Rating: ${course.ratingsAverage}`
+      .feedback__subtitle(data-aos='fade-left')= `Course Rating: ${course.ratingsAverage}`
         .feedback__subtitle--rating
           each star in [1, 2, 3, 4, 5]
             svg.contentHeader__head--star(class=`contentHeader__head--star--${course.ratingsAverage >= star ? 'active' : 'inactive'}`)
-              use(xlink:href="/img/icons.svg#icon-star")
+              use(xlink:href='/img/icons.svg#icon-star')
       .feedback__content
         each review in course.reviews
-          .feedback__content--review
+          .feedback__content--review(data-aos='fade-up')
             .feedback__content--review--col-1
               img.feedback__content--review--img(src=`/img/users/${review.user.photo}` alt=`${review.user.name}`)
               h4.feedback__content--review--name= review.user.name
@@ -130,29 +130,29 @@ block content
               .feedback__content--review--rating
                 each star in [1, 2, 3, 4, 5]
                   svg.contentHeader__head--star(class=`contentHeader__head--star--${review.rating >= star ? 'active' : 'inactive'}`)
-                    use(xlink:href="/img/icons.svg#icon-star")
+                    use(xlink:href='/img/icons.svg#icon-star')
               p.feedback__content--review--text= review.review
   -if (user)
     - if (!course.reviews.map(x => x.user.id).includes(user.id))
       section.feedback.feedback__leave-review
-        .feedback__title
+        .feedback__title(data-aos='fade-right')
           h3.heading-3 Leave a review
         - if (course.reviews.length < 1)
-          .feedback__subtitle.feedback__subtitle--lr
+          .feedback__subtitle.feedback__subtitle--lr(data-aos='fade-left')
             ion-icon(name='happy-outline')
             | Be the first one to leave a review!
         - if (course.reviews.length >= 1)
-          .feedback__subtitle.feedback__subtitle--lr
+          .feedback__subtitle.feedback__subtitle--lr(data-aos='fade-left')
             ion-icon(name='thumbs-up-outline')
             | Tell us what you think!
-        .feedback__content
+        .feedback__content(data-aos='fade-up')
           .feedback__content--review.feedback__content--review--lr
             .feedback__content--review--col-1
               img.feedback__content--review--img(src=`/img/users/${user.photo}` alt=`${user.name}`)
               h4.feedback__content--review--name= user.name
               .feedback__content--review--occupation= user.occupation
               .feedback__content--review--country= user.country
-              - const a = new Date().toString().split(" ").slice(1, 4)
+              - const a = new Date().toString().split(' ').slice(1, 4)
               .feedback__content--review--date= `${a[1]} ${a[0]} ${a[2]}`
             .feedback__content--review--col-2.feedback__content--review--col-2--lr
               form.form#form__leavereview
