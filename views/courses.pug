@@ -3,11 +3,11 @@ extends base
 block content
   section.featured
     .featured__heading
-      h1.heading-1.mb-sm Ready to jump in?
-      h2.heading-2.mb-sm Choose from hundreds of online courses from top universities and specialist organisations.
+      h1.heading-1.mb-sm(data-aos='fade-left' data-aos-offset='0') Ready to jump in?
+      h2.heading-2.mb-sm(data-aos='fade-right' data-aos-offset='0') Choose from hundreds of online courses from top universities and specialist organisations.
     .featured__popular
-      .featured__popular--title Explore our popular courses
-      .featured__popular--content
+      .featured__popular--title(data-aos='fade-down') Explore our popular courses
+      .featured__popular--content(data-aos='fade-up')
         each course in unfilteredCourses.sort((a, b) =>  b.ratingsAverage - a.ratingsAverage).slice(0, 3)
           .card
             .card__header
@@ -27,7 +27,7 @@ block content
               a.btn.btn__card(href=`/course/${course.slug}`) Details
 
   section.courses#courses
-    .courses__heading Find the right online course for you
+    .courses__heading(data-aos='fade-down') Find the right online course for you
     .courses__filters
       label(for='dropdown')
         select#dropdown.dropdown__subjects(name='select')

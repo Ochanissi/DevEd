@@ -2,37 +2,37 @@ extends base
 
 block content
   header.header
-    img.header__logo(src='./img/logo.png', alt='WebDev Logo' data-aos="fade-down" data-aos-offset="0")
-    h1.heading-1(data-aos="fade-left" data-aos-offset="0") Your Course to Success
-    h2.heading-2.mb-sm(data-aos="fade-right" data-aos-offset="0") Build skills with courses, certificates, and degrees online from world-class universities and companies
-    a.btn(href='/courses' data-aos="fade-up" data-aos-offset="0") View courses
+    img.header__logo(src='./img/logo.png', alt='WebDev Logo' data-aos='fade-down' data-aos-offset='0')
+    h1.heading-1(data-aos='fade-left' data-aos-offset='0') Your Course to Success
+    h2.heading-2.mb-sm(data-aos='fade-right' data-aos-offset='0') Build skills with courses, certificates, and degrees online from world-class universities and companies
+    a.btn(href='/courses' data-aos='fade-up' data-aos-offset='0') View courses
 
   section.about#about
-    .about__title
+    .about__title(data-aos='fade-right')
       h3.heading-3 Achieve your goals
     .about__features
       .about__features-1
-        ion-icon.about__features--img(name='construct')
-        h4.heading-4--dark Learn the latest skills
-        p.about__features--text-1 like business analytics, graphic design, Python, and more
+        ion-icon.about__features--img(name='construct' data-aos='flip-right')
+        h4.heading-4--dark(data-aos='fade-up') Learn the latest skills
+        p.about__features--text-1(data-aos='fade-up' data-aos-delay='100') like business analytics, graphic design, Python, and more
       .about__features-2
-        ion-icon.about__features--img(name='trending-up')
-        h4.heading-4--dark Get ready for a career
-        p.about__features--text-2 in high-demand fields like IT, AI and cloud engineering
+        ion-icon.about__features--img(name='trending-up' data-aos='flip-right')
+        h4.heading-4--dark(data-aos='fade-up') Get ready for a career
+        p.about__features--text-2(data-aos='fade-up' data-aos-delay='100') in high-demand fields like IT, AI and cloud engineering
       .about__features-3
-        ion-icon.about__features--img(name='checkbox-outline')
-        h4.heading-4--dark Earn a certificate or degree
-        p.about__features--text-3 from a leading university in business, computer science, and more
+        ion-icon.about__features--img(name='checkbox-outline' data-aos='flip-right')
+        h4.heading-4--dark(data-aos='fade-up') Earn a certificate or degree
+        p.about__features--text-3(data-aos='fade-up' data-aos-delay='100') from a leading university in business, computer science, and more
       .about__features-4
-        ion-icon.about__features--img(name='rocket')
-        h4.heading-4--dark Upskill your organization
-        p.about__features--text-4 with on-demand training and development programs
+        ion-icon.about__features--img(name='rocket' data-aos='flip-right')
+        h4.heading-4--dark(data-aos='fade-up') Upskill your organization
+        p.about__features--text-4(data-aos='fade-up' data-aos-delay='100') with on-demand training and development programs
 
   section.review
-    .review__title
+    .review__title(data-aos='fade-left')
       h3.heading-3 From the DevEd community
     .review__features
-      .review__features--card
+      .review__features--card(data-aos='fade-up' data-aos-delay='0')
         img.review__description--img(
           src='/img/users/_user-4.jpg',
           alt='Review Photo 1'
@@ -41,8 +41,8 @@ block content
         p.review__features--text-1 Cybersecurity Engineer
         p.review__features--text-2 Russia
         p.review__features--text-3 &mdash;&mdash;&mdash;
-        p.review__features--text-4 "I started at stage zero. With DevEd I was able to start learning online and eventually build up enough knowledge and skills to <strong>transition into a well-paying career</strong>."
-      .review__features--card
+        p.review__features--text-4 'I started at stage zero. With DevEd I was able to start learning online and eventually build up enough knowledge and skills to <strong>transition into a well-paying career</strong>.'
+      .review__features--card(data-aos='fade-up' data-aos-delay='150')
         img.review__description--img(
           src='/img/users/_user-3.jpg',
           alt='Review Photo 2'
@@ -51,8 +51,8 @@ block content
         p.review__features--text-1 Web Developer
         p.review__features--text-2 United States
         p.review__features--text-3 &mdash;&mdash;&mdash;
-        p.review__features--text-4 "<strong>Recruiters saw my Professional Certificate</strong> on my LinkedIn profile. During the interview, they told me <strong>they were impressed with my skills</strong>. I got the job!"
-      .review__features--card
+        p.review__features--text-4 '<strong>Recruiters saw my Professional Certificate</strong> on my LinkedIn profile. During the interview, they told me <strong>they were impressed with my skills</strong>. I got the job!'
+      .review__features--card(data-aos='fade-up' data-aos-delay='300')
         img.review__description--img(
           src='/img/users/_user-2.jpg',
           alt='Review Photo 3'
@@ -61,17 +61,17 @@ block content
         p.review__features--text-1 DevOps Engineer
         p.review__features--text-2 United Kingdom
         p.review__features--text-3 &mdash;&mdash;&mdash;
-        p.review__features--text-4 "It’s a really big deal to offer an online MBA that’s a <strong>real MBA at a price that’s actually achievable</strong>. This program is totally disrupting higher education."
+        p.review__features--text-4 'It’s a really big deal to offer an online MBA that’s a <strong>real MBA at a price that’s actually achievable</strong>. This program is totally disrupting higher education.'
 
   section.join
-    p.join__title Take the next step toward your personal and professional goals with DevEd.
-    p.join__text Join now to receive personalized recommendations from the full DevEd catalog.
-    .join__btns
+    p.join__title(data-aos='fade-left') Take the next step toward your personal and professional goals with DevEd.
+    p.join__text(data-aos='fade-right') Join now to receive personalized recommendations from the full DevEd catalog.
+    .join__btns(data-aos='fade-up')
       a.btn.join__btns--1(href='/courses') View courses
       a.btn.join__btns--2(href='/signup') Join now
 
   section.business
-    .business__photo
+    .business__photo(data-aos='fade-right')
       img.business__photo--1(
         src='./img/business/business__photo--1.png',
         alt='Business Photo 1'
@@ -108,17 +108,17 @@ block content
         src='./img/business/business__photo--9.png',
         alt='Business Photo 9'
       )
-    .business__content
+    .business__content(data-aos='fade-left')
       p.business__content__title DevEd for Business
       p.business__content__text We’ve got the solution: world-class training and development programs developed by top universities and companies. All on DevEd for Business.
       a.btn.join__btns--2.business__content__btn(href='/courses') Learn more
 
   section.contact#contact
     .contact__title
-      .heading-3.contact__title--header Contact
+      .heading-3.contact__title--header(data-aos='fade-right') Contact
     .contact__content
-      h4.heading-4.mb-lg Want to know more?
-      .contact__content--links
+      h4.heading-4.mb-lg(data-aos='fade-left') Want to know more?
+      .contact__content--links(data-aos='fade-up')
         a.btn.btn__contact(href='mailto:mirelalex2094@gmail.com') 
           ion-icon(name='mail')
         a.btn.btn__contact(
