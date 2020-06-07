@@ -7,8 +7,8 @@ const AppError = require('./../utils/appError');
 const Email = require('./../utils/email');
 
 const signToken = id => {
-  return jwt.sign({ id }, process.env.JWT_SECRET, {
-    expiresIn: process.env.JWT_EXPIRES_IN
+  return jwt.sign({ id }, process.env.DEVED_JWT_SECRET, {
+    expiresIn: process.env.DEVED_JWT_EXPIRES_IN
   });
 };
 
@@ -17,7 +17,7 @@ const createSendToken = (user, statusCode, req, res) => {
 
   res.cookie('jwt', token, {
     expires: new Date(
-      Date.now() + process.env.JWT_COOKIE_EXPIRES_IN * 24 * 60 * 60 * 1000
+      Date.now() + process.env.DEVED_JWT_COOKIE_EXPIRES_IN * 24 * 60 * 60 * 1000
     ),
     httpOnly: true,
     secure: req.secure || req.headers['x-forwarded-proto'] === 'https'
@@ -94,7 +94,10 @@ exports.protect = catchAsync(async (req, res, next) => {
   }
 
   // 2. Verification token
-  const decoded = await promisify(jwt.verify)(token, process.env.JWT_SECRET);
+  const decoded = await promisify(jwt.verify)(
+    token,
+    process.env.DEVED_JWT_SECRET
+  );
   // console.log(decoded);
 
   // 3. Check if user still exists
@@ -128,7 +131,7 @@ exports.isLoggedIn = async (req, res, next) => {
       // 1. Verifty token
       const decoded = await promisify(jwt.verify)(
         req.cookies.jwt,
-        process.env.JWT_SECRET
+        process.env.DEVED_JWT_SECRET
       );
 
       // 2. Check if user still exists
