@@ -12,11 +12,11 @@ const app = require('./app');
 
 const DB = process.env.DEVED_DATABASE.replace(
   '<PASSWORD>',
-  process.env.DEVED_DEVED_DATABASE_PASSWORD
+  process.env.DEVED_DATABASE_PASSWORD
 );
 
 mongoose
-  // .connect(process.env.DEVED_DEVED_DATABASE_LOCAL, {
+  // .connect(process.env.DEVED_DATABASE_LOCAL, {
   .connect(DB, {
     useNewUrlParser: true,
     useCreateIndex: true,
