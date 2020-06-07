@@ -10,13 +10,13 @@ process.on('uncaughtException', err => {
 dotenv.config({ path: './config.env' });
 const app = require('./app');
 
-const DB = process.env.DATABASE.replace(
+const DB = process.env.DEVED_DATABASE.replace(
   '<PASSWORD>',
-  process.env.DATABASE_PASSWORD
+  process.env.DEVED_DEVED_DATABASE_PASSWORD
 );
 
 mongoose
-  // .connect(process.env.DATABASE_LOCAL, {
+  // .connect(process.env.DEVED_DEVED_DATABASE_LOCAL, {
   .connect(DB, {
     useNewUrlParser: true,
     useCreateIndex: true,
@@ -27,7 +27,7 @@ mongoose
 
 // console.log(process.env);
 
-const port = process.env.PORT || 3000;
+const port = process.env.PORT || process.env.DEVED_PORT || 5003;
 const server = app.listen(port, () => {
   console.log(`App running on port ${port}...`);
 });
